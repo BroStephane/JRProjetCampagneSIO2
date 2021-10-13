@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JRProjetCampagneBO;
+using JRProjetCampagneDAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,10 +26,16 @@ namespace JRProjetEvenementBLL
 
         }
 
-        //public int AddEvenement(DateTime dateDebut, DateTime dateFin, )
-        //{
+        public int AddEvenement(DateTime dateDebut, DateTime dateFin, int idTheme, int idCampagne)
+        {
+            Theme unTheme = new Theme(idTheme);
+            Campagne uneCampagne = new Campagne(idCampagne);
 
-        //}
+            Evenement unEvenement = new Evenement(dateDebut, dateFin, unTheme, uneCampagne);
+
+            return EvenementDAO.GetInstance().AddEvenement(unEvenement);
+
+        }
 
 
     }

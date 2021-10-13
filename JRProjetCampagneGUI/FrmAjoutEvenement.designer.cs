@@ -37,7 +37,7 @@ namespace JRProjetCampagneGUI
             this.btnEnvoyer = new System.Windows.Forms.Button();
             this.lblDateFin = new System.Windows.Forms.Label();
             this.lblDateDebut = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxCampagne = new System.Windows.Forms.ComboBox();
             this.lblCampagne = new System.Windows.Forms.Label();
             this.cbxTheme = new System.Windows.Forms.ComboBox();
             this.pnlAjout.SuspendLayout();
@@ -47,7 +47,8 @@ namespace JRProjetCampagneGUI
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitre.Location = new System.Drawing.Point(514, 94);
+            this.lblTitre.Location = new System.Drawing.Point(685, 116);
+            this.lblTitre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(274, 31);
             this.lblTitre.TabIndex = 0;
@@ -58,7 +59,8 @@ namespace JRProjetCampagneGUI
             // 
             this.lblTheme.AutoSize = true;
             this.lblTheme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTheme.Location = new System.Drawing.Point(65, 58);
+            this.lblTheme.Location = new System.Drawing.Point(87, 71);
+            this.lblTheme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTheme.Name = "lblTheme";
             this.lblTheme.Size = new System.Drawing.Size(181, 20);
             this.lblTheme.TabIndex = 1;
@@ -71,35 +73,40 @@ namespace JRProjetCampagneGUI
             this.pnlAjout.Controls.Add(this.btnEnvoyer);
             this.pnlAjout.Controls.Add(this.lblDateFin);
             this.pnlAjout.Controls.Add(this.lblDateDebut);
-            this.pnlAjout.Controls.Add(this.comboBox1);
+            this.pnlAjout.Controls.Add(this.cbxCampagne);
             this.pnlAjout.Controls.Add(this.lblCampagne);
             this.pnlAjout.Controls.Add(this.cbxTheme);
             this.pnlAjout.Controls.Add(this.lblTheme);
-            this.pnlAjout.Location = new System.Drawing.Point(306, 156);
+            this.pnlAjout.Location = new System.Drawing.Point(408, 192);
+            this.pnlAjout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlAjout.Name = "pnlAjout";
-            this.pnlAjout.Size = new System.Drawing.Size(742, 592);
+            this.pnlAjout.Size = new System.Drawing.Size(989, 729);
             this.pnlAjout.TabIndex = 2;
             // 
             // dtpDebut
             // 
-            this.dtpDebut.Location = new System.Drawing.Point(282, 161);
+            this.dtpDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDebut.Location = new System.Drawing.Point(376, 198);
+            this.dtpDebut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpDebut.Name = "dtpDebut";
-            this.dtpDebut.Size = new System.Drawing.Size(200, 20);
+            this.dtpDebut.Size = new System.Drawing.Size(265, 23);
             this.dtpDebut.TabIndex = 11;
             // 
             // dtpFin
             // 
-            this.dtpFin.Location = new System.Drawing.Point(282, 220);
+            this.dtpFin.Location = new System.Drawing.Point(376, 271);
+            this.dtpFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(200, 20);
+            this.dtpFin.Size = new System.Drawing.Size(265, 23);
             this.dtpFin.TabIndex = 10;
             // 
             // btnEnvoyer
             // 
             this.btnEnvoyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnvoyer.Location = new System.Drawing.Point(407, 290);
+            this.btnEnvoyer.Location = new System.Drawing.Point(543, 357);
+            this.btnEnvoyer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEnvoyer.Name = "btnEnvoyer";
-            this.btnEnvoyer.Size = new System.Drawing.Size(75, 33);
+            this.btnEnvoyer.Size = new System.Drawing.Size(100, 41);
             this.btnEnvoyer.TabIndex = 9;
             this.btnEnvoyer.Text = "Envoyer";
             this.btnEnvoyer.UseVisualStyleBackColor = true;
@@ -109,7 +116,8 @@ namespace JRProjetCampagneGUI
             // 
             this.lblDateFin.AutoSize = true;
             this.lblDateFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateFin.Location = new System.Drawing.Point(147, 221);
+            this.lblDateFin.Location = new System.Drawing.Point(196, 272);
+            this.lblDateFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateFin.Name = "lblDateFin";
             this.lblDateFin.Size = new System.Drawing.Size(99, 20);
             this.lblDateFin.TabIndex = 7;
@@ -119,25 +127,29 @@ namespace JRProjetCampagneGUI
             // 
             this.lblDateDebut.AutoSize = true;
             this.lblDateDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDebut.Location = new System.Drawing.Point(123, 161);
+            this.lblDateDebut.Location = new System.Drawing.Point(164, 198);
+            this.lblDateDebut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateDebut.Name = "lblDateDebut";
             this.lblDateDebut.Size = new System.Drawing.Size(123, 20);
             this.lblDateDebut.TabIndex = 5;
             this.lblDateDebut.Text = "Date de début : ";
             // 
-            // comboBox1
+            // cbxCampagne
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(282, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cbxCampagne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCampagne.FormattingEnabled = true;
+            this.cbxCampagne.Location = new System.Drawing.Point(376, 137);
+            this.cbxCampagne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxCampagne.Name = "cbxCampagne";
+            this.cbxCampagne.Size = new System.Drawing.Size(160, 24);
+            this.cbxCampagne.TabIndex = 4;
             // 
             // lblCampagne
             // 
             this.lblCampagne.AutoSize = true;
             this.lblCampagne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCampagne.Location = new System.Drawing.Point(147, 112);
+            this.lblCampagne.Location = new System.Drawing.Point(196, 138);
+            this.lblCampagne.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCampagne.Name = "lblCampagne";
             this.lblCampagne.Size = new System.Drawing.Size(99, 20);
             this.lblCampagne.TabIndex = 3;
@@ -147,19 +159,22 @@ namespace JRProjetCampagneGUI
             // 
             this.cbxTheme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTheme.FormattingEnabled = true;
-            this.cbxTheme.Location = new System.Drawing.Point(282, 56);
+            this.cbxTheme.Location = new System.Drawing.Point(376, 69);
+            this.cbxTheme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxTheme.Name = "cbxTheme";
-            this.cbxTheme.Size = new System.Drawing.Size(200, 24);
+            this.cbxTheme.Size = new System.Drawing.Size(265, 24);
             this.cbxTheme.TabIndex = 2;
             // 
             // FrmAjoutEvenement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1332, 816);
+            this.ClientSize = new System.Drawing.Size(1776, 1004);
             this.Controls.Add(this.pnlAjout);
             this.Controls.Add(this.lblTitre);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmAjoutEvenement";
             this.Text = "Ajout d\'un événement";
             this.pnlAjout.ResumeLayout(false);
@@ -174,7 +189,7 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Label lblTheme;
         private System.Windows.Forms.Panel pnlAjout;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxCampagne;
         private System.Windows.Forms.Label lblCampagne;
         private System.Windows.Forms.ComboBox cbxTheme;
         private System.Windows.Forms.Label lblDateFin;
