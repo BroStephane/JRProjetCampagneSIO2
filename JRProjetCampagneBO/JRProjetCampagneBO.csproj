@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Agence.cs" />
     <Compile Include="Artiste.cs" />
+    <Compile Include="ArtisteEvenement.cs" />
     <Compile Include="Campagne.cs" />
+    <Compile Include="CourantArtistique.cs" />
     <Compile Include="Evenement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public.cs" />

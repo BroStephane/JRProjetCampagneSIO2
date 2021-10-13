@@ -8,5 +8,22 @@ namespace JRProjetCampagneDAL
 {
     public class ArtisteDAO
     {
+        private static ArtisteDAO uneInstance;
+
+          public static ArtisteDAO GetInstance()
+          {
+            if (uneInstance == null)
+            {
+                uneInstance = new ArtisteDAO();
+            }
+            return uneInstance;
+          }
+
+        private ArtisteDAO()
+        {
+
+        }
+
+
     }
 }
