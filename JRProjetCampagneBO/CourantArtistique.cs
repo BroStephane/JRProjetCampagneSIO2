@@ -10,13 +10,11 @@ namespace JRProjetCampagneBO
     {
         private int id;
         private string libelle;
-        private Artiste unArtiste;
 
-        public CourantArtistique(int id, string libelle, Artiste unArtiste)
+        public CourantArtistique(int id, string libelle)
         {
             this.id = id;
             this.libelle = libelle;
-            this.unArtiste = unArtiste;
         }
 
         public CourantArtistique(int id)
@@ -26,8 +24,6 @@ namespace JRProjetCampagneBO
 
         public int Id { get => id; set => id = value; }
         public string Libelle { get => libelle; set => libelle = value; }
-        public Artiste UnArtiste { get => unArtiste; set => unArtiste = value; }
-
 
     }
 }

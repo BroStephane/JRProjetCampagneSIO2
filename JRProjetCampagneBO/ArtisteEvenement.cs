@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneBO
 {
-    class ArtisteEvenement
+    public class ArtisteEvenement
     {
         private Artiste idArtiste;
         private Evenement idEvenement;

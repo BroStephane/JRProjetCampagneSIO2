@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtisteEvenementManager.cs" />
     <Compile Include="ArtisteManager.cs" />
     <Compile Include="CampagneManager.cs" />
     <Compile Include="CourantArtistiqueManager.cs" />

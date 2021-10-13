@@ -8,31 +8,30 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneDAL
 {
-    public class ThemeDAO
+    public class CourantArtistiqueDAO
     {
-        private static ThemeDAO uneInstance;
+        private static CourantArtistiqueDAO uneInstance;
 
-        public static ThemeDAO GetInstance()
+        public static CourantArtistiqueDAO GetInstance()
         {
             if (uneInstance == null)
             {
-                uneInstance = new ThemeDAO();
+                uneInstance = new CourantArtistiqueDAO();
             }
             return uneInstance;
         }
 
-        private ThemeDAO()
+        private CourantArtistiqueDAO()
         {
 
         }
 
-
-        public List<Theme> GetThemes()
+        public List<CourantArtistique> GetCourantArtistiques()
         {
             int id;
             string libelle;
 
-            List<Theme> lesThemes = new List<Theme>();
+            List<CourantArtistique> lesCourantArtistiques = new List<CourantArtistique>();
 
             //Recupère l'objet commande et ouvre la connexion à la BDD
             SqlCommand command = Command.GetObjCommande();
@@ -40,7 +39,7 @@ namespace JRProjetCampagneDAL
             // Nettoie le 'cache'
             command.Parameters.Clear();
 
-            command.CommandText = "exec GetTheme";
+            command.CommandText = "exec GetCourantArtistique";
             SqlDataReader monLecteur = command.ExecuteReader();
 
             while (monLecteur.Read())
@@ -58,7 +57,7 @@ namespace JRProjetCampagneDAL
                     libelle = monLecteur["libelle"].ToString();
                 }
 
-                lesThemes.Add(new Theme(id, libelle));
+                lesCourantArtistiques.Add(new CourantArtistique(id, libelle));
             }
             // Fermeture du lecteur
             monLecteur.Close();
@@ -66,11 +65,9 @@ namespace JRProjetCampagneDAL
             // Fermeture de la connexion
             command.Connection.Close();
 
-            return lesThemes;
+            return lesCourantArtistiques;
 
 
         }
-
-
     }
 }

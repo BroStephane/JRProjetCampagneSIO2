@@ -1,8 +1,10 @@
-﻿using System;
+﻿using JRProjetCampagneBO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JRProjetCampagneDAL;
 
 namespace JRProjetCampagneBLL
 {
@@ -24,6 +26,12 @@ namespace JRProjetCampagneBLL
 
         }
 
+        public List<CourantArtistique> GetCourantArtistiques()
+        {
+            List<CourantArtistique> lesCourantArtistiques = new List<CourantArtistique>();
+            return CourantArtistiqueDAO.GetInstance().GetCourantArtistiques();
+
+        }
 
     }
 }

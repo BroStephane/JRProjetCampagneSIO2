@@ -44,8 +44,10 @@
   <ItemGroup>
     <Compile Include="AgenceDAO.cs" />
     <Compile Include="ArtisteDAO.cs" />
+    <Compile Include="ArtisteEvenementDAO.cs" />
     <Compile Include="CampagneDAO.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="CourantArtistiqueDAO.cs" />
     <Compile Include="EvenementDAO.cs" />
     <Compile Include="ObjectifDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

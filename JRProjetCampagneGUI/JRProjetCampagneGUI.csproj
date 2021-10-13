@@ -52,6 +52,12 @@
     <Compile Include="FrmAccueil.designer.cs">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAjoutArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutArtiste.Designer.cs">
+      <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAjoutEvenement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutArtiste.resx">
+      <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutEvenement.resx">
       <DependentUpon>FrmAjoutEvenement.cs</DependentUpon>

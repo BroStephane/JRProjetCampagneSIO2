@@ -25,10 +25,13 @@ namespace JRProjetCampagneBLL
 
         }
 
-        public List<Artiste> AddArtiste()
+        public int AddArtististe(string nom, string siteWeb, int idCourantArtistique)
         {
-            List<Artiste> lesArtiste = new List<Artiste>();
-            return ArtisteDAO.GetInstance().AddArtiste();
+            CourantArtistique unCourantArtistique = new CourantArtistique(idCourantArtistique);
+
+            Artiste unArtiste = new Artiste(nom, siteWeb);
+
+            return ArtisteDAO.GetInstance().AddArtiste(unArtiste);
 
         }
 
