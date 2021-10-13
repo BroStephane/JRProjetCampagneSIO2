@@ -35,6 +35,7 @@ namespace JRProjetCampagneGUI
             this.ajoutDunÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajoutDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@ namespace JRProjetCampagneGUI
             // 
             this.ajoutToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ajoutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ajoutDunÉvénementToolStripMenuItem});
+            this.ajoutDunÉvénementToolStripMenuItem,
+            this.ajoutDunVIPToolStripMenuItem});
             this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
             this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ajoutToolStripMenuItem.Text = "Ajout";
@@ -93,6 +95,13 @@ namespace JRProjetCampagneGUI
             this.suppressionToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.suppressionToolStripMenuItem.Text = "Suppression";
             // 
+            // ajoutDunVIPToolStripMenuItem
+            // 
+            this.ajoutDunVIPToolStripMenuItem.Name = "ajoutDunVIPToolStripMenuItem";
+            this.ajoutDunVIPToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.ajoutDunVIPToolStripMenuItem.Text = "Ajout d\'un VIP";
+            this.ajoutDunVIPToolStripMenuItem.Click += new System.EventHandler(this.ajoutDunVIPToolStripMenuItem_Click);
+            // 
             // FrmAccueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +128,7 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.ToolStripMenuItem ajoutDunÉvénementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suppressionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajoutDunVIPToolStripMenuItem;
     }
 }
 

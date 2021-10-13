@@ -48,6 +48,8 @@
     <Compile Include="EvenementManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeManager.cs" />
+    <Compile Include="VilleManager.cs" />
+    <Compile Include="VIPManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JRProjetCampagneDAL\JRProjetCampagneDAL.csproj">

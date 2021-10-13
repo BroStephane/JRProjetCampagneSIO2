@@ -20,12 +20,18 @@ namespace JRProjetCampagneGUI
         private void ajoutDunÉvénementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmAjoutEvenement lAjout = new FrmAjoutEvenement();
-            lAjout.Show();
+            lAjout.ShowDialog();
         }
 
         private void Accueil_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ajoutDunVIPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAjoutVIP vip = new FrmAjoutVIP();
+            vip.ShowDialog();
         }
     }
 }
