@@ -11,35 +11,36 @@ namespace JRProjetCampagneDAL
 {
     static public class Command
     {
-        static private SqlCommand objCommand;
+
+        private static SqlCommand objCommande;
 
         static Command()
         {
-            SqlConnection objConnex;
-            objConnex = new SqlConnection();
-            objConnex.ConnectionString = ConfigurationManager.ConnectionStrings["GSB"].ConnectionString;
-            objCommand = new SqlCommand("", objConnex);
-            objCommand.CommandType = CommandType.StoredProcedure;
+            SqlConnection objConnex = new SqlConnection();
+           objConnex.ConnectionString = ConfigurationManager.ConnectionStrings["GSB"].ConnectionString;
+
+            objCommande = new SqlCommand("", objConnex);
+            objCommande.CommandType = CommandType.StoredProcedure;
         }
 
-        public static SqlCommand GetObjCommand()
+        public static SqlCommand GetObjCommande()
         {
-            //on ouvre la connexion si elle est fermée
-            if (objCommand.Connection.State == System.Data.ConnectionState.Closed)
+            if (objCommande.Connection.State == System.Data.ConnectionState.Closed)
             {
-                objCommand.Connection.Open();
+                objCommande.Connection.Open();
             }
-            //on retourne l'objet responsable de la connexion
-            return objCommand;
+            return objCommande;
         }
 
         public static void CloseConnexion()
         {
-            //si la connexion est ouverte on la ferme
-            if (objCommand.Connection != null && objCommand.Connection.State != System.Data.ConnectionState.Closed)
+            if (objCommande.Connection != null && objCommande.Connection.State != System.Data.ConnectionState.Closed)
             {
-                objCommand.Connection.Close();
+                objCommande.Connection.Close();
             }
         }
+
+
+
     }
 }
