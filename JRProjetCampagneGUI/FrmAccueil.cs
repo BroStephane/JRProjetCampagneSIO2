@@ -30,6 +30,10 @@ namespace JRProjetCampagneGUI
 
         }
 
+        private void ajoutDunArtisteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAjoutArtiste lAjout = new FrmAjoutArtiste();
+            lAjout.Show();
 
         private void ajoutDuneAgenceToolStripMenuItem_Click(object sender, EventArgs e)
         {
