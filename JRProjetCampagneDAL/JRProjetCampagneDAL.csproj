@@ -45,6 +45,7 @@
     <Compile Include="AgenceDAO.cs" />
     <Compile Include="ArtisteDAO.cs" />
     <Compile Include="CampagneDAO.cs" />
+    <Compile Include="CategorieVIPDAO.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>

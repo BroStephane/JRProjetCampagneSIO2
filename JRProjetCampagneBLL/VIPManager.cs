@@ -23,13 +23,14 @@ namespace JRProjetCampagneBLL
             return uneInstance;
         }
 
-        //public int AddVIP(string nom, string rue,string  mail, int numInsee )
-        //{
-        //    Ville uneVille = new Ville(numInsee);
-            
-        //    VIP unVIP = new VIP(nom, rue, mail, uneVille);
+        public int AddVIP(string nom, string rue, string mail, int numInsee, int categVIP)
+        {
+            Ville uneVille = new Ville(numInsee);
+            CategorieVIP laCategVIP = new CategorieVIP(categVIP);
 
-        //    //return VIPDAO.GetInstance().AddVIP();
-        //}
+            VIP unVIP = new VIP(nom, rue, mail, uneVille, laCategVIP);
+
+            return VIPDAO.GetInstance().AddVIP(unVIP);
+        }
     }
 }

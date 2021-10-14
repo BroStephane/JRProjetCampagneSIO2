@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace JRProjetCampagneGUI
 {
     public partial class FrmAjoutVIP : Form
@@ -26,6 +27,18 @@ namespace JRProjetCampagneGUI
                 cbxVille.SelectedItem = null;
             }
             catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                cbxCategVIP.DisplayMember = "libelle";
+                cbxCategVIP.ValueMember = "id";
+                cbxCategVIP.DataSource = CategorieVIPManager.GetInstance().GetLesCategsVIP();
+                cbxCategVIP.SelectedItem = null;
+
+            }catch(Exception exception)
             {
                 MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -53,20 +66,24 @@ namespace JRProjetCampagneGUI
             }
 
             int numInsee = (int)cbxVille.SelectedValue;
+            int categVIP = (int)cbxCategVIP.SelectedValue;
 
             try
             {
+                if(rue != "" && mail != "" && nom != "")
+                {
+                    int nb = VIPManager.GetInstance().AddVIP(nom, rue, mail, numInsee, categVIP);
+                    if (nb == 0)
+                    {
+                        MessageBox.Show("Erreur lors de l'ajout du VIP", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("l'ajout du VIP à été effectué", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //int nb = VIPManager.GetInstance().AddVIP(nom, rue,mail, numInsee);
-                //if (nb == 0)
-                //{
-                //    MessageBox.Show("Erreur lors de l'ajout du VIP", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("l'ajout du VIP à été effectué", "Information", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
-
-                //}
+                    }
+                }
+                
 
 
 

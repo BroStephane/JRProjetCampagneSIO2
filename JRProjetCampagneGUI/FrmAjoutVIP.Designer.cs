@@ -31,15 +31,17 @@ namespace JRProjetCampagneGUI
         {
             this.lblTitre = new System.Windows.Forms.Label();
             this.pnlAjout = new System.Windows.Forms.Panel();
-            this.lblNom = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.lblMail = new System.Windows.Forms.Label();
-            this.txtMail = new System.Windows.Forms.TextBox();
+            this.btnEnvoyer = new System.Windows.Forms.Button();
+            this.cbxVille = new System.Windows.Forms.ComboBox();
+            this.lblVille = new System.Windows.Forms.Label();
             this.txtRue = new System.Windows.Forms.TextBox();
             this.lblRue = new System.Windows.Forms.Label();
-            this.lblVille = new System.Windows.Forms.Label();
-            this.cbxVille = new System.Windows.Forms.ComboBox();
-            this.btnEnvoyer = new System.Windows.Forms.Button();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.lblNom = new System.Windows.Forms.Label();
+            this.cbxCategVIP = new System.Windows.Forms.ComboBox();
+            this.lblCategVIP = new System.Windows.Forms.Label();
             this.pnlAjout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +57,8 @@ namespace JRProjetCampagneGUI
             // 
             // pnlAjout
             // 
+            this.pnlAjout.Controls.Add(this.cbxCategVIP);
+            this.pnlAjout.Controls.Add(this.lblCategVIP);
             this.pnlAjout.Controls.Add(this.btnEnvoyer);
             this.pnlAjout.Controls.Add(this.cbxVille);
             this.pnlAjout.Controls.Add(this.lblVille);
@@ -66,26 +70,63 @@ namespace JRProjetCampagneGUI
             this.pnlAjout.Controls.Add(this.lblNom);
             this.pnlAjout.Location = new System.Drawing.Point(232, 160);
             this.pnlAjout.Name = "pnlAjout";
-            this.pnlAjout.Size = new System.Drawing.Size(495, 339);
+            this.pnlAjout.Size = new System.Drawing.Size(495, 397);
             this.pnlAjout.TabIndex = 1;
             // 
-            // lblNom
+            // btnEnvoyer
             // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom.Location = new System.Drawing.Point(93, 60);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(54, 20);
-            this.lblNom.TabIndex = 0;
-            this.lblNom.Text = "Nom : ";
+            this.btnEnvoyer.Location = new System.Drawing.Point(326, 330);
+            this.btnEnvoyer.Name = "btnEnvoyer";
+            this.btnEnvoyer.Size = new System.Drawing.Size(84, 30);
+            this.btnEnvoyer.TabIndex = 8;
+            this.btnEnvoyer.Text = "Envoyer";
+            this.btnEnvoyer.UseVisualStyleBackColor = true;
+            this.btnEnvoyer.Click += new System.EventHandler(this.btnEnvoyer_Click);
             // 
-            // txtNom
+            // cbxVille
             // 
-            this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(170, 60);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(100, 23);
-            this.txtNom.TabIndex = 1;
+            this.cbxVille.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxVille.FormattingEnabled = true;
+            this.cbxVille.Location = new System.Drawing.Point(170, 273);
+            this.cbxVille.Name = "cbxVille";
+            this.cbxVille.Size = new System.Drawing.Size(121, 24);
+            this.cbxVille.TabIndex = 7;
+            // 
+            // lblVille
+            // 
+            this.lblVille.AutoSize = true;
+            this.lblVille.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVille.Location = new System.Drawing.Point(98, 273);
+            this.lblVille.Name = "lblVille";
+            this.lblVille.Size = new System.Drawing.Size(50, 20);
+            this.lblVille.TabIndex = 6;
+            this.lblVille.Text = "Ville : ";
+            // 
+            // txtRue
+            // 
+            this.txtRue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRue.Location = new System.Drawing.Point(170, 224);
+            this.txtRue.Name = "txtRue";
+            this.txtRue.Size = new System.Drawing.Size(100, 23);
+            this.txtRue.TabIndex = 5;
+            // 
+            // lblRue
+            // 
+            this.lblRue.AutoSize = true;
+            this.lblRue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRue.Location = new System.Drawing.Point(98, 224);
+            this.lblRue.Name = "lblRue";
+            this.lblRue.Size = new System.Drawing.Size(51, 20);
+            this.lblRue.TabIndex = 4;
+            this.lblRue.Text = "Rue : ";
+            // 
+            // txtMail
+            // 
+            this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMail.Location = new System.Drawing.Point(170, 114);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(100, 23);
+            this.txtMail.TabIndex = 3;
             // 
             // lblMail
             // 
@@ -97,67 +138,49 @@ namespace JRProjetCampagneGUI
             this.lblMail.TabIndex = 2;
             this.lblMail.Text = "Mail : ";
             // 
-            // txtMail
+            // txtNom
             // 
-            this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMail.Location = new System.Drawing.Point(170, 114);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(100, 23);
-            this.txtMail.TabIndex = 3;
+            this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNom.Location = new System.Drawing.Point(170, 60);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(100, 23);
+            this.txtNom.TabIndex = 1;
             // 
-            // txtRue
+            // lblNom
             // 
-            this.txtRue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRue.Location = new System.Drawing.Point(170, 166);
-            this.txtRue.Name = "txtRue";
-            this.txtRue.Size = new System.Drawing.Size(100, 23);
-            this.txtRue.TabIndex = 5;
+            this.lblNom.AutoSize = true;
+            this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNom.Location = new System.Drawing.Point(93, 60);
+            this.lblNom.Name = "lblNom";
+            this.lblNom.Size = new System.Drawing.Size(54, 20);
+            this.lblNom.TabIndex = 0;
+            this.lblNom.Text = "Nom : ";
             // 
-            // lblRue
+            // cbxCategVIP
             // 
-            this.lblRue.AutoSize = true;
-            this.lblRue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRue.Location = new System.Drawing.Point(98, 166);
-            this.lblRue.Name = "lblRue";
-            this.lblRue.Size = new System.Drawing.Size(51, 20);
-            this.lblRue.TabIndex = 4;
-            this.lblRue.Text = "Rue : ";
+            this.cbxCategVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategVIP.FormattingEnabled = true;
+            this.cbxCategVIP.Location = new System.Drawing.Point(170, 171);
+            this.cbxCategVIP.Name = "cbxCategVIP";
+            this.cbxCategVIP.Size = new System.Drawing.Size(121, 24);
+            this.cbxCategVIP.TabIndex = 10;
             // 
-            // lblVille
+            // lblCategVIP
             // 
-            this.lblVille.AutoSize = true;
-            this.lblVille.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVille.Location = new System.Drawing.Point(98, 223);
-            this.lblVille.Name = "lblVille";
-            this.lblVille.Size = new System.Drawing.Size(50, 20);
-            this.lblVille.TabIndex = 6;
-            this.lblVille.Text = "Ville : ";
-            // 
-            // cbxVille
-            // 
-            this.cbxVille.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxVille.FormattingEnabled = true;
-            this.cbxVille.Location = new System.Drawing.Point(170, 223);
-            this.cbxVille.Name = "cbxVille";
-            this.cbxVille.Size = new System.Drawing.Size(121, 24);
-            this.cbxVille.TabIndex = 7;
-            // 
-            // btnEnvoyer
-            // 
-            this.btnEnvoyer.Location = new System.Drawing.Point(331, 285);
-            this.btnEnvoyer.Name = "btnEnvoyer";
-            this.btnEnvoyer.Size = new System.Drawing.Size(84, 30);
-            this.btnEnvoyer.TabIndex = 8;
-            this.btnEnvoyer.Text = "Envoyer";
-            this.btnEnvoyer.UseVisualStyleBackColor = true;
-            this.btnEnvoyer.Click += new System.EventHandler(this.btnEnvoyer_Click);
+            this.lblCategVIP.AutoSize = true;
+            this.lblCategVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategVIP.Location = new System.Drawing.Point(61, 171);
+            this.lblCategVIP.Name = "lblCategVIP";
+            this.lblCategVIP.Size = new System.Drawing.Size(86, 20);
+            this.lblCategVIP.TabIndex = 9;
+            this.lblCategVIP.Text = "Catégorie :";
             // 
             // FrmAjoutVIP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(938, 542);
+            this.ClientSize = new System.Drawing.Size(979, 653);
             this.Controls.Add(this.pnlAjout);
             this.Controls.Add(this.lblTitre);
             this.Name = "FrmAjoutVIP";
@@ -182,5 +205,7 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.ComboBox cbxCategVIP;
+        private System.Windows.Forms.Label lblCategVIP;
     }
 }
