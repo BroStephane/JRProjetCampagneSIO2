@@ -8,39 +8,39 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneDAL
 {
-    public class ThemeDAO
+    public class CategorieVIPDAO
     {
-        private static ThemeDAO uneInstance;
+        private static CategorieVIPDAO uneInstance;
 
-        public static ThemeDAO GetInstance()
+        public static CategorieVIPDAO GetInstance()
         {
             if (uneInstance == null)
             {
-                uneInstance = new ThemeDAO();
+                uneInstance = new CategorieVIPDAO();
             }
             return uneInstance;
         }
 
-        private ThemeDAO()
+        private CategorieVIPDAO()
         {
 
         }
 
 
-        public List<Theme> GetThemes()
+        public List<CategorieVIP> GetLesCategsVIP()
         {
             int id;
             string libelle;
 
-            List<Theme> lesThemes = new List<Theme>();
+            List<CategorieVIP> lesCategsVIP = new List<CategorieVIP>();
 
             //Recupère l'objet commande et ouvre la connexion à la BDD
-            SqlCommand command = Command.GetObjCommand();
+            SqlCommand command = Command.GetObjCommande();
 
             // Nettoie le 'cache'
             command.Parameters.Clear();
 
-            command.CommandText = "GetTheme";
+            command.CommandText = "GetlesCategsVIP";
             SqlDataReader monLecteur = command.ExecuteReader();
 
             while (monLecteur.Read())
@@ -58,7 +58,7 @@ namespace JRProjetCampagneDAL
                     libelle = monLecteur["libelle"].ToString();
                 }
 
-                lesThemes.Add(new Theme(id, libelle));
+                lesCategsVIP.Add(new CategorieVIP(id, libelle));
             }
             // Fermeture du lecteur
             monLecteur.Close();
@@ -66,11 +66,10 @@ namespace JRProjetCampagneDAL
             // Fermeture de la connexion
             command.Connection.Close();
 
-            return lesThemes;
+            return lesCategsVIP;
 
 
         }
-
 
     }
 }

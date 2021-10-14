@@ -1,4 +1,4 @@
-﻿using JRProjetCampagneBO;
+using JRProjetCampagneBO;
 using JRProjetCampagneDAL;
 using System;
 using System.Collections.Generic;
@@ -41,6 +41,19 @@ namespace JRProjetCampagneBLL
         {
             //Ici, on peut appliquer des règles métier
             return AgenceDAO.GetInstance().GetAgenceCommunication();
+        }
+        //appel de la couche DAL pour récupérer une collection de agence
+        public List<Agence> GetAgences()
+        {
+            return AgenceDAO.GetInstance().GetAgences();
+        }
+        //appel de la couche DAL pour créer une nouvelle agence
+        public int AddAgence(string sonNom, string saRue, string sonTelephone, string sonEmail, string sonSite, char sontypeAgence, int saVille)
+        {
+            Ville laVille = new Ville(saVille);
+            Agence lAgence;
+            lAgence = new Agence(sonNom, saRue, sonTelephone, sonEmail, sonSite, sontypeAgence, laVille);
+            return AgenceDAO.GetInstance().AddAgence(lAgence);
         }
     }
 }

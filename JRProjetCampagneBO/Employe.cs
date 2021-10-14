@@ -16,7 +16,6 @@ namespace JRProjetCampagneBO
         private Service unService;
         private Profil unProfil;
 
-
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
@@ -48,5 +47,6 @@ namespace JRProjetCampagneBO
         {
             this.id = id;
         }
+
     }
 }

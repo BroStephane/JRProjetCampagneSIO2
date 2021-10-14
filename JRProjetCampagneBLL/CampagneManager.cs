@@ -42,5 +42,12 @@ namespace JRProjetCampagneBLL
             laCampagne = new Campagne(sonLibelle, saDateDebut, saDateFin, sonObjectif, unEmploye, uneAgenceEvenementiel, uneAgenceCommunication);
             return CampagneDAO.GetInstance().AddCampagne(laCampagne);
         }
+
+
+        public List<Campagne> GetCampagnes()
+        {
+            List<Campagne> lesCampagnes = new List<Campagne>();
+            return CampagneDAO.GetInstance().GetCampagnes();
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace JRProjetCampagneBO
         private char typeAgence;
         private Ville uneVille;
 
+        //Les propriétés pour gérer les attributs
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Rue { get => rue; set => rue = value; }
@@ -49,5 +50,17 @@ namespace JRProjetCampagneBO
             this.Id = id;
         }
 
+        //Constructeur permettant de valoriser seulement 7 attributs
+        public Agence(string nom, string rue, string telephone, string emailContact, string site, char typeAgence, Ville uneVille)
+        {
+            this.nom = nom;
+            this.rue = rue;
+            this.telephone = telephone;
+            this.emailContact = emailContact;
+            this.site = site;
+            this.typeAgence = typeAgence;
+            this.uneVille = uneVille;
+        }
+     
     }
 }

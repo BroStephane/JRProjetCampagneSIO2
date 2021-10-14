@@ -6,26 +6,23 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneBO
 {
-    public class Theme
+    public class CategorieVIP
     {
-        int id;
-        string libelle;
+        private int id;
+        private string libelle;
 
-        public Theme(int id, string libelle)
+        public CategorieVIP(int id)
         {
-            this.id = id;
-            this.libelle = libelle;
+            this.Id = id;
         }
-        public Theme(int id)
+
+        public CategorieVIP(int id, string libelle)
         {
-            this.id = id;
-            
+            this.Id = id;
+            this.Libelle = libelle;
         }
 
         public int Id { get => id; set => id = value; }
         public string Libelle { get => libelle; set => libelle = value; }
-    
-        
-    
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace JRProjetCampagneBO
 {
     public class Campagne
@@ -28,7 +29,7 @@ namespace JRProjetCampagneBO
 
 
         //premier constructeur pour valoriser tous les attributs
-        public Campagne(int id, string libelle, DateTime dateDebut, DateTime dateFin, string objectif, Employe unEmploye, Agence uneAgence)
+        public Campagne(int id, string libelle, DateTime dateDebut, DateTime dateFin, string objectif, Employe unEmploye, Agence uneAgenceEvenementiel, Agence uneAgenceCommunication)
         {
             this.id = id;
             this.libelle = libelle;
@@ -36,6 +37,8 @@ namespace JRProjetCampagneBO
             this.dateFin = dateFin;
             this.objectif = objectif;
             this.unEmploye = unEmploye;
+            this.uneAgenceEvenementiel = uneAgenceEvenementiel;
+            this.uneAgenceCommunication = uneAgenceCommunication;
         }
 
         //deuxième constructeur pour valoriser le libelle, la dateDbut, la dateFin, objectif et unEmploye
@@ -50,6 +53,15 @@ namespace JRProjetCampagneBO
             this.uneAgenceCommunication = uneAgenceCommunication;
         }
 
+        public Campagne(int id, string libelle)
+        {
+            this.id = id;
+            this.libelle = libelle;
+        }
+        public Campagne(int id)
+        {
+            this.id = id;
 
+        }
     }
 }

@@ -57,12 +57,28 @@
     </Compile>
     <Compile Include="FrmAddCampagne.Designer.cs">
       <DependentUpon>FrmAddCampagne.cs</DependentUpon>
+    <Compile Include="FrmAjoutArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutArtiste.Designer.cs">
+      <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
+    <Compile Include="FrmAjoutAgence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutAgence.Designer.cs">
+      <DependentUpon>FrmAjoutAgence.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAjoutEvenement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAjoutEvenement.designer.cs">
       <DependentUpon>FrmAjoutEvenement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjoutVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutVIP.Designer.cs">
+      <DependentUpon>FrmAjoutVIP.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,9 +87,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddCampagne.resx">
       <DependentUpon>FrmAddCampagne.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAjoutArtiste.resx">
+      <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAjoutAgence.resx">
+      <DependentUpon>FrmAjoutAgence.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutEvenement.resx">
       <DependentUpon>FrmAjoutEvenement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutVIP.resx">
+      <DependentUpon>FrmAjoutVIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
