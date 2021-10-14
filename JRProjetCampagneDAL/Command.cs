@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,9 @@ namespace JRProjetCampagneDAL
         static Command()
         {
             SqlConnection objConnex = new SqlConnection();
-           objConnex.ConnectionString = ConfigurationManager.ConnectionStrings["GSB"].ConnectionString;
-
+            objConnex.ConnectionString = ConfigurationManager.ConnectionStrings["GSB"].ConnectionString;
             objCommande = new SqlCommand("", objConnex);
+            objCommande.CommandType = CommandType.StoredProcedure;
         }
 
         public static SqlCommand GetObjCommande()

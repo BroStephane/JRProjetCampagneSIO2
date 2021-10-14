@@ -47,6 +47,8 @@
     <Compile Include="CampagneDAO.cs" />
     <Compile Include="CategorieVIPDAO.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="CourantArtistiqueDAO.cs" />
+    <Compile Include="EmployeDAO.cs" />
     <Compile Include="EvenementDAO.cs" />
     <Compile Include="ObjectifDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,7 +70,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

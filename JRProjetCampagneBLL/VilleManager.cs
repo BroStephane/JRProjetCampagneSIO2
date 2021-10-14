@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using JRProjetCampagneDAL;
 using JRProjetCampagneBO;
-namespace JRProjetEvenementBLL
 
+namespace JRProjetCampagneBLL
 {
     public class VilleManager
     {

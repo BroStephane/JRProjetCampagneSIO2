@@ -40,7 +40,7 @@ namespace JRProjetCampagneDAL
             // Nettoie le 'cache'
             command.Parameters.Clear();
 
-            command.CommandText = "exec GetTheme";
+            command.CommandText = "GetTheme";
             SqlDataReader monLecteur = command.ExecuteReader();
 
             while (monLecteur.Read())

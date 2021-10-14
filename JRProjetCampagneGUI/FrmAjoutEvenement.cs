@@ -1,5 +1,5 @@
-﻿using JRProjetCampagneBO;
-using JRProjetEvenementBLL;
+﻿using JRProjetCampagneBLL;
+using JRProjetCampagneBO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +52,7 @@ namespace JRProjetCampagneGUI
             //Determine le format de la dateTimePanel
             dtpFin.Format = DateTimePickerFormat.Custom;
             dtpFin.CustomFormat = "yyyy/MM/dd ";
-            dtpFin.MinDate = DateTime.Today;
+            dtpFin.MinDate = dtpDebut.Value;
 
 
 
@@ -64,27 +64,67 @@ namespace JRProjetCampagneGUI
             string dateDebut = dtpDebut.Text.Trim();
             string dateFin = dtpFin.Text.Trim();
 
+            if (dateDebut == "")
+            {
+                MessageBox.Show("Veuillez sélectionner une date de début", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (dateFin == "")
+            {
+                MessageBox.Show("Veuillez sélectionner une date de fin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             //Convertie le format string en DateTime
             DateTime laDateDeb = Convert.ToDateTime(dateDebut);
             DateTime laDateFin = Convert.ToDateTime(dateFin);
 
             //Récupere les id des cbx
-            int idTheme = (int)cbxTheme.SelectedValue;
-            int idCampagne = (int)cbxCampagne.SelectedValue;
+
+            int idCampagne = 0;
+            int idTheme = 0;
+
+
+            if (cbxTheme.SelectedIndex == -1)
+            {
+
+                MessageBox.Show("Veuillez sélectionner un Thème", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                idTheme = (int)cbxTheme.SelectedValue;
+            }
+            if (cbxCampagne.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez sélectionner un Campagne", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                idCampagne = (int)cbxCampagne.SelectedValue;
+
+
+            }
+
 
 
             try
             {
-                int nb = EvenementManager.GetInstance().AddEvenement(laDateDeb, laDateFin, idTheme, idCampagne);
-                if (nb == 0)
+                if (idCampagne != 0 && idTheme != 0 && dateDebut != "" && dateFin != "")
                 {
-                    MessageBox.Show("Erreur lors de l'ajout de l'évènement", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    int nb = EvenementManager.GetInstance().AddEvenement(laDateDeb, laDateFin, idTheme, idCampagne);
+                    if (nb == 0)
+                    {
+                        MessageBox.Show("Erreur lors de l'ajout de l'évènement", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("l'ajout de l'évènement à été effectué", "Information", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("l'ajout de l'évènement à été effectué", "Information", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
-
+                    MessageBox.Show("Erreur : vueillez verifier vos sélection", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
 
             }
             catch (Exception ex)
@@ -94,4 +134,5 @@ namespace JRProjetCampagneGUI
 
         }
     }
+    
 }

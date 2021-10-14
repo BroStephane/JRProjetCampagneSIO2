@@ -8,31 +8,30 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneDAL
 {
-    public class CategorieVIPDAO
+    public class CourantArtistiqueDAO
     {
-        private static CategorieVIPDAO uneInstance;
+        private static CourantArtistiqueDAO uneInstance;
 
-        public static CategorieVIPDAO GetInstance()
+        public static CourantArtistiqueDAO GetInstance()
         {
             if (uneInstance == null)
             {
-                uneInstance = new CategorieVIPDAO();
+                uneInstance = new CourantArtistiqueDAO();
             }
             return uneInstance;
         }
 
-        private CategorieVIPDAO()
+        private CourantArtistiqueDAO()
         {
 
         }
 
-
-        public List<CategorieVIP> GetLesCategsVIP()
+        public List<CourantArtistique> GetCourantArtistiques()
         {
             int id;
             string libelle;
 
-            List<CategorieVIP> lesCategsVIP = new List<CategorieVIP>();
+            List<CourantArtistique> lesCourantArtistiques = new List<CourantArtistique>();
 
             //Recupère l'objet commande et ouvre la connexion à la BDD
             SqlCommand command = Command.GetObjCommande();
@@ -40,7 +39,7 @@ namespace JRProjetCampagneDAL
             // Nettoie le 'cache'
             command.Parameters.Clear();
 
-            command.CommandText = "GetLesCategsVIP";
+            command.CommandText = "GetCourantArtistique";
             SqlDataReader monLecteur = command.ExecuteReader();
 
             while (monLecteur.Read())
@@ -58,7 +57,7 @@ namespace JRProjetCampagneDAL
                     libelle = monLecteur["libelle"].ToString();
                 }
 
-                lesCategsVIP.Add(new CategorieVIP(id, libelle));
+                lesCourantArtistiques.Add(new CourantArtistique(id, libelle));
             }
             // Fermeture du lecteur
             monLecteur.Close();
@@ -66,10 +65,9 @@ namespace JRProjetCampagneDAL
             // Fermeture de la connexion
             command.Connection.Close();
 
-            return lesCategsVIP;
+            return lesCourantArtistiques;
 
 
         }
-
     }
 }
