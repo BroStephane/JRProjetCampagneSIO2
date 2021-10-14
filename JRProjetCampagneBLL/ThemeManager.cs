@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using JRProjetCampagneDAL;
 
-namespace JRProjetEvenementBLL
+namespace JRProjetCampagneBLL
 {
     public class ThemeManager
     {

@@ -47,8 +47,10 @@
     <Compile Include="Campagne.cs" />
     <Compile Include="CourantArtistique.cs" />
     <Compile Include="CategorieVIP.cs" />
+    <Compile Include="CourantArtistique.cs" />
     <Compile Include="Employe.cs" />
     <Compile Include="Evenement.cs" />
+    <Compile Include="Profil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public.cs" />
     <Compile Include="Service.cs" />

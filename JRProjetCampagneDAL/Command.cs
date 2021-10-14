@@ -17,8 +17,7 @@ namespace JRProjetCampagneDAL
         static Command()
         {
             SqlConnection objConnex = new SqlConnection();
-           objConnex.ConnectionString = ConfigurationManager.ConnectionStrings["GSB"].ConnectionString;
-
+            objConnex.ConnectionString = ConfigurationManager.ConnectionStrings["GSB"].ConnectionString;
             objCommande = new SqlCommand("", objConnex);
             objCommande.CommandType = CommandType.StoredProcedure;
         }

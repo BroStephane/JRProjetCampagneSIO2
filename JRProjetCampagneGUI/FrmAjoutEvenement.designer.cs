@@ -78,7 +78,7 @@ namespace JRProjetCampagneGUI
             this.pnlAjout.Controls.Add(this.cbxTheme);
             this.pnlAjout.Controls.Add(this.lblTheme);
             this.pnlAjout.Location = new System.Drawing.Point(408, 192);
-            this.pnlAjout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlAjout.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAjout.Name = "pnlAjout";
             this.pnlAjout.Size = new System.Drawing.Size(989, 729);
             this.pnlAjout.TabIndex = 2;
@@ -87,7 +87,7 @@ namespace JRProjetCampagneGUI
             // 
             this.dtpDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDebut.Location = new System.Drawing.Point(376, 198);
-            this.dtpDebut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDebut.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDebut.Name = "dtpDebut";
             this.dtpDebut.Size = new System.Drawing.Size(265, 23);
             this.dtpDebut.TabIndex = 11;
@@ -95,7 +95,7 @@ namespace JRProjetCampagneGUI
             // dtpFin
             // 
             this.dtpFin.Location = new System.Drawing.Point(376, 271);
-            this.dtpFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFin.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFin.Name = "dtpFin";
             this.dtpFin.Size = new System.Drawing.Size(265, 23);
             this.dtpFin.TabIndex = 10;
@@ -103,8 +103,8 @@ namespace JRProjetCampagneGUI
             // btnEnvoyer
             // 
             this.btnEnvoyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnvoyer.Location = new System.Drawing.Point(543, 357);
-            this.btnEnvoyer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEnvoyer.Location = new System.Drawing.Point(451, 352);
+            this.btnEnvoyer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnvoyer.Name = "btnEnvoyer";
             this.btnEnvoyer.Size = new System.Drawing.Size(100, 41);
             this.btnEnvoyer.TabIndex = 9;
@@ -139,9 +139,9 @@ namespace JRProjetCampagneGUI
             this.cbxCampagne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxCampagne.FormattingEnabled = true;
             this.cbxCampagne.Location = new System.Drawing.Point(376, 137);
-            this.cbxCampagne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxCampagne.Margin = new System.Windows.Forms.Padding(4);
             this.cbxCampagne.Name = "cbxCampagne";
-            this.cbxCampagne.Size = new System.Drawing.Size(160, 24);
+            this.cbxCampagne.Size = new System.Drawing.Size(265, 24);
             this.cbxCampagne.TabIndex = 4;
             // 
             // lblCampagne
@@ -160,7 +160,7 @@ namespace JRProjetCampagneGUI
             this.cbxTheme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTheme.FormattingEnabled = true;
             this.cbxTheme.Location = new System.Drawing.Point(376, 69);
-            this.cbxTheme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxTheme.Margin = new System.Windows.Forms.Padding(4);
             this.cbxTheme.Name = "cbxTheme";
             this.cbxTheme.Size = new System.Drawing.Size(265, 24);
             this.cbxTheme.TabIndex = 2;
@@ -174,7 +174,7 @@ namespace JRProjetCampagneGUI
             this.Controls.Add(this.pnlAjout);
             this.Controls.Add(this.lblTitre);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAjoutEvenement";
             this.Text = "Ajout d\'un événement";
             this.pnlAjout.ResumeLayout(false);

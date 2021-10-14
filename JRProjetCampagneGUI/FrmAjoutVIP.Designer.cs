@@ -31,6 +31,8 @@ namespace JRProjetCampagneGUI
         {
             this.lblTitre = new System.Windows.Forms.Label();
             this.pnlAjout = new System.Windows.Forms.Panel();
+            this.cbxCategVIP = new System.Windows.Forms.ComboBox();
+            this.lblCategVIP = new System.Windows.Forms.Label();
             this.btnEnvoyer = new System.Windows.Forms.Button();
             this.cbxVille = new System.Windows.Forms.ComboBox();
             this.lblVille = new System.Windows.Forms.Label();
@@ -40,8 +42,6 @@ namespace JRProjetCampagneGUI
             this.lblMail = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.lblNom = new System.Windows.Forms.Label();
-            this.cbxCategVIP = new System.Windows.Forms.ComboBox();
-            this.lblCategVIP = new System.Windows.Forms.Label();
             this.pnlAjout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,11 +73,30 @@ namespace JRProjetCampagneGUI
             this.pnlAjout.Size = new System.Drawing.Size(495, 397);
             this.pnlAjout.TabIndex = 1;
             // 
+            // cbxCategVIP
+            // 
+            this.cbxCategVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategVIP.FormattingEnabled = true;
+            this.cbxCategVIP.Location = new System.Drawing.Point(170, 171);
+            this.cbxCategVIP.Name = "cbxCategVIP";
+            this.cbxCategVIP.Size = new System.Drawing.Size(185, 24);
+            this.cbxCategVIP.TabIndex = 10;
+            // 
+            // lblCategVIP
+            // 
+            this.lblCategVIP.AutoSize = true;
+            this.lblCategVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategVIP.Location = new System.Drawing.Point(61, 171);
+            this.lblCategVIP.Name = "lblCategVIP";
+            this.lblCategVIP.Size = new System.Drawing.Size(86, 20);
+            this.lblCategVIP.TabIndex = 9;
+            this.lblCategVIP.Text = "Catégorie :";
+            // 
             // btnEnvoyer
             // 
-            this.btnEnvoyer.Location = new System.Drawing.Point(326, 330);
+            this.btnEnvoyer.Location = new System.Drawing.Point(204, 330);
             this.btnEnvoyer.Name = "btnEnvoyer";
-            this.btnEnvoyer.Size = new System.Drawing.Size(84, 30);
+            this.btnEnvoyer.Size = new System.Drawing.Size(102, 38);
             this.btnEnvoyer.TabIndex = 8;
             this.btnEnvoyer.Text = "Envoyer";
             this.btnEnvoyer.UseVisualStyleBackColor = true;
@@ -89,7 +108,7 @@ namespace JRProjetCampagneGUI
             this.cbxVille.FormattingEnabled = true;
             this.cbxVille.Location = new System.Drawing.Point(170, 273);
             this.cbxVille.Name = "cbxVille";
-            this.cbxVille.Size = new System.Drawing.Size(121, 24);
+            this.cbxVille.Size = new System.Drawing.Size(185, 24);
             this.cbxVille.TabIndex = 7;
             // 
             // lblVille
@@ -107,7 +126,7 @@ namespace JRProjetCampagneGUI
             this.txtRue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRue.Location = new System.Drawing.Point(170, 224);
             this.txtRue.Name = "txtRue";
-            this.txtRue.Size = new System.Drawing.Size(100, 23);
+            this.txtRue.Size = new System.Drawing.Size(185, 23);
             this.txtRue.TabIndex = 5;
             // 
             // lblRue
@@ -125,7 +144,7 @@ namespace JRProjetCampagneGUI
             this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMail.Location = new System.Drawing.Point(170, 114);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(100, 23);
+            this.txtMail.Size = new System.Drawing.Size(185, 23);
             this.txtMail.TabIndex = 3;
             // 
             // lblMail
@@ -143,7 +162,7 @@ namespace JRProjetCampagneGUI
             this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNom.Location = new System.Drawing.Point(170, 60);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(100, 23);
+            this.txtNom.Size = new System.Drawing.Size(185, 23);
             this.txtNom.TabIndex = 1;
             // 
             // lblNom
@@ -155,25 +174,6 @@ namespace JRProjetCampagneGUI
             this.lblNom.Size = new System.Drawing.Size(54, 20);
             this.lblNom.TabIndex = 0;
             this.lblNom.Text = "Nom : ";
-            // 
-            // cbxCategVIP
-            // 
-            this.cbxCategVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCategVIP.FormattingEnabled = true;
-            this.cbxCategVIP.Location = new System.Drawing.Point(170, 171);
-            this.cbxCategVIP.Name = "cbxCategVIP";
-            this.cbxCategVIP.Size = new System.Drawing.Size(121, 24);
-            this.cbxCategVIP.TabIndex = 10;
-            // 
-            // lblCategVIP
-            // 
-            this.lblCategVIP.AutoSize = true;
-            this.lblCategVIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategVIP.Location = new System.Drawing.Point(61, 171);
-            this.lblCategVIP.Name = "lblCategVIP";
-            this.lblCategVIP.Size = new System.Drawing.Size(86, 20);
-            this.lblCategVIP.TabIndex = 9;
-            this.lblCategVIP.Text = "Catégorie :";
             // 
             // FrmAjoutVIP
             // 

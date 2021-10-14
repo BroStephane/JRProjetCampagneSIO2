@@ -40,7 +40,7 @@ namespace JRProjetCampagneDAL
             // Nettoie le 'cache'
             command.Parameters.Clear();
 
-            command.CommandText = "exec GetLesCategsVIP";
+            command.CommandText = "GetLesCategsVIP";
             SqlDataReader monLecteur = command.ExecuteReader();
 
             while (monLecteur.Read())
