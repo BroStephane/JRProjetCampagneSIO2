@@ -1,4 +1,5 @@
 ﻿using JRProjetCampagneBLL;
+using JRProjetEvenementBLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace JRProjetCampagneGUI
                 //Affichage dans le combobox Ville
                 cbxVilleAgence.DisplayMember = "nom";
                 cbxVilleAgence.ValueMember = "numero_insee";
-                cbxVilleAgence.DataSource = VilleManager.GetInstance().GetLaVilleAgence();
+                cbxVilleAgence.DataSource = VilleManager.GetInstance().GetLaVille();
                 cbxVilleAgence.SelectedItem = null;
             }
             catch (Exception exception)
