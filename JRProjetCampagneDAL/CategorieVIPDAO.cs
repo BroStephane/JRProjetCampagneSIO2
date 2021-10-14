@@ -8,26 +8,31 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneDAL
 {
-    public class CampagneDAO
+    public class CategorieVIPDAO
     {
-        private static CampagneDAO uneInstance;
+        private static CategorieVIPDAO uneInstance;
 
-        public static CampagneDAO GetInstance()
+        public static CategorieVIPDAO GetInstance()
         {
             if (uneInstance == null)
             {
-                uneInstance = new CampagneDAO();
+                uneInstance = new CategorieVIPDAO();
             }
             return uneInstance;
         }
-        private CampagneDAO() { }
 
-        public List<Campagne> GetCampagnes()
+        private CategorieVIPDAO()
+        {
+
+        }
+
+
+        public List<CategorieVIP> GetLesCategsVIP()
         {
             int id;
             string libelle;
 
-            List<Campagne> lesCampagnes = new List<Campagne>();
+            List<CategorieVIP> lesCategsVIP = new List<CategorieVIP>();
 
             //Recupère l'objet commande et ouvre la connexion à la BDD
             SqlCommand command = Command.GetObjCommande();
@@ -35,7 +40,7 @@ namespace JRProjetCampagneDAL
             // Nettoie le 'cache'
             command.Parameters.Clear();
 
-            command.CommandText = "exec GetCampagnesListeDeroulante";
+            command.CommandText = "exec GetLesCategsVIP";
             SqlDataReader monLecteur = command.ExecuteReader();
 
             while (monLecteur.Read())
@@ -53,7 +58,7 @@ namespace JRProjetCampagneDAL
                     libelle = monLecteur["libelle"].ToString();
                 }
 
-                lesCampagnes.Add(new Campagne(id, libelle));
+                lesCategsVIP.Add(new CategorieVIP(id, libelle));
             }
             // Fermeture du lecteur
             monLecteur.Close();
@@ -61,7 +66,10 @@ namespace JRProjetCampagneDAL
             // Fermeture de la connexion
             command.Connection.Close();
 
-            return lesCampagnes;
+            return lesCategsVIP;
+
+
         }
+
     }
 }

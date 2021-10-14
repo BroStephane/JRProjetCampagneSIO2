@@ -46,6 +46,7 @@
     <Compile Include="ArtisteDAO.cs" />
     <Compile Include="ArtisteEvenementDAO.cs" />
     <Compile Include="CampagneDAO.cs" />
+    <Compile Include="CategorieVIPDAO.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CourantArtistiqueDAO.cs" />
     <Compile Include="EvenementDAO.cs" />
@@ -69,6 +70,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
