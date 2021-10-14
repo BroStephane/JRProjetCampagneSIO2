@@ -58,7 +58,7 @@ namespace JRProjetCampagneDAL
                     libelle = monLecteur["libelle"].ToString();
                 }
 
-               // lesThemes.Add(new Theme(id, libelle));
+                lesThemes.Add(new Theme(id, libelle));
             }
             // Fermeture du lecteur
             monLecteur.Close();
