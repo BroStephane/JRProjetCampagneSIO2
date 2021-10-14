@@ -48,6 +48,7 @@
     <Compile Include="CampagneDAO.cs" />
     <Compile Include="CategorieVIPDAO.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="EmployeDAO.cs" />
     <Compile Include="CourantArtistiqueDAO.cs" />
     <Compile Include="EvenementDAO.cs" />
     <Compile Include="ObjectifDAO.cs" />
