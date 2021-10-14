@@ -19,8 +19,10 @@ namespace JRProjetCampagneGUI
 
         private void ajoutDunÉvénementToolStripMenuItem_Click(object sender, EventArgs e)
         {
+        //créer un objet, une instance dee la classe du formulaire appeler
             FrmAjoutEvenement lAjout = new FrmAjoutEvenement();
-            lAjout.Show();
+            //affichage du formulaire
+            lAjout.ShowDialog();
         }
 
         private void Accueil_Load(object sender, EventArgs e)
@@ -28,13 +30,23 @@ namespace JRProjetCampagneGUI
 
         }
 
+
         private void ajoutDuneAgenceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //créer un objet, une instance dee la classe du formualire appeler
+            //créer un objet, une instance dee la classe du formulaire appeler
             FrmAjoutAgence leFormAppele = new FrmAjoutAgence();
 
             //affichage du formulaire
-            leFormAppele.Show();
+            leFormAppele.ShowDialog();
+         }
+
+        private void ajoutDunVIPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        //créer un objet, une instance dee la classe du formulaire appeler
+            FrmAjoutVIP vip = new FrmAjoutVIP();
+            //affichage du formulaire
+            vip.ShowDialog();
+
         }
     }
 }

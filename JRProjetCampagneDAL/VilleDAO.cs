@@ -1,4 +1,3 @@
-﻿using System;
 using JRProjetCampagneBO;
 using System;
 using System.Collections.Generic;
@@ -27,10 +26,11 @@ namespace JRProjetCampagneDAL
         // objet à l'extérieur de la classe avec l'instruction new ...
         private VilleDAO()
         {
-        }
-        // la méthode GetLaVilleAgence retourne une collection contenant les Villes
+        }   
+      
+        // la méthode GetLaVille retourne une collection contenant les Villes
         // existant dans la table Ville
-        public List<Ville> GetLaVilleAgence()
+        public List<Ville> GetLaVille()
         {
             // déclaration des variables de travail
             int numero_insee;
@@ -40,17 +40,20 @@ namespace JRProjetCampagneDAL
             List<Ville> lesVilles = new List<Ville>();
 
             SqlCommand maCommand = Command.GetObjCommande();
+
             // on indique que l'on va appeler une procédure stockée
             maCommand.CommandType = CommandType.StoredProcedure;
 
-            //Select numero_insee, nom FROM Ville
-            // on crée l'objet qui va contenir la requête SQL d'insert qui sera exécutée
-            maCommand.CommandText = "GetVille";
+            // pour chaque enregistrement du DataReader on crée un objet instance de
+            // Client que l'on ajoute dans la collection lesVilles
 
+            // on exécute la requête et on récupère dans un DataReader les enregistrements
+            maCommand.CommandText = "GetVille";
             SqlDataReader reader = maCommand.ExecuteReader();
 
             // pour chaque enregistrement du DataReader on crée un objet instance de
-            // Client que l'on ajoute dans la collection lesVilles
+            // Client que l'on ajoute dans la collection lesClients
+
             while (reader.Read())
             {
                 int.TryParse(reader["numero_insee"].ToString(), out numero_insee);
@@ -63,10 +66,12 @@ namespace JRProjetCampagneDAL
                 {
                     leNom = reader["nom"].ToString();
                 }
+
                 //On crée une Ville
-                uneVilleAgence = new Ville(numero_insee, leNom);
+                uneVille = new Ville(numero_insee, leNom);
                 //On ajoute la ville dans une liste
-                lesVilles.Add(uneVilleAgence);
+
+                lesVilles.Add(uneVille);
             }
 
             // on ferme le DataReader
