@@ -34,11 +34,12 @@ namespace JRProjetCampagneGUI
             this.ajoutDunÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
             this.ajoutDunArtisteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 
             this.ajoutDuneAgenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.ajoutDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,9 +73,9 @@ namespace JRProjetCampagneGUI
             this.ajoutDunÉvénementToolStripMenuItem,
             this.ajoutDunArtisteToolStripMenuItem});
 
-            this.ajoutDuneAgenceToolStripMenuItem ,
+            this.ajoutDuneAgenceToolStripMenuItem});
 
-            this.ajoutDunVIPToolStripMenuItem} );
+            this.ajoutDunVIPToolStripMenuItem});
 
             this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
             this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
@@ -139,9 +140,9 @@ namespace JRProjetCampagneGUI
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout(); }
+            this.PerformLayout();
 
-
+        }
 
         #endregion
 
