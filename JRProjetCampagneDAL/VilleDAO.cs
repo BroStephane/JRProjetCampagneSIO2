@@ -35,7 +35,7 @@ namespace JRProjetCampagneDAL
             // déclaration des variables de travail
             int numero_insee;
             string leNom;
-            Ville uneVilleAgence;
+           
 
             List<Ville> lesVilles = new List<Ville>();
 
@@ -68,7 +68,7 @@ namespace JRProjetCampagneDAL
                 }
 
                 //On crée une Ville
-                uneVille = new Ville(numero_insee, leNom);
+                Ville uneVille = new Ville(numero_insee, leNom);
                 //On ajoute la ville dans une liste
 
                 lesVilles.Add(uneVille);
