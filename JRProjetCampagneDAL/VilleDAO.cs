@@ -1,6 +1,7 @@
-﻿using JRProjetCampagneBO;
+using JRProjetCampagneBO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,10 @@ namespace JRProjetCampagneDAL
         // objet à l'extérieur de la classe avec l'instruction new ...
         private VilleDAO()
         {
-        }
-        // la méthode GetClients retourne une collection contenant les clients
-        // existant dans la table Client
+        }   
+      
+        // la méthode GetLaVille retourne une collection contenant les Villes
+        // existant dans la table Ville
         public List<Ville> GetLaVille()
         {
             // déclaration des variables de travail
@@ -38,12 +40,20 @@ namespace JRProjetCampagneDAL
             List<Ville> lesVilles = new List<Ville>();
 
             SqlCommand maCommand = Command.GetObjCommande();
+
+            // on indique que l'on va appeler une procédure stockée
+            maCommand.CommandType = CommandType.StoredProcedure;
+
+            // pour chaque enregistrement du DataReader on crée un objet instance de
+            // Client que l'on ajoute dans la collection lesVilles
+
             // on exécute la requête et on récupère dans un DataReader les enregistrements
             maCommand.CommandText = "GetVille";
             SqlDataReader reader = maCommand.ExecuteReader();
 
             // pour chaque enregistrement du DataReader on crée un objet instance de
             // Client que l'on ajoute dans la collection lesClients
+
             while (reader.Read())
             {
                 int.TryParse(reader["numero_insee"].ToString(), out numero_insee);
@@ -56,10 +66,12 @@ namespace JRProjetCampagneDAL
                 {
                     leNom = reader["nom"].ToString();
                 }
-                //On crée un client
-                uneVilleAgence = new Ville(numero_insee, leNom);
-                //On ajoute le client dans une liste
-                lesVilles.Add(uneVilleAgence);
+
+                //On crée une Ville
+                uneVille = new Ville(numero_insee, leNom);
+                //On ajoute la ville dans une liste
+
+                lesVilles.Add(uneVille);
             }
 
             // on ferme le DataReader

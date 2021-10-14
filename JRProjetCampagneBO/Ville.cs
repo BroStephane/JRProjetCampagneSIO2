@@ -21,7 +21,8 @@ namespace JRProjetCampagneBO
             this.numero_insee = numero_insee;
             this.nom = nom;
         }
-        //Constructeur permettant de valoriser l'attributs id
+
+        //Constructeur permettant de valoriser l'attribut numero_insee
         public Ville(int numero_insee)
         {
             this.numero_insee = numero_insee;
