@@ -52,12 +52,11 @@
     <Compile Include="FrmAccueil.designer.cs">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAjoutCampagne.cs">
+    <Compile Include="FrmAjoutArtiste.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAjoutCampagne.Designer.cs">
-      <DependentUpon>FrmAjoutCampagne.cs</DependentUpon>
-    </Compile>
+    <Compile Include="FrmAjoutArtiste.Designer.cs">
+      <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
     <Compile Include="FrmAjoutAgence.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +89,8 @@
     <EmbeddedResource Include="FrmAjoutCampagne.resx">
       <DependentUpon>FrmAjoutCampagne.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutArtiste.resx">
+      <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
     <EmbeddedResource Include="FrmAjoutAgence.resx">
       <DependentUpon>FrmAjoutAgence.cs</DependentUpon>
     </EmbeddedResource>
