@@ -21,10 +21,11 @@ namespace JRProjetCampagneBO
             this.unCourantArtistique = unCourantArtistique;
         }
 
-        public Artiste(string nom, string siteWeb)
+        public Artiste(string nom, string siteWeb, CourantArtistique unCourantArtistique)
         {
             this.nom = nom;
             this.siteWeb = siteWeb;
+            this.unCourantArtistique = unCourantArtistique;
         }
 
         public int Id { get => id; set => id = value; }

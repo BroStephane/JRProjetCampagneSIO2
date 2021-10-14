@@ -41,12 +41,12 @@ namespace JRProjetCampagneDAL
             // Créer l'objet qui contient la requête INSERT
             laCom.CommandText = "AddArtiste";
 
-            laCom.Parameters.Add("nom", SqlDbType.VarChar);
-            laCom.Parameters["nom"].Value = unArtiste.Nom;
-            laCom.Parameters.Add("sitWeb", SqlDbType.VarChar);
-            laCom.Parameters["siteWeb"].Value = unArtiste.SitWeb;
-            laCom.Parameters.Add("id_CourantArtistique", SqlDbType.VarChar);
-            laCom.Parameters["id_CourantArtistique"].Value = unArtiste.UnCourantArtistique.Id;
+            laCom.Parameters.Add("Nom", SqlDbType.VarChar);
+            laCom.Parameters["Nom"].Value = unArtiste.Nom;
+            laCom.Parameters.Add("SiteWeb", SqlDbType.VarChar);
+            laCom.Parameters["SiteWeb"].Value = unArtiste.SitWeb;
+            laCom.Parameters.Add("IdCourantArtistique", SqlDbType.VarChar);
+            laCom.Parameters["IdCourantArtistique"].Value = unArtiste.UnCourantArtistique.Id;
 
             // Exécuter la requête + Return
             int nb = laCom.ExecuteNonQuery();

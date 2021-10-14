@@ -20,6 +20,7 @@ namespace JRProjetCampagneGUI
 
             try
             {
+                //Remplie la comboBox des valeurs de la table Courant Artistique
                 cbxCourantArtistique.DisplayMember = "libelle";
                 cbxCourantArtistique.ValueMember = "id";
                 cbxCourantArtistique.DataSource = CourantArtistiqueManager.GetInstance().GetCourantArtistiques();
@@ -29,6 +30,19 @@ namespace JRProjetCampagneGUI
             {
                 MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
+            }
+        }
+
+        private void btnValiderAjoutArtiste_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNomArtiste.Text) || string.IsNullOrWhiteSpace(txtSiteWebArtiste.Text))
+            {
+                MessageBox.Show("Les champs saisi sont vide veuillez ressayer");
+            }
+            else
+            {
+                ArtisteManager.GetInstance().AddArtististe(txtNomArtiste.Text, txtSiteWebArtiste.Text, (int)cbxCourantArtistique.SelectedValue);
+                MessageBox.Show("Le client a bien étré enregidstré");
             }
         }
     }

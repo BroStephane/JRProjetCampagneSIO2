@@ -46,6 +46,7 @@ namespace JRProjetCampagneGUI
             this.btnValiderAjoutArtiste.TabIndex = 0;
             this.btnValiderAjoutArtiste.Text = "Valider";
             this.btnValiderAjoutArtiste.UseVisualStyleBackColor = true;
+            this.btnValiderAjoutArtiste.Click += new System.EventHandler(this.btnValiderAjoutArtiste_Click);
             // 
             // cbxCourantArtistique
             // 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneBLL
 {
-    class ArtisteManager
+    public  class ArtisteManager
     {
         private static ArtisteManager uneInstance;
         public static ArtisteManager GetInstance()
@@ -29,7 +29,7 @@ namespace JRProjetCampagneBLL
         {
             CourantArtistique unCourantArtistique = new CourantArtistique(idCourantArtistique);
 
-            Artiste unArtiste = new Artiste(nom, siteWeb);
+            Artiste unArtiste = new Artiste(nom, siteWeb, unCourantArtistique);
 
             return ArtisteDAO.GetInstance().AddArtiste(unArtiste);
 

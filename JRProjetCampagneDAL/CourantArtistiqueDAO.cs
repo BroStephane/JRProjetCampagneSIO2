@@ -39,7 +39,7 @@ namespace JRProjetCampagneDAL
             // Nettoie le 'cache'
             command.Parameters.Clear();
 
-            command.CommandText = "exec GetCourantArtistique";
+            command.CommandText = "GetCourantArtistique";
             SqlDataReader monLecteur = command.ExecuteReader();
 
             while (monLecteur.Read())
