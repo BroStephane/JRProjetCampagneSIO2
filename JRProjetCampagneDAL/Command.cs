@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,35 +11,35 @@ namespace JRProjetCampagneDAL
 {
     static public class Command
     {
-
-        private static SqlCommand objCommande;
+        static private SqlCommand objCommand;
 
         static Command()
         {
-            SqlConnection objConnex = new SqlConnection();
-           objConnex.ConnectionString = ConfigurationManager.ConnectionStrings["GSB"].ConnectionString;
-
-            objCommande = new SqlCommand("", objConnex);
+            SqlConnection objConnex;
+            objConnex = new SqlConnection();
+            objConnex.ConnectionString = ConfigurationManager.ConnectionStrings["GSB"].ConnectionString;
+            objCommand = new SqlCommand("", objConnex);
+            objCommand.CommandType = CommandType.StoredProcedure;
         }
 
-        public static SqlCommand GetObjCommande()
+        public static SqlCommand GetObjCommand()
         {
-            if (objCommande.Connection.State == System.Data.ConnectionState.Closed)
+            //on ouvre la connexion si elle est fermée
+            if (objCommand.Connection.State == System.Data.ConnectionState.Closed)
             {
-                objCommande.Connection.Open();
+                objCommand.Connection.Open();
             }
-            return objCommande;
+            //on retourne l'objet responsable de la connexion
+            return objCommand;
         }
 
         public static void CloseConnexion()
         {
-            if (objCommande.Connection != null && objCommande.Connection.State != System.Data.ConnectionState.Closed)
+            //si la connexion est ouverte on la ferme
+            if (objCommand.Connection != null && objCommand.Connection.State != System.Data.ConnectionState.Closed)
             {
-                objCommande.Connection.Close();
+                objCommand.Connection.Close();
             }
         }
-
-
-
     }
 }

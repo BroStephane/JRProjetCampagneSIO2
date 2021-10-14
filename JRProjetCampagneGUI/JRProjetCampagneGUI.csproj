@@ -52,6 +52,12 @@
     <Compile Include="FrmAccueil.designer.cs">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddCampagne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddCampagne.Designer.cs">
+      <DependentUpon>FrmAddCampagne.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAjoutEvenement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddCampagne.resx">
+      <DependentUpon>FrmAddCampagne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutEvenement.resx">
       <DependentUpon>FrmAjoutEvenement.cs</DependentUpon>
@@ -92,7 +101,7 @@
       <Name>JRProjetCampagneBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\JRProjetCampagneBO\JRProjetCampagneBO.csproj">
-      <Project>{63fb04ff-c689-46ca-9b24-20472a5b6fc7}</Project>
+      <Project>{63FB04FF-C689-46CA-9B24-20472A5B6FC7}</Project>
       <Name>JRProjetCampagneBO</Name>
     </ProjectReference>
   </ItemGroup>

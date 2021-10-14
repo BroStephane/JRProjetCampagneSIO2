@@ -35,7 +35,7 @@ namespace JRProjetCampagneDAL
             List<Theme> lesThemes = new List<Theme>();
 
             //Recupère l'objet commande et ouvre la connexion à la BDD
-            SqlCommand command = Command.GetObjCommande();
+            SqlCommand command = Command.GetObjCommand();
 
             // Nettoie le 'cache'
             command.Parameters.Clear();
