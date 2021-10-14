@@ -1,4 +1,3 @@
-﻿
 namespace JRProjetCampagneGUI
 {
     partial class FrmAccueil
@@ -35,6 +34,7 @@ namespace JRProjetCampagneGUI
             this.ajoutDunÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajoutDunArtisteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 
             this.ajoutDuneAgenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 
@@ -71,6 +71,7 @@ namespace JRProjetCampagneGUI
             this.ajoutToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ajoutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ajoutDunÉvénementToolStripMenuItem,
+            this.ajoutDunArtisteToolStripMenuItem});
 
             this.ajoutDuneAgenceToolStripMenuItem});
 
@@ -103,6 +104,12 @@ namespace JRProjetCampagneGUI
             this.suppressionToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.suppressionToolStripMenuItem.Text = "Suppression";
             // 
+            // ajoutDunArtisteToolStripMenuItem
+            // 
+            this.ajoutDunArtisteToolStripMenuItem.Name = "ajoutDunArtisteToolStripMenuItem";
+            this.ajoutDunArtisteToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.ajoutDunArtisteToolStripMenuItem.Text = "Ajout d\'un artiste";
+            this.ajoutDunArtisteToolStripMenuItem.Click += new System.EventHandler(this.ajoutDunArtisteToolStripMenuItem_Click);
 
             // ajoutDuneAgenceToolStripMenuItem
             // 
@@ -145,7 +152,7 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.ToolStripMenuItem ajoutDunÉvénementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suppressionToolStripMenuItem;
-
+        private System.Windows.Forms.ToolStripMenuItem ajoutDunArtisteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajoutDuneAgenceToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem ajoutDunVIPToolStripMenuItem;
