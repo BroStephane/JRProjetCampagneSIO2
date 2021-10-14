@@ -44,6 +44,7 @@
     <Compile Include="Agence.cs" />
     <Compile Include="Artiste.cs" />
     <Compile Include="Campagne.cs" />
+    <Compile Include="CategorieVIP.cs" />
     <Compile Include="Employe.cs" />
     <Compile Include="Evenement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
