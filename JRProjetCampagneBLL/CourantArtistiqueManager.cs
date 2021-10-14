@@ -8,7 +8,7 @@ using JRProjetCampagneDAL;
 
 namespace JRProjetCampagneBLL
 {
-    class CourantArtistiqueManager
+    public class CourantArtistiqueManager
     {
         private static CourantArtistiqueManager uneInstance;
 

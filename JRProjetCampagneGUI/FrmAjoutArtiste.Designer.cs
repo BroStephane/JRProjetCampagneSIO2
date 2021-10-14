@@ -30,7 +30,7 @@ namespace JRProjetCampagneGUI
         private void InitializeComponent()
         {
             this.btnValiderAjoutArtiste = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxCourantArtistique = new System.Windows.Forms.ComboBox();
             this.txtNomArtiste = new System.Windows.Forms.TextBox();
             this.txtSiteWebArtiste = new System.Windows.Forms.TextBox();
             this.lblNomArtiste = new System.Windows.Forms.Label();
@@ -47,13 +47,13 @@ namespace JRProjetCampagneGUI
             this.btnValiderAjoutArtiste.Text = "Valider";
             this.btnValiderAjoutArtiste.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbxCourantArtistique
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(156, 144);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cbxCourantArtistique.FormattingEnabled = true;
+            this.cbxCourantArtistique.Location = new System.Drawing.Point(156, 144);
+            this.cbxCourantArtistique.Name = "cbxCourantArtistique";
+            this.cbxCourantArtistique.Size = new System.Drawing.Size(121, 21);
+            this.cbxCourantArtistique.TabIndex = 1;
             // 
             // txtNomArtiste
             // 
@@ -106,7 +106,7 @@ namespace JRProjetCampagneGUI
             this.Controls.Add(this.lblNomArtiste);
             this.Controls.Add(this.txtSiteWebArtiste);
             this.Controls.Add(this.txtNomArtiste);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxCourantArtistique);
             this.Controls.Add(this.btnValiderAjoutArtiste);
             this.Name = "FrmAjoutArtiste";
             this.Text = "FrmAjoutArtiste";
@@ -118,7 +118,7 @@ namespace JRProjetCampagneGUI
         #endregion
 
         private System.Windows.Forms.Button btnValiderAjoutArtiste;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxCourantArtistique;
         private System.Windows.Forms.TextBox txtNomArtiste;
         private System.Windows.Forms.TextBox txtSiteWebArtiste;
         private System.Windows.Forms.Label lblNomArtiste;

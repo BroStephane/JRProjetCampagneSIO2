@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JRProjetCampagneBO;
+using JRProjetCampagneBLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,19 @@ namespace JRProjetCampagneGUI
         public FrmAjoutArtiste()
         {
             InitializeComponent();
+
+            try
+            {
+                cbxCourantArtistique.DisplayMember = "libelle";
+                cbxCourantArtistique.ValueMember = "id";
+                cbxCourantArtistique.DataSource = CourantArtistiqueManager.GetInstance().GetCourantArtistiques();
+                cbxCourantArtistique.SelectedItem = null;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
     }
 }
