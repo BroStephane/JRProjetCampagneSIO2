@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JRProjetCampagneBO">
-      <HintPath>..\JRProjetCampagneBO\bin\Debug\JRProjetCampagneBO.dll</HintPath>
+      <HintPath>..\JRProjetCampagneBO\obj\Debug\JRProjetCampagneBO.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,10 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgenceManager.cs" />
     <Compile Include="CampagneManager.cs" />
     <Compile Include="EvenementManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeManager.cs" />
+    <Compile Include="VilleManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JRProjetCampagneDAL\JRProjetCampagneDAL.csproj">

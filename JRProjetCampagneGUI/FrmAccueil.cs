@@ -27,5 +27,14 @@ namespace JRProjetCampagneGUI
         {
 
         }
+
+        private void ajoutDuneAgenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance dee la classe du formualire appeler
+            FrmAjoutAgence leFormAppele = new FrmAjoutAgence();
+
+            //affichage du formulaire
+            leFormAppele.Show();
+        }
     }
 }
