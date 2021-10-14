@@ -8,59 +8,65 @@ namespace JRProjetCampagneBO
 {
     public class Agence
     {
-        private int id;
-        private string nom;
-        private string rue;
-        private string telephone;
-        private string emailContact;
-        private string siteWeb;
-        private char typeAgence;
-        private Ville uneVille;
+        int id;
+        string nom;
+        string rue;
+        string telephone;
+        string email;
+        string site;
+        char typeAgence;
+        Ville laVille;
+        string sonNom;
+        string saRue;
+        string sonTelephone;
+        string sonEmail;
+        string sonSite;
+        char sonTypeAgence;
+        int saVille;
 
         //Les propriétés pour gérer les attributs
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Rue { get => rue; set => rue = value; }
         public string Telephone { get => telephone; set => telephone = value; }
-        public string EmailContact { get => emailContact; set => emailContact = value; }
-        public string SiteWeb { get => siteWeb; set => siteWeb = value; }
+        public string Email { get => email; set => email = value; }
+        public string Site { get => site; set => site = value; }
         public char TypeAgence { get => typeAgence; set => typeAgence = value; }
-        public Ville UneVille { get => uneVille; set => uneVille = value; }
+        public Ville LaVille { get => laVille; set => laVille = value; }
 
-        public Agence(int id, string nom, string rue, string telephone, string emailContact, string siteWeb, char typeAgence, Ville uneVille)
+        //Constructeur permettant de valoriser les 8 attributs
+        public Agence(int id, string nom, string rue, string telephone, string email, string site, char typeAgence, Ville laVille)
         {
-            this.Id = id;
-            this.Nom = nom;
-            this.Rue = rue;
-            this.Telephone = telephone;
-            this.EmailContact = emailContact;
-            this.SiteWeb = siteWeb;
-            this.TypeAgence = typeAgence;
-            this.UneVille = uneVille;
+            this.id = id;
+            this.nom = nom;
+            this.rue = rue;
+            this.telephone = telephone;
+            this.email = email;
+            this.site = site;
+            this.typeAgence = typeAgence;
+            this.laVille = laVille;
         }
-
-        public Agence(int id, string nom)
-        {
-            this.Id = id;
-            this.Nom = nom;
-        }
-
-        public Agence(int id)
-        {
-            this.Id = id;
-        }
-
         //Constructeur permettant de valoriser seulement 7 attributs
-        public Agence(string nom, string rue, string telephone, string emailContact, string site, char typeAgence, Ville uneVille)
+        public Agence(string nom, string rue, string telephone, string email, string site, char typeAgence, Ville laVille)
         {
             this.nom = nom;
             this.rue = rue;
             this.telephone = telephone;
-            this.emailContact = emailContact;
+            this.email = email;
             this.site = site;
             this.typeAgence = typeAgence;
-            this.uneVille = uneVille;
+            this.laVille = laVille;
         }
-     
+        //Constructeur permettant de valoriser seulement 7 attributs
+        public Agence(string sonNom, string saRue, string sonTelephone, string sonEmail, string sonSite, char sonTypeAgence, int saVille)
+        {
+            this.sonNom = sonNom;
+            this.saRue = saRue;
+            this.sonTelephone = sonTelephone;
+            this.sonEmail = sonEmail;
+            this.sonSite = sonSite;
+            this.sonTypeAgence = sonTypeAgence;
+            this.saVille = saVille;
+        }
     }
 }
