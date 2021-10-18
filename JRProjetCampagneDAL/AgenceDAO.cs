@@ -71,67 +71,67 @@ namespace JRProjetCampagneDAL
             // Agence que l'on ajoute dans la collection lesAgences
             while (reader.Read())
             {
-                int.TryParse(reader["numero_insee"].ToString(), out numero_insee);
+                int.TryParse(reader["id"].ToString(), out numero_insee);
                 //Etant donné que le nom peut contenir des valeurs null, on doit remplacer la valeur null par la chaîne vide
-                if (reader["nom"] == DBNull.Value)
+                if (reader["Nom de l'agence"] == DBNull.Value)
                 {
                     leNom = default(string);
                 }
                 else
                 {
-                    leNom = reader["nom"].ToString();
+                    leNom = reader["Nom de l'agence"].ToString();
                 }
-                if (reader["rue"] == DBNull.Value)
+                if (reader["Rue"] == DBNull.Value)
                 {
                     laRue = default(string);
                 }
                 else
                 {
-                    laRue = reader["rue"].ToString();
+                    laRue = reader["Rue"].ToString();
                 }
-                if (reader["telephone"] == DBNull.Value)
+                if (reader["Téléphone"] == DBNull.Value)
                 {
                     leTelephone = default(string);
                 }
                 else
                 {
-                    leTelephone = reader["telephone"].ToString();
+                    leTelephone = reader["Téléphone"].ToString();
                 }
-                if (reader["email"] == DBNull.Value)
+                if (reader["Email de contact"] == DBNull.Value)
                 {
                     lEmail = default(string);
                 }
                 else
                 {
-                    lEmail = reader["email"].ToString();
+                    lEmail = reader["Email de contact"].ToString();
                 }
-                if (reader["site"] == DBNull.Value)
+                if (reader["Site Web"] == DBNull.Value)
                 {
                     leSite = default(string);
                 }
                 else
                 {
-                    leSite = reader["site"].ToString();
+                    leSite = reader["Site Web"].ToString();
                 }
-                if (reader["typeAgence"] == DBNull.Value)
+                if (reader["Type de l'agence"] == DBNull.Value)
                 {
                     leType = Char.Parse(default(string));
                 }
                 else
                 {
-                    leType = Char.Parse(reader["typeAgence"].ToString());
+                    leType = Char.Parse(reader["Type de l'agence"].ToString());
                 }
-                if (reader["Ville.nom"] == DBNull.Value)
+                if (reader["Nom de la ville"] == DBNull.Value)
                 {
                     leNomVille = default(string);
                 }
                 else
                 {
-                    leNomVille = reader["Ville.nom"].ToString();
+                    leNomVille = reader["Nom de la ville"].ToString();
                 }
                 laVille = new Ville(numero_insee, leNomVille);
                 //On crée une agence
-                uneAgence = new Agence(leNom, laRue, leTelephone, lEmail, leSite, leType, laVille);
+                uneAgence = new Agence(leNom, laRue, laVille, leTelephone, lEmail, leSite, leType);
                 //On ajoute l'agence dans une liste
                 lesAgences.Add(uneAgence);
             }

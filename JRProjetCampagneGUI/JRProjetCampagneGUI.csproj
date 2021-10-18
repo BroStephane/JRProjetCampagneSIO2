@@ -82,6 +82,12 @@
     <Compile Include="FrmAjoutVIP.Designer.cs">
       <DependentUpon>FrmAjoutVIP.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsultAgence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultAgence.Designer.cs">
+      <DependentUpon>FrmConsultAgence.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutVIP.resx">
       <DependentUpon>FrmAjoutVIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultAgence.resx">
+      <DependentUpon>FrmConsultAgence.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

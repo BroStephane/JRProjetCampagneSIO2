@@ -60,10 +60,11 @@ namespace JRProjetCampagneBLL
         /// <param name="saVille">la ville</param>
         /// <returns>retourne un objet Agence contenant tous ses attributs </returns>
         public int AddAgence(string sonNom, string saRue, string sonTelephone, string sonEmail, string sonSite, char sontypeAgence, int saVille)
+
         {
             Ville laVille = new Ville(saVille);
             Agence lAgence;
-            lAgence = new Agence(sonNom, saRue, sonTelephone, sonEmail, sonSite, sontypeAgence, laVille);
+            lAgence = new Agence(sonNom, saRue, laVille, sonTelephone, sonEmail, sonSite, sontypeAgence);
             return AgenceDAO.GetInstance().AddAgence(lAgence);
         }
 

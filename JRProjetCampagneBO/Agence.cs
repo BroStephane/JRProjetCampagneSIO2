@@ -31,6 +31,7 @@ namespace JRProjetCampagneBO
         public string SiteWeb { get => siteWeb; set => siteWeb = value; }
         public char TypeAgence { get => typeAgence; set => typeAgence = value; }
         public Ville UneVille { get => uneVille; set => uneVille = value; }
+        public string leNomVille { get => uneVille.Nom; }
 
         /// <summary>
         /// Le constructeur valorisant tous les attributs
@@ -43,7 +44,7 @@ namespace JRProjetCampagneBO
         /// <param name="siteWeb"></param>
         /// <param name="typeAgence"></param>
         /// <param name="uneVille"></param>
-        public Agence(int id, string nom, string rue, string telephone, string emailContact, string siteWeb, char typeAgence, Ville uneVille)
+        public Agence(int id, string nom, string rue, Ville uneVille , string telephone, string emailContact, string siteWeb, char typeAgence)
         {
             this.Id = id;
             this.Nom = nom;
@@ -87,7 +88,7 @@ namespace JRProjetCampagneBO
         /// <param name="siteWeb"></param>
         /// <param name="typeAgence"></param>
         /// <param name="uneVille"></param>
-        public Agence(string nom, string rue, string telephone, string emailContact, string siteWeb, char typeAgence, Ville uneVille)
+        public Agence(string nom, string rue, Ville uneVille , string telephone, string emailContact, string siteWeb, char typeAgence)
         {
             this.nom = nom;
             this.rue = rue;
