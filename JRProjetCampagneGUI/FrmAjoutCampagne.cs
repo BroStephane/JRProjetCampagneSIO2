@@ -13,11 +13,12 @@ namespace JRProjetCampagneGUI
 {
     public partial class FrmAjoutCampagne : Form
     {
+        /// <summary>
+        /// Affiche daans les combobox les différents données issues de la base de données
+        /// </summary>
         public FrmAjoutCampagne()
         {
             InitializeComponent();
-
-
 
             try
             {
@@ -77,6 +78,11 @@ namespace JRProjetCampagneGUI
 
         }
 
+        /// <summary>
+        /// Envoie les valeurs saisie par l'utilsiateurs dans le CampagneBLL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddCampagne_Click(object sender, EventArgs e)
         {
             string dtpDebut = dtpDateDebut.Text.Trim();
