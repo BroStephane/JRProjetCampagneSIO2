@@ -21,17 +21,18 @@ namespace JRProjetCampagneGUI
             cbxEmploye.DisplayMember = "Identite";
             cbxEmploye.ValueMember = "id";
             cbxEmploye.DataSource = EmployeManager.GetInstance().GetLesEmployes();
+            cbxEmploye.SelectedItem = null;
 
             //combobox des agences evenementielles
             cbxAgenceEvenementiel.DisplayMember = "nom";
             cbxAgenceEvenementiel.ValueMember = "id";
             cbxAgenceEvenementiel.DataSource = AgenceManager.GetInstance().GetLesAgencesEvenementiels();
-
+            cbxAgenceEvenementiel.SelectedItem = null;
             //combobox des agences de communications
             cbxAgenceCommunication.DisplayMember = "nom";
             cbxAgenceCommunication.ValueMember = "id";
             cbxAgenceCommunication.DataSource = AgenceManager.GetInstance().GetLesAgencesCommunications();
-
+            cbxAgenceCommunication.SelectedItem = null;
         
             //créer un nouveau contrôleur DateTimePicker et l'initialiser
             DateTimePicker dtpDateDebut = new DateTimePicker();

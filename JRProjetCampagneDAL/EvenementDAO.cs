@@ -24,7 +24,11 @@ namespace JRProjetCampagneDAL
         private EvenementDAO() { }
 
 
-
+        /// <summary>
+        /// Récupère un objet Evenement et l'ajoute dans la table Evenement dans la base de données
+        /// </summary>
+        /// <param name="unEvenement"></param>
+        /// <returns></returns>
         public int AddEvenement(Evenement unEvenement)
         {
             // Récupérer l'objet responsable de la connexion à la db

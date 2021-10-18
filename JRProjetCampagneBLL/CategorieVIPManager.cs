@@ -27,7 +27,10 @@ namespace JRProjetCampagneBLL
         }
 
 
-
+        /// <summary>
+        /// Fait appel à CategorieDAOVIP et retourne une liste de Categorie
+        /// </summary>
+        /// <returns></returns>
         public List<CategorieVIP> GetLesCategsVIP()
         {
             List<CategorieVIP> lesCategsVIP = new List<CategorieVIP>();

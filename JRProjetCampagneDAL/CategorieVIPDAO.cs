@@ -26,7 +26,10 @@ namespace JRProjetCampagneDAL
 
         }
 
-
+        /// <summary>
+        /// Récupère les données de la table CategorieVIP et créer des objets de celle-ci puis retourne une liste de CategorieVIP
+        /// </summary>
+        /// <returns></returns>
         public List<CategorieVIP> GetLesCategsVIP()
         {
             int id;

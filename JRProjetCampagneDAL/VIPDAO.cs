@@ -15,6 +15,10 @@ namespace JRProjetCampagneDAL
 
         // cette méthode crée un objet de la classe ClientDAO s'il n'existe pas déjà un
         // puis retourne la référence à cet objet
+        /// <summary>
+        /// Créer une instance de VIPDAO de type VIPDAO
+        /// </summary>
+        /// <returns></returns>
         public static VIPDAO GetInstance()
         {
             if (uneInstance == null)
@@ -24,7 +28,11 @@ namespace JRProjetCampagneDAL
             return uneInstance;
         }
 
-
+        /// <summary>
+        /// Récupère un VIP et l'ajoue dans la base de données 
+        /// </summary>
+        /// <param name="unVIP"></param>
+        /// <returns></returns>
         public int AddVIP(VIP unVIP)
         {
 

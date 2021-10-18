@@ -25,7 +25,14 @@ namespace JRProjetCampagneBLL
         {
 
         }
-
+        /// <summary>
+        /// Créer un objet Theme, un objet Campagne et un objet Evenement avec les données reçu. Puis fait appel à EvenementDAO
+        /// </summary>
+        /// <param name="dateDebut"></param>
+        /// <param name="dateFin"></param>
+        /// <param name="idTheme"></param>
+        /// <param name="idCampagne"></param>
+        /// <returns></returns>
         public int AddEvenement(DateTime dateDebut, DateTime dateFin, int idTheme, int idCampagne)
         {
             Theme unTheme = new Theme(idTheme);

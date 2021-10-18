@@ -86,6 +86,7 @@ namespace JRProjetCampagneGUI
             // btnEnregAgence
             // 
             this.btnEnregAgence.BackColor = System.Drawing.Color.White;
+            this.btnEnregAgence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnregAgence.Location = new System.Drawing.Point(249, 327);
             this.btnEnregAgence.Name = "btnEnregAgence";
             this.btnEnregAgence.Size = new System.Drawing.Size(167, 33);
@@ -121,45 +122,51 @@ namespace JRProjetCampagneGUI
             // 
             // cbxVilleAgence
             // 
+            this.cbxVilleAgence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxVilleAgence.FormattingEnabled = true;
             this.cbxVilleAgence.Location = new System.Drawing.Point(374, 104);
             this.cbxVilleAgence.Name = "cbxVilleAgence";
-            this.cbxVilleAgence.Size = new System.Drawing.Size(250, 21);
+            this.cbxVilleAgence.Size = new System.Drawing.Size(250, 24);
             this.cbxVilleAgence.TabIndex = 13;
             // 
             // txtEmailAgence
             // 
+            this.txtEmailAgence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAgence.Location = new System.Drawing.Point(374, 193);
             this.txtEmailAgence.Name = "txtEmailAgence";
-            this.txtEmailAgence.Size = new System.Drawing.Size(250, 20);
+            this.txtEmailAgence.Size = new System.Drawing.Size(250, 23);
             this.txtEmailAgence.TabIndex = 11;
             // 
             // txtSiteAgence
             // 
+            this.txtSiteAgence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSiteAgence.Location = new System.Drawing.Point(29, 282);
             this.txtSiteAgence.Name = "txtSiteAgence";
-            this.txtSiteAgence.Size = new System.Drawing.Size(250, 20);
+            this.txtSiteAgence.Size = new System.Drawing.Size(250, 23);
             this.txtSiteAgence.TabIndex = 10;
             // 
             // txtTelephoneAgence
             // 
+            this.txtTelephoneAgence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelephoneAgence.Location = new System.Drawing.Point(29, 193);
             this.txtTelephoneAgence.Name = "txtTelephoneAgence";
-            this.txtTelephoneAgence.Size = new System.Drawing.Size(250, 20);
+            this.txtTelephoneAgence.Size = new System.Drawing.Size(250, 23);
             this.txtTelephoneAgence.TabIndex = 9;
             // 
             // txtRueAgence
             // 
+            this.txtRueAgence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRueAgence.Location = new System.Drawing.Point(29, 104);
             this.txtRueAgence.Name = "txtRueAgence";
-            this.txtRueAgence.Size = new System.Drawing.Size(250, 20);
+            this.txtRueAgence.Size = new System.Drawing.Size(250, 23);
             this.txtRueAgence.TabIndex = 8;
             // 
             // txtNomAgence
             // 
+            this.txtNomAgence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomAgence.Location = new System.Drawing.Point(321, 26);
             this.txtNomAgence.Name = "txtNomAgence";
-            this.txtNomAgence.Size = new System.Drawing.Size(187, 20);
+            this.txtNomAgence.Size = new System.Drawing.Size(187, 23);
             this.txtNomAgence.TabIndex = 7;
             // 
             // lblVilleAgence

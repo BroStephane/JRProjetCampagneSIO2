@@ -26,7 +26,10 @@ namespace JRProjetCampagneDAL
 
         }
 
-
+        /// <summary>
+        /// Récupère les données de la table Theme et créer des objets de celle-ci et retourne une liste de Thêmes
+        /// </summary>
+        /// <returns></returns>
         public List<Theme> GetThemes()
         {
             int id;

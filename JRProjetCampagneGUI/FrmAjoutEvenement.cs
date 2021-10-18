@@ -116,7 +116,7 @@ namespace JRProjetCampagneGUI
                     }
                     else
                     {
-                        MessageBox.Show("l'ajout de l'évènement à été effectué", "Information", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                        MessageBox.Show("l'ajout de l'évènement à été effectué", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                 }

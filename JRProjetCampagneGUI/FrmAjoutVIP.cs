@@ -49,7 +49,9 @@ namespace JRProjetCampagneGUI
             string nom = txtNom.Text.Trim();
             string mail = txtMail.Text.Trim();
             string rue = txtRue.Text.Trim();
-            if(nom == "")
+            int numInsee = 0;
+            int categVIP = 0;
+            if (nom == "")
             {
                 MessageBox.Show("Veuillez saisir un nom", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -64,13 +66,31 @@ namespace JRProjetCampagneGUI
 
             }
 
-            int numInsee = (int)cbxVille.SelectedValue;
-            int categVIP = (int)cbxCategVIP.SelectedValue;
+            if (cbxVille.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez saisir une ville", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                 numInsee = (int)cbxVille.SelectedValue;
+            }
+            if (cbxCategVIP.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez saisir une catégorie", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                 categVIP = (int)cbxCategVIP.SelectedValue;
+            }
+
+            
 
             try
             {
-                if(rue != "" && mail != "" && nom != "")
+                if(rue != "" && mail != "" && nom != "" && numInsee != 0 && categVIP != 0)
                 {
+                    
+
                     int nb = VIPManager.GetInstance().AddVIP(nom, rue, mail, numInsee, categVIP);
                     if (nb == 0)
                     {

@@ -21,7 +21,10 @@ namespace JRProjetCampagneDAL
             objCommande = new SqlCommand("", objConnex);
             objCommande.CommandType = CommandType.StoredProcedure;
         }
-
+        /// <summary>
+        /// Ouvre une connexion à la base de données 
+        /// </summary>
+        /// <returns></returns>
         public static SqlCommand GetObjCommande()
         {
             if (objCommande.Connection.State == System.Data.ConnectionState.Closed)
@@ -30,7 +33,9 @@ namespace JRProjetCampagneDAL
             }
             return objCommande;
         }
-
+        /// <summary>
+        /// Ferme la connexion à la base de données en cours
+        /// </summary>
         public static void CloseConnexion()
         {
             if (objCommande.Connection != null && objCommande.Connection.State != System.Data.ConnectionState.Closed)

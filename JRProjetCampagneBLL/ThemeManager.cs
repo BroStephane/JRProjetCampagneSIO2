@@ -26,7 +26,10 @@ namespace JRProjetCampagneBLL
 
         }
 
-
+        /// <summary>
+        /// Fait appel à ThemeDAO et retourne une list de thème
+        /// </summary>
+        /// <returns></returns>
         public List<Theme> GetThemes()
         {
             List<Theme> lesThemes = new List<Theme>();
