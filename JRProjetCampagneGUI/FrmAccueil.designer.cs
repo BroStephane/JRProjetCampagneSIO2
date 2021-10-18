@@ -77,10 +77,10 @@ namespace JRProjetCampagneGUI
             this.ajoutDuneAgenceToolStripMenuItem,
             this.ajoutDunVIPToolStripMenuItem,
             this.ajoutDunArtisteToolStripMenuItem,
-            this.ajoutDuneCampagneToolStripMenuItem});
-            this.ajoutDunArtisteToolStripMenuItem});
+            this.ajoutDuneCampagneToolStripMenuItem,
+            
 
-            this.ajoutDuneAgenceToolStripMenuItem});
+            this.ajoutDuneAgenceToolStripMenuItem,
 
             this.ajoutDunVIPToolStripMenuItem});
 
@@ -133,12 +133,7 @@ namespace JRProjetCampagneGUI
             this.suppressionToolStripMenuItem.Text = "Suppression";
             // 
             // ajoutDuneCampagneToolStripMenuItem
-            // ajoutDunArtisteToolStripMenuItem
-            // 
-            this.ajoutDunArtisteToolStripMenuItem.Name = "ajoutDunArtisteToolStripMenuItem";
-            this.ajoutDunArtisteToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.ajoutDunArtisteToolStripMenuItem.Text = "Ajout d\'un artiste";
-            this.ajoutDunArtisteToolStripMenuItem.Click += new System.EventHandler(this.ajoutDunArtisteToolStripMenuItem_Click);
+            
 
             // ajoutDuneAgenceToolStripMenuItem
             // 
@@ -188,7 +183,7 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.ToolStripMenuItem ajoutDuneAgenceToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem ajoutDunVIPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ajoutDunArtisteToolStripMenuItem;
+       
         private System.Windows.Forms.ToolStripMenuItem ajoutDuneCampagneToolStripMenuItem;
         private System.Windows.Forms.Label lblTitre;
     }
