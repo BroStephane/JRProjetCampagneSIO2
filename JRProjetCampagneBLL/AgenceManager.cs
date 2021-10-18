@@ -59,7 +59,7 @@ namespace JRProjetCampagneBLL
         /// <param name="sontypeAgence">le type d'agence E ou C</param>
         /// <param name="saVille">la ville</param>
         /// <returns>retourne un objet Agence contenant tous ses attributs </returns>
-        public int AddAgence(string sonNom, string saRue, string sonTelephone, string sonEmail, string sonSite, char sontypeAgence, int saVille)
+        public int AddAgence(string sonNom, string saRue, int saVille, string sonTelephone, string sonEmail, string sonSite, char sontypeAgence)
 
         {
             Ville laVille = new Ville(saVille);
