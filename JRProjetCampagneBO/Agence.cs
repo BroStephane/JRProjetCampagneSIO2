@@ -26,6 +26,7 @@ namespace JRProjetCampagneBO
         public char TypeAgence { get => typeAgence; set => typeAgence = value; }
         public Ville UneVille { get => uneVille; set => uneVille = value; }
         public string leNomVille { get => uneVille.Nom; }
+        //Constructeur permettant de valoriser tous les attributs
         public Agence(int id, string nom, string rue, Ville uneVille , string telephone, string emailContact, string siteWeb, char typeAgence)
         {
             this.Id = id;
@@ -43,7 +44,7 @@ namespace JRProjetCampagneBO
             this.Id = id;
             this.Nom = nom;
         }
-
+        //Constructeur permettant de valoriser seulement l'id
         public Agence(int id)
         {
             this.Id = id;
