@@ -14,6 +14,10 @@ namespace JRProjetCampagneDAL
 
         // cette méthode crée un objet de la classe EmployeDAO s'il n'existe pas déjà un
         // puis retourne la référence à cet objet
+        /// <summary>
+        /// cette méthode crée un objet de la classe EmployeDAO s'il n'existe pas déjà un, puis retourne la référence à cet objet
+        /// </summary>
+        /// <returns></returns>
         public static EmployeDAO GetInstance()
         {
             if (uneInstance == null)
@@ -25,12 +29,19 @@ namespace JRProjetCampagneDAL
 
         // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
         // objet à l'extérieur de la classe avec l'instruction new ...
+        /// <summary>
+        /// le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
+        /// </summary>
         private EmployeDAO()
         {
         }
 
         // la méthode GetEmployes retourne une collection contenant les employes
         // existant dans la table Employe
+        /// <summary>
+        /// la méthode GetEmployes retourne une collection contenant les employes existant dans la table Employe
+        /// </summary>
+        /// <returns>Retourne une collection des employes</returns>
         public List<Employe> GetEmploye()
         {
             int num;

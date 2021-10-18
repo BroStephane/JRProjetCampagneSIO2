@@ -9,6 +9,9 @@ namespace JRProjetCampagneBO
 {
     public class Campagne
     {
+        /// <summary>
+        /// Les attributs de la classe Campagne
+        /// </summary>
         private int id;
         private string libelle;
         private DateTime dateDebut;
@@ -18,6 +21,9 @@ namespace JRProjetCampagneBO
         private Agence uneAgenceEvenementiel;
         private Agence uneAgenceCommunication;
 
+        /// <summary>
+        /// Les propriétés des attibuts de la classe Campagne
+        /// </summary>
         public int Id { get => id; set => id = value; }
         public string Libelle { get => libelle; set => libelle = value; }
         public DateTime DateDebut { get => dateDebut; set => dateDebut = value; }
@@ -29,6 +35,17 @@ namespace JRProjetCampagneBO
 
 
         //premier constructeur pour valoriser tous les attributs
+        /// <summary>
+        /// le constructeur valorisant tous les attributs
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="libelle"></param>
+        /// <param name="dateDebut"></param>
+        /// <param name="dateFin"></param>
+        /// <param name="objectif"></param>
+        /// <param name="unEmploye"></param>
+        /// <param name="uneAgenceEvenementiel"></param>
+        /// <param name="uneAgenceCommunication"></param>
         public Campagne(int id, string libelle, DateTime dateDebut, DateTime dateFin, string objectif, Employe unEmploye, Agence uneAgenceEvenementiel, Agence uneAgenceCommunication)
         {
             this.id = id;
@@ -42,6 +59,16 @@ namespace JRProjetCampagneBO
         }
 
         //deuxième constructeur pour valoriser le libelle, la dateDbut, la dateFin, objectif et unEmploye
+        /// <summary>
+        /// le constructeur valorisant le libelle, la dateDbut, la dateFin, l'objectif, unEmploye, uneAgenceEvenementiel et uneAgenceCommunication
+        /// </summary>
+        /// <param name="libelle"></param>
+        /// <param name="dateDebut"></param>
+        /// <param name="dateFin"></param>
+        /// <param name="objectif"></param>
+        /// <param name="unEmploye"></param>
+        /// <param name="uneAgenceEvenementiel"></param>
+        /// <param name="uneAgenceCommunication"></param>
         public Campagne(string libelle, DateTime dateDebut, DateTime dateFin, string objectif, Employe unEmploye, Agence uneAgenceEvenementiel, Agence uneAgenceCommunication)
         {
             this.libelle = libelle;
@@ -53,11 +80,20 @@ namespace JRProjetCampagneBO
             this.uneAgenceCommunication = uneAgenceCommunication;
         }
 
+        /// <summary>
+        /// le constructeur valorisant l'id et le libelle
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="libelle"></param>
         public Campagne(int id, string libelle)
         {
             this.id = id;
             this.libelle = libelle;
         }
+        /// <summary>
+        /// le constructeur valorisant l'id
+        /// </summary>
+        /// <param name="id"></param>
         public Campagne(int id)
         {
             this.id = id;
