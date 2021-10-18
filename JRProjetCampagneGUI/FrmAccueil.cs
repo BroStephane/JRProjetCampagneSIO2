@@ -66,5 +66,13 @@ namespace JRProjetCampagneGUI
             //affichage du formulaire
             leFormAppele.ShowDialog();
         }
+        private void consultationDesAgencesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //créer un objet, une instance dee la classe du formualire appeler
+            FrmConsultAgence leFormAppele = new FrmConsultAgence();
+
+            //affichage du formulaire
+            leFormAppele.Show();
+        }
     }
 }

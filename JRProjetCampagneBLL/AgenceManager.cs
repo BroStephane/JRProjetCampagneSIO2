@@ -37,11 +37,11 @@ namespace JRProjetCampagneBLL
         }
 
         //appel de la couche DAL pour créer une nouvelle agence
-        public int AddAgence(string sonNom, string saRue, string sonTelephone, string sonEmail, string sonSite, char sontypeAgence, int saVille)
+        public int AddAgence(string sonNom, string saRue, int saVille, string sonTelephone, string sonEmail, string sonSite, char sontypeAgence)
         {
             Ville laVille = new Ville(saVille);
             Agence lAgence;
-            lAgence = new Agence(sonNom, saRue, sonTelephone, sonEmail, sonSite, sontypeAgence, laVille);
+            lAgence = new Agence(sonNom, saRue, laVille, sonTelephone, sonEmail, sonSite, sontypeAgence);
             return AgenceDAO.GetInstance().AddAgence(lAgence);
         }
 
