@@ -8,6 +8,9 @@ namespace JRProjetCampagneBO
 {
     public class Agence
     {
+        /// <summary>
+        /// Les attributs de la classe Agence
+        /// </summary>
         private int id;
         private string nom;
         private string rue;
@@ -17,6 +20,9 @@ namespace JRProjetCampagneBO
         private char typeAgence;
         private Ville uneVille;
 
+        /// <summary>
+        /// Les propriétés des attributs de la classe Agence
+        /// </summary>
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Rue { get => rue; set => rue = value; }
@@ -26,6 +32,17 @@ namespace JRProjetCampagneBO
         public char TypeAgence { get => typeAgence; set => typeAgence = value; }
         public Ville UneVille { get => uneVille; set => uneVille = value; }
 
+        /// <summary>
+        /// Le constructeur valorisant tous les attributs
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
+        /// <param name="rue"></param>
+        /// <param name="telephone"></param>
+        /// <param name="emailContact"></param>
+        /// <param name="siteWeb"></param>
+        /// <param name="typeAgence"></param>
+        /// <param name="uneVille"></param>
         public Agence(int id, string nom, string rue, string telephone, string emailContact, string siteWeb, char typeAgence, Ville uneVille)
         {
             this.Id = id;
@@ -38,18 +55,38 @@ namespace JRProjetCampagneBO
             this.UneVille = uneVille;
         }
 
+        /// <summary>
+        /// le constructeur valorisant l'id et le nom
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
         public Agence(int id, string nom)
         {
             this.Id = id;
             this.Nom = nom;
         }
 
+        /// <summary>
+        /// le constructeur valorisant l'id
+        /// </summary>
+        /// <param name="id"></param>
         public Agence(int id)
         {
             this.Id = id;
         }
 
+        
         //Constructeur permettant de valoriser seulement 7 attributs
+        /// <summary>
+        /// le constructeur valorisant le nom, la rue, le telephone, l'email de contact, le site web, le type d'agence et uneVille
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="rue"></param>
+        /// <param name="telephone"></param>
+        /// <param name="emailContact"></param>
+        /// <param name="siteWeb"></param>
+        /// <param name="typeAgence"></param>
+        /// <param name="uneVille"></param>
         public Agence(string nom, string rue, string telephone, string emailContact, string siteWeb, char typeAgence, Ville uneVille)
         {
             this.nom = nom;

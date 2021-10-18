@@ -15,6 +15,10 @@ namespace JRProjetCampagneDAL
 
         // cette méthode crée un objet de la classe AgenceDAO s'il n'existe pas déjà un
         // puis retourne la référence à cet objet
+        /// <summary>
+        /// cette méthode crée un objet de la classe AgenceDAO s'il n'existe pas déjà un, puis retourne la référence à cet objet
+        /// </summary>
+        /// <returns></returns>
         public static AgenceDAO GetInstance()
         {
             if (uneInstance == null)
@@ -23,14 +27,20 @@ namespace JRProjetCampagneDAL
             }
             return uneInstance;
         }
+
         // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
         // objet à l'extérieur de la classe avec l'instruction new ...
+        /// <summary>
+        /// le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
+        /// </summary>
         private AgenceDAO()
         {
         }
 
-        // la méthode GetAgences retourne une collection contenant les agences
-        // existant dans la table Agence
+        /// <summary>
+        /// la méthode GetAgences retourne une collection contenant les agences existant dans la table Agence
+        /// </summary>
+        /// <returns>Retourne une collection d'agence</returns>
         public List<Agence> GetAgences()
         {
             // déclaration des variables de travail
@@ -135,6 +145,12 @@ namespace JRProjetCampagneDAL
             // on retourne la collection
             return lesAgences;
         }
+
+        /// <summary>
+        /// la méthode AddAgences fait un INSERT dans la table Agence de la base de données
+        /// </summary>
+        /// <param name="uneAgence">l'instance de Agence contenant tous les attributs</param>
+        /// <returns>Execute la requête</returns>
         public int AddAgence(Agence uneAgence)
         {
             //On récupère l'objet responsable de la connexion de base
@@ -174,11 +190,14 @@ namespace JRProjetCampagneDAL
             // on exécute la requête
             return maCommand.ExecuteNonQuery();
 
-            // on retourne le nombre d'enregistrements ajoutés
         }
 
         // la méthode GetAgenceEvenementiel retourne une collection contenant les agences evenementiels
         // existant dans la table Agence
+        /// <summary>
+        /// la méthode GetAgenceEvenementiel retourne une collection contenant les agences evenementiels existant dans la table Agence
+        /// </summary>
+        /// <returns>Retroune une collection des agences evenementiels</returns>
         public List<Agence> GetAgenceEvenementiel()
         {
             int num;
@@ -231,6 +250,10 @@ namespace JRProjetCampagneDAL
 
         // la méthode GetAgenceCommunciation retourne une collection contenant les agences de commuications
         // existant dans la table Agence
+        /// <summary>
+        /// la méthode GetAgenceEvenementiel retourne une collection contenant les agences de communications existant dans la table Agence
+        /// </summary>
+        /// <returns>Retroune une collection des agences de communications</returns>
         public List<Agence> GetAgenceCommunication()
         {
             int num;

@@ -14,6 +14,10 @@ namespace JRProjetCampagneDAL
 
         // cette méthode crée un objet de la classe CampagneDAO s'il n'existe pas déjà un
         // puis retourne la référence à cet objet
+        /// <summary>
+        /// cette méthode crée un objet de la classe CampagneDAO s'il n'existe pas déjà un, puis retourne la référence à cet objet
+        /// </summary>
+        /// <returns></returns>
         public static CampagneDAO GetInstance()
         {
             if (uneInstance == null)
@@ -25,15 +29,18 @@ namespace JRProjetCampagneDAL
 
         // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
         // objet à l'extérieur de la classe avec l'instruction new ...
+        /// <summary>
+        /// // le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
+        /// </summary>
         private CampagneDAO()
         {
         }
 
         /// <summary>
-        /// permet 
+        /// la méthode AddCampagne fait un INSERT dans la table Campagne de la base de données
         /// </summary>
-        /// <param name="uneCampagne"></param>
-        /// <returns></returns>
+        /// <param name="uneCampagne">l'instance de Campagne contenant tous les attributs</param>
+        /// <returns>Execute la requête</returns>
         //création de la campagne
         public int AddCampagne(Campagne uneCampagne)
         {
@@ -70,7 +77,10 @@ namespace JRProjetCampagneDAL
             return maCommand.ExecuteNonQuery();
         }
 
-
+        /// <summary>
+        /// la méthode GetCampagnes retourne une collection contenant les campagnes existant dans la table Campagne
+        /// </summary>
+        /// <returns>Retourne une collection de campagnes</returns>
         public List<Campagne> GetCampagnes()
         {
             int id;

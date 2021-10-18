@@ -58,6 +58,11 @@ namespace JRProjetCampagneGUI
             leFormAppele.ShowDialog();
         }
 
+        /// <summary>
+        /// Affiche le formulaire AjoutCampagne en créant un objet, ainsi qu'une instance de la classe du formulaire pour l'appeler 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ajoutDuneCampagneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //créer un objet, une instance dee la classe du formulaire appeler
