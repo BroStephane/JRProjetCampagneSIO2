@@ -16,23 +16,51 @@ namespace JRProjetCampagneGUI
         public FrmAjoutCampagne()
         {
             InitializeComponent();
-            
-            //combobox d'employé
-            cbxEmploye.DisplayMember = "Identite";
-            cbxEmploye.ValueMember = "id";
-            cbxEmploye.DataSource = EmployeManager.GetInstance().GetLesEmployes();
 
-            //combobox des agences evenementielles
-            cbxAgenceEvenementiel.DisplayMember = "nom";
-            cbxAgenceEvenementiel.ValueMember = "id";
-            cbxAgenceEvenementiel.DataSource = AgenceManager.GetInstance().GetLesAgencesEvenementiels();
 
-            //combobox des agences de communications
-            cbxAgenceCommunication.DisplayMember = "nom";
-            cbxAgenceCommunication.ValueMember = "id";
-            cbxAgenceCommunication.DataSource = AgenceManager.GetInstance().GetLesAgencesCommunications();
 
-        
+            try
+            {
+                //combobox d'employé
+                cbxEmploye.DisplayMember = "Identite";
+                cbxEmploye.ValueMember = "id";
+                cbxEmploye.DataSource = EmployeManager.GetInstance().GetLesEmployes();
+                cbxEmploye.SelectedItem = null;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+            try
+            {
+                //combobox des agences evenementielles
+                cbxAgenceEvenementiel.DisplayMember = "nom";
+                cbxAgenceEvenementiel.ValueMember = "id";
+                cbxAgenceEvenementiel.DataSource = AgenceManager.GetInstance().GetLesAgencesEvenementiels();
+                cbxAgenceEvenementiel.SelectedItem = null;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+            try
+            {
+                //combobox des agences de communications
+                cbxAgenceCommunication.DisplayMember = "nom";
+                cbxAgenceCommunication.ValueMember = "id";
+                cbxAgenceCommunication.DataSource = AgenceManager.GetInstance().GetLesAgencesCommunications();
+                cbxAgenceCommunication.SelectedItem = null;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
             //créer un nouveau contrôleur DateTimePicker et l'initialiser
             DateTimePicker dtpDateDebut = new DateTimePicker();
             DateTimePicker dtpDateFin = new DateTimePicker();
@@ -51,17 +79,26 @@ namespace JRProjetCampagneGUI
 
         private void btnAddCampagne_Click(object sender, EventArgs e)
         {
-            string dtpDebut = dtpDateDebut.Text;
-            string dtpFin = dtpDateFin.Text;
+            string dtpDebut = dtpDateDebut.Text.Trim();
+            string dtpFin = dtpDateFin.Text.Trim();
+            int idChoixEmploye = 0;
+            int idChoixAgenceEvenementiel = 0;
+            int idChoixAgenceCommunication = 0;
+
+            if (dtpDebut == "")
+            {
+                MessageBox.Show("Veuillez sélectionner une date de début", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (dtpFin == "")
+            {
+                MessageBox.Show("Veuillez sélectionner une date de fin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             DateTime dtpDateDeDebut = Convert.ToDateTime(dtpDebut);
             DateTime dtpDateDeFin = Convert.ToDateTime(dtpFin);
 
             txtLibelle.Text = txtLibelle.Text.Trim();
             txtObjectif.Text = txtObjectif.Text.Trim();
-            int idChoixEmploye = (int)cbxEmploye.SelectedValue;
-            int idChoixAgenceEvenementiel = (int)cbxAgenceEvenementiel.SelectedValue;
-            int idChoixAgenceCommunication = (int)cbxAgenceCommunication.SelectedValue;
 
             if (txtLibelle.Text == string.Empty)
             {
@@ -81,6 +118,34 @@ namespace JRProjetCampagneGUI
             }
             else
             {
+                if (cbxEmploye.SelectedIndex == -1)
+                {
+
+                    MessageBox.Show("Veuillez sélectionner un employé", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    idChoixEmploye = (int)cbxEmploye.SelectedValue;
+                }
+
+                if (cbxAgenceEvenementiel.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Veuillez sélectionner une agence évènementielle", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    idChoixAgenceEvenementiel = (int)cbxAgenceEvenementiel.SelectedValue;
+                }
+
+                if (cbxAgenceCommunication.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Veuillez sélectionner une agence de communication", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    idChoixAgenceCommunication = (int)cbxAgenceCommunication.SelectedValue;
+                }
+
                 int nb = CampagneManager.GetInstance().CreateCampagne(txtLibelle.Text, dtpDateDeDebut, dtpDateDeFin, txtObjectif.Text, idChoixEmploye, idChoixAgenceEvenementiel, idChoixAgenceCommunication);
 
                 if (nb == 0)
@@ -93,7 +158,6 @@ namespace JRProjetCampagneGUI
                 }
 
             }
-
         }
     }
 }
