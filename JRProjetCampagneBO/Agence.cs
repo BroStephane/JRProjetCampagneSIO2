@@ -66,7 +66,6 @@ namespace JRProjetCampagneBO
             this.Id = id;
             this.Nom = nom;
         }
-
         /// <summary>
         /// le constructeur valorisant l'id
         /// </summary>

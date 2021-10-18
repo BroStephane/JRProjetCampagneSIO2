@@ -15,7 +15,7 @@ namespace JRProjetCampagneGUI
     {
         char sonType;
         /// <summary>
-        /// 
+        /// Ajoute l'agence en utilisant la méthode AddAgence, après avoir vérifier que tout les champs de saisies et la combobox sont bien remplies.
         /// </summary>
 
         public FrmAjoutAgence()
