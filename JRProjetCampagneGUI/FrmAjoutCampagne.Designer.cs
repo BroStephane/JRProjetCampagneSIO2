@@ -82,6 +82,7 @@ namespace JRProjetCampagneGUI
             this.dtpDateDebut.Name = "dtpDateDebut";
             this.dtpDateDebut.Size = new System.Drawing.Size(221, 23);
             this.dtpDateDebut.TabIndex = 3;
+            this.dtpDateDebut.ValueChanged += new System.EventHandler(this.dtpDateDebut_ValueChanged);
             // 
             // lblDateDebut
             // 

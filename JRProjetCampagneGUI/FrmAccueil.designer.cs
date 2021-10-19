@@ -30,16 +30,18 @@ namespace JRProjetCampagneGUI
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.consultationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultationDesAgencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutDunÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajoutDuneAgenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajoutDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutDunArtisteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutDuneCampagneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajoutDuneAgenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajoutDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.invitationVIPÀUnÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitre = new System.Windows.Forms.Label();
-            this.consultationDesAgencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultationDesÉvénementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,11 +64,19 @@ namespace JRProjetCampagneGUI
             // 
             this.consultationToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.consultationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultationDesAgencesToolStripMenuItem});
+            this.consultationDesAgencesToolStripMenuItem,
+            this.consultationDesÉvénementsToolStripMenuItem});
             this.consultationToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.consultationToolStripMenuItem.Name = "consultationToolStripMenuItem";
             this.consultationToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.consultationToolStripMenuItem.Text = "Consultation";
+            // 
+            // consultationDesAgencesToolStripMenuItem
+            // 
+            this.consultationDesAgencesToolStripMenuItem.Name = "consultationDesAgencesToolStripMenuItem";
+            this.consultationDesAgencesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.consultationDesAgencesToolStripMenuItem.Text = "Consultation des agences";
+            this.consultationDesAgencesToolStripMenuItem.Click += new System.EventHandler(this.consultationDesAgencesToolStripMenuItem_Click_1);
             // 
             // ajoutToolStripMenuItem
             // 
@@ -76,7 +86,8 @@ namespace JRProjetCampagneGUI
             this.ajoutDunArtisteToolStripMenuItem,
             this.ajoutDuneCampagneToolStripMenuItem,
             this.ajoutDuneAgenceToolStripMenuItem,
-            this.ajoutDunVIPToolStripMenuItem});
+            this.ajoutDunVIPToolStripMenuItem,
+            this.invitationVIPÀUnÉvénementToolStripMenuItem});
             this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
             this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ajoutToolStripMenuItem.Text = "Ajout";
@@ -84,37 +95,44 @@ namespace JRProjetCampagneGUI
             // ajoutDunÉvénementToolStripMenuItem
             // 
             this.ajoutDunÉvénementToolStripMenuItem.Name = "ajoutDunÉvénementToolStripMenuItem";
-            this.ajoutDunÉvénementToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.ajoutDunÉvénementToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.ajoutDunÉvénementToolStripMenuItem.Text = "Ajout d\'un événement";
             this.ajoutDunÉvénementToolStripMenuItem.Click += new System.EventHandler(this.ajoutDunÉvénementToolStripMenuItem_Click);
-            // 
-            // ajoutDuneAgenceToolStripMenuItem
-            // 
-            this.ajoutDuneAgenceToolStripMenuItem.Name = "ajoutDuneAgenceToolStripMenuItem";
-            this.ajoutDuneAgenceToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.ajoutDuneAgenceToolStripMenuItem.Text = "Ajout d\'une agence";
-            this.ajoutDuneAgenceToolStripMenuItem.Click += new System.EventHandler(this.ajoutDuneAgenceToolStripMenuItem_Click);
-            // 
-            // ajoutDunVIPToolStripMenuItem
-            // 
-            this.ajoutDunVIPToolStripMenuItem.Name = "ajoutDunVIPToolStripMenuItem";
-            this.ajoutDunVIPToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.ajoutDunVIPToolStripMenuItem.Text = "Ajout d\'un VIP";
-            this.ajoutDunVIPToolStripMenuItem.Click += new System.EventHandler(this.ajoutDunVIPToolStripMenuItem_Click);
             // 
             // ajoutDunArtisteToolStripMenuItem
             // 
             this.ajoutDunArtisteToolStripMenuItem.Name = "ajoutDunArtisteToolStripMenuItem";
-            this.ajoutDunArtisteToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.ajoutDunArtisteToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.ajoutDunArtisteToolStripMenuItem.Text = "Ajout d\'un artiste";
             this.ajoutDunArtisteToolStripMenuItem.Click += new System.EventHandler(this.ajoutDunArtisteToolStripMenuItem_Click);
             // 
             // ajoutDuneCampagneToolStripMenuItem
             // 
             this.ajoutDuneCampagneToolStripMenuItem.Name = "ajoutDuneCampagneToolStripMenuItem";
-            this.ajoutDuneCampagneToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.ajoutDuneCampagneToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.ajoutDuneCampagneToolStripMenuItem.Text = "Ajout d\'une campagne";
             this.ajoutDuneCampagneToolStripMenuItem.Click += new System.EventHandler(this.ajoutDuneCampagneToolStripMenuItem_Click);
+            // 
+            // ajoutDuneAgenceToolStripMenuItem
+            // 
+            this.ajoutDuneAgenceToolStripMenuItem.Name = "ajoutDuneAgenceToolStripMenuItem";
+            this.ajoutDuneAgenceToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.ajoutDuneAgenceToolStripMenuItem.Text = "Ajout d\'une agence";
+            this.ajoutDuneAgenceToolStripMenuItem.Click += new System.EventHandler(this.ajoutDuneAgenceToolStripMenuItem_Click);
+            // 
+            // ajoutDunVIPToolStripMenuItem
+            // 
+            this.ajoutDunVIPToolStripMenuItem.Name = "ajoutDunVIPToolStripMenuItem";
+            this.ajoutDunVIPToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.ajoutDunVIPToolStripMenuItem.Text = "Ajout d\'un VIP";
+            this.ajoutDunVIPToolStripMenuItem.Click += new System.EventHandler(this.ajoutDunVIPToolStripMenuItem_Click);
+            // 
+            // invitationVIPÀUnÉvénementToolStripMenuItem
+            // 
+            this.invitationVIPÀUnÉvénementToolStripMenuItem.Name = "invitationVIPÀUnÉvénementToolStripMenuItem";
+            this.invitationVIPÀUnÉvénementToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.invitationVIPÀUnÉvénementToolStripMenuItem.Text = "Inviter un VIP à un événement";
+            this.invitationVIPÀUnÉvénementToolStripMenuItem.Click += new System.EventHandler(this.invitationVIPÀUnÉvénementToolStripMenuItem_Click);
             // 
             // modificationToolStripMenuItem
             // 
@@ -142,12 +160,12 @@ namespace JRProjetCampagneGUI
             this.lblTitre.TabIndex = 1;
             this.lblTitre.Text = "Bienvenue sur le menu des campagnes";
             // 
-            // consultationDesAgencesToolStripMenuItem
+            // consultationDesÉvénementsToolStripMenuItem
             // 
-            this.consultationDesAgencesToolStripMenuItem.Name = "consultationDesAgencesToolStripMenuItem";
-            this.consultationDesAgencesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.consultationDesAgencesToolStripMenuItem.Text = "Consultation des agences";
-            this.consultationDesAgencesToolStripMenuItem.Click += new System.EventHandler(this.consultationDesAgencesToolStripMenuItem_Click_1);
+            this.consultationDesÉvénementsToolStripMenuItem.Name = "consultationDesÉvénementsToolStripMenuItem";
+            this.consultationDesÉvénementsToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.consultationDesÉvénementsToolStripMenuItem.Text = "Consultation des événements";
+            this.consultationDesÉvénementsToolStripMenuItem.Click += new System.EventHandler(this.consultationDesÉvénementsToolStripMenuItem_Click);
             // 
             // FrmAccueil
             // 
@@ -184,6 +202,8 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.ToolStripMenuItem ajoutDuneCampagneToolStripMenuItem;
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.ToolStripMenuItem consultationDesAgencesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem invitationVIPÀUnÉvénementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultationDesÉvénementsToolStripMenuItem;
     }
 }
 

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneDAL
 {
+    /// <summary>
+    /// La classe VIPDAO accède à la table VIP dans la base de données
+    /// </summary>
     public class VIPDAO
     {
         private static VIPDAO uneInstance;
@@ -22,6 +25,50 @@ namespace JRProjetCampagneDAL
                 uneInstance = new VIPDAO();
             }
             return uneInstance;
+        }
+
+        public List<VIP> GetLesVIP()
+        {
+            
+                int id;
+                string nom;
+
+                List<VIP> lesVIP = new List<VIP>();
+
+                //Recupère l'objet commande et ouvre la connexion à la BDD
+                SqlCommand command = Command.GetObjCommande();
+
+                // Nettoie le 'cache'
+                command.Parameters.Clear();
+
+                command.CommandText = "GetVIPListeDeroulante";
+                SqlDataReader monLecteur = command.ExecuteReader();
+
+                while (monLecteur.Read())
+                {
+
+
+                    int.TryParse(monLecteur["id"].ToString(), out id);
+
+                    if (monLecteur["nom"] == DBNull.Value)
+                    {
+                        nom = default(string);
+                    }
+                    else
+                    {
+                        nom = monLecteur["nom"].ToString();
+                    }
+
+                    lesVIP.Add(new VIP(id, nom));
+                }
+                // Fermeture du lecteur
+                monLecteur.Close();
+
+                // Fermeture de la connexion
+                command.Connection.Close();
+
+                return lesVIP;
+            
         }
 
 

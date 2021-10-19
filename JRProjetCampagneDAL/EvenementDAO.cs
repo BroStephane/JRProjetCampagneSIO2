@@ -24,6 +24,117 @@ namespace JRProjetCampagneDAL
         private EvenementDAO() { }
 
 
+        public List<Evenement> GetLesEvenementsConsult()
+        {
+            int id, idTheme, idCampagne;
+            DateTime dateDeb;
+            DateTime dateFin;
+            string libelleTheme, libelleCampagne;
+            Theme leTheme;
+            Campagne laCampagne;
+            Evenement unEv;
+
+            List<Evenement> lesEvenements = new List<Evenement>();
+
+            SqlCommand command = Command.GetObjCommande();
+
+            // Nettoie le 'cache'
+            command.Parameters.Clear();
+
+            command.CommandText = "GetLesEvenements";
+            
+            SqlDataReader monLecteur = command.ExecuteReader();
+
+            while (monLecteur.Read())
+            {
+
+
+                int.TryParse(monLecteur["id"].ToString(), out id);
+                int.TryParse(monLecteur["id_Theme"].ToString(), out idTheme);
+                int.TryParse(monLecteur["id_Campagne"].ToString(), out idCampagne);
+
+                DateTime.TryParse(monLecteur["dateDebut"].ToString(), out dateDeb);
+                DateTime.TryParse(monLecteur["dateFin"].ToString(), out dateFin);
+
+
+                if (monLecteur["libelleTheme"] == DBNull.Value)
+                {
+                    libelleTheme = default(string);
+                }
+                else
+                {
+                    libelleTheme = monLecteur["libelleTheme"].ToString();
+                }
+                if (monLecteur["libelleCampagne"] == DBNull.Value)
+                {
+                    libelleCampagne = default(string);
+                }
+                else
+                {
+                    libelleCampagne = monLecteur["libelleCampagne"].ToString();
+                }
+
+                leTheme = new Theme(idTheme, libelleTheme);
+
+                laCampagne = new Campagne(idCampagne, libelleCampagne);
+
+                unEv = new Evenement(id, dateDeb, dateFin, leTheme, laCampagne);
+
+                lesEvenements.Add(unEv);
+                
+            }
+            // Fermeture du lecteur
+            monLecteur.Close();
+
+            // Fermeture de la connexion
+            command.Connection.Close();
+
+            return lesEvenements;
+
+        }
+
+
+        public List<Evenement> GetLesEvenements()
+        {
+            int id;
+            string leLib;
+
+            List<Evenement> lesEvenements = new List<Evenement>();
+
+            //Recupère l'objet commande et ouvre la connexion à la BDD
+            SqlCommand command = Command.GetObjCommande();
+
+            // Nettoie le 'cache'
+            command.Parameters.Clear();
+
+            command.CommandText = "GetLesEvenementsListeDeroulante";
+            SqlDataReader monLecteur = command.ExecuteReader();
+
+            while (monLecteur.Read())
+            {
+
+
+                int.TryParse(monLecteur["id"].ToString(), out id);
+
+                if (monLecteur["libelle"] == DBNull.Value)
+                {
+                    leLib = default(string);
+                }
+                else
+                {
+                    leLib = monLecteur["libelle"].ToString();
+                }
+
+                lesEvenements.Add(new Evenement(id, leLib));
+            }
+            // Fermeture du lecteur
+            monLecteur.Close();
+
+            // Fermeture de la connexion
+            command.Connection.Close();
+
+            return lesEvenements;
+        }
 
         public int AddEvenement(Evenement unEvenement)
         {

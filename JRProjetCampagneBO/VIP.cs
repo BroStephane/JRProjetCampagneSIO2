@@ -20,6 +20,12 @@ namespace JRProjetCampagneBO
             this.id = id;
         }
 
+        public VIP(int id, string nom)
+        {
+            this.id = id;
+            this.nom = nom;
+        }
+
         public VIP(int id, string nom, string rue, string mail)
         {
             this.id = id;

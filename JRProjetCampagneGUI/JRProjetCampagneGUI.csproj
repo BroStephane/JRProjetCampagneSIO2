@@ -88,6 +88,18 @@
     <Compile Include="FrmConsultAgence.Designer.cs">
       <DependentUpon>FrmConsultAgence.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsultEvenement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultEvenement.Designer.cs">
+      <DependentUpon>FrmConsultEvenement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInvitationVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInvitationVIP.Designer.cs">
+      <DependentUpon>FrmInvitationVIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
@@ -110,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultAgence.resx">
       <DependentUpon>FrmConsultAgence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultEvenement.resx">
+      <DependentUpon>FrmConsultEvenement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInvitationVIP.resx">
+      <DependentUpon>FrmInvitationVIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

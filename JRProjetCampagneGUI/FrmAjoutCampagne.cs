@@ -62,19 +62,20 @@ namespace JRProjetCampagneGUI
                 throw;
             }
 
-            //créer un nouveau contrôleur DateTimePicker et l'initialiser
-            DateTimePicker dtpDateDebut = new DateTimePicker();
-            DateTimePicker dtpDateFin = new DateTimePicker();
+           
 
             //configurer le format
-            dtpDateDebut.CustomFormat = "yyyy/MM/dd";
             dtpDateDebut.Format = DateTimePickerFormat.Custom;
-            dtpDateFin.CustomFormat = "yyyy/MM/dd";
+            dtpDateDebut.CustomFormat = "dd MMMMM yyyy";
+            dtpDateDebut.MinDate = DateTime.Today;
+
             dtpDateFin.Format = DateTimePickerFormat.Custom;
+            dtpDateFin.CustomFormat = "dd MMMMM yyyy";
+            dtpDateFin.MinDate = DateTime.Today;
 
             //configurer la date minimun 
-            dtpDateDebut.MinDate = DateTime.Today;
-            dtpDateFin.MinDate = DateTime.Today;
+
+
 
         }
 
@@ -163,6 +164,18 @@ namespace JRProjetCampagneGUI
                     MessageBox.Show("Ajout du la campagne réalisé", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
+            }
+        }
+
+        private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dtpDateFin.MinDate = dtpDateDebut.Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

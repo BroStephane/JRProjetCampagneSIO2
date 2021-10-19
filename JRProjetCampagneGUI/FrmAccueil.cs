@@ -77,7 +77,22 @@ namespace JRProjetCampagneGUI
             FrmConsultAgence leFormAppele = new FrmConsultAgence();
 
             //affichage du formulaire
-            leFormAppele.Show();
+            leFormAppele.ShowDialog();
+        }
+
+        private void invitationVIPÀUnÉvénementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance dee la classe du formualire appeler
+            FrmInvitationVIP leFormAppele = new FrmInvitationVIP();
+
+            //affichage du formulaire
+            leFormAppele.ShowDialog();
+        }
+
+        private void consultationDesÉvénementsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultEvenement cons = new FrmConsultEvenement();
+            cons.ShowDialog();
         }
     }
 }
