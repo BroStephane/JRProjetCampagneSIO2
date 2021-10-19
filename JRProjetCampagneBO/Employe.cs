@@ -31,6 +31,7 @@ namespace JRProjetCampagneBO
         public Profil UnProfil { get => unProfil; set => unProfil = value; }
         public string Identite { get => nom + " " + prenom; }
 
+
         /// <summary>
         /// le constructeur valorisant tous les attributs
         /// </summary>
@@ -72,6 +73,17 @@ namespace JRProjetCampagneBO
         public Employe(int id)
         {
             this.id = id;
+        }
+
+        /// <summary>
+        /// le constructeur valorisant le nom et le prénom
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        public Employe(string nom, string prenom)
+        {
+            this.nom = nom;
+            this.prenom = prenom;
         }
     }
 }

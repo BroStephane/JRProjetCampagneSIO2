@@ -32,6 +32,8 @@ namespace JRProjetCampagneBO
         public Employe UnEmploye { get => unEmploye; set => unEmploye = value; }
         public Agence UneAgenceEvenementiel { get => uneAgenceEvenementiel; set => uneAgenceEvenementiel = value; }
         public Agence UneAgenceCommunication { get => uneAgenceCommunication; set => uneAgenceCommunication = value; }
+        public string unEmployeNom { get => unEmployeNom.Nom; }
+        public string unEmployePrenom { get => unEmployePrenom.Prenom; }
 
 
         //premier constructeur pour valoriser tous les attributs
