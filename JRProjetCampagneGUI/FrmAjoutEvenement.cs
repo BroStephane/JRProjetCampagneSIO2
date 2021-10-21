@@ -46,13 +46,13 @@ namespace JRProjetCampagneGUI
             }
             //Determine le format de la dateTimePanel
             dtpDebut.Format = DateTimePickerFormat.Custom;
-            dtpDebut.CustomFormat = "yyyy/MM/dd ";
+            dtpDebut.CustomFormat = "dd MMMMM yyyy";
             dtpDebut.MinDate = DateTime.Today;
 
             //Determine le format de la dateTimePanel
             dtpFin.Format = DateTimePickerFormat.Custom;
-            dtpFin.CustomFormat = "yyyy/MM/dd ";
-            dtpFin.MinDate = dtpDebut.Value;
+            dtpFin.CustomFormat = "dd MMMMM yyyy ";
+            dtpFin.MinDate = DateTime.Today;
 
 
 
@@ -63,14 +63,17 @@ namespace JRProjetCampagneGUI
             //Instanciation des données saisie par l'utilisateur
             string dateDebut = dtpDebut.Text.Trim();
             string dateFin = dtpFin.Text.Trim();
+            string msgErr = "";
 
             if (dateDebut == "")
             {
-                MessageBox.Show("Veuillez sélectionner une date de début", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msgErr += "\nVeuillez sélectionner une date de début";
+
             }
             if (dateFin == "")
             {
-                MessageBox.Show("Veuillez sélectionner une date de fin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msgErr += "\nVeuillez sélectionner une date de fin";
+
             }
 
             //Convertie le format string en DateTime
@@ -85,8 +88,8 @@ namespace JRProjetCampagneGUI
 
             if (cbxTheme.SelectedIndex == -1)
             {
+                msgErr += "\nVeuillez sélectionner un Thême";
 
-                MessageBox.Show("Veuillez sélectionner un Thème", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -94,7 +97,8 @@ namespace JRProjetCampagneGUI
             }
             if (cbxCampagne.SelectedIndex == -1)
             {
-                MessageBox.Show("Veuillez sélectionner un Campagne", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msgErr += "\nVeuillez sélectionner une Campagne";
+
             }
             else
             {
@@ -107,7 +111,12 @@ namespace JRProjetCampagneGUI
 
             try
             {
-                if (idCampagne != 0 && idTheme != 0 && dateDebut != "" && dateFin != "")
+                if (dtpFin.Value > dtpDebut.Value.AddDays(3))
+                {
+                    msgErr += "Veuillez saisir une date de fin inférieur à 3 jours suivant la date de début";
+                }
+
+                if (msgErr == "")
                 {
                     int nb = EvenementManager.GetInstance().AddEvenement(laDateDeb, laDateFin, idTheme, idCampagne);
                     if (nb == 0)
@@ -116,13 +125,14 @@ namespace JRProjetCampagneGUI
                     }
                     else
                     {
-                        MessageBox.Show("l'ajout de l'évènement à été effectué", "Information", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
-
+                        MessageBox.Show("l'ajout de l'évènement à été effectué", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cbxCampagne.SelectedItem = null;
+                        cbxTheme.SelectedItem = null;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Erreur : vueillez verifier vos sélection", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(msgErr, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 
@@ -133,6 +143,18 @@ namespace JRProjetCampagneGUI
             }
 
         }
+
+        private void dtpDebut_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dtpFin.MinDate = dtpDebut.Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
-    
+
 }

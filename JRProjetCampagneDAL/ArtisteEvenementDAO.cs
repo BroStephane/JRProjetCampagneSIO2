@@ -20,7 +20,8 @@ namespace JRProjetCampagneDAL
             }
             return uneInstance;
         }
-
+        // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
+        // objet à l'extérieur de la classe avec l'instruction new ...
         private ArtisteEvenementDAO()
         {
 

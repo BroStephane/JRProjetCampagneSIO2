@@ -91,6 +91,7 @@ namespace JRProjetCampagneGUI
             this.dtpDebut.Name = "dtpDebut";
             this.dtpDebut.Size = new System.Drawing.Size(265, 23);
             this.dtpDebut.TabIndex = 11;
+            this.dtpDebut.ValueChanged += new System.EventHandler(this.dtpDebut_ValueChanged);
             // 
             // dtpFin
             // 

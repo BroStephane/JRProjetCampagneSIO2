@@ -21,10 +21,88 @@ namespace JRProjetCampagneDAL
             }
             return uneInstance;
         }
+        // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
+        // objet à l'extérieur de la classe avec l'instruction new ...
         private EvenementDAO() { }
 
+        /// <summary>
+        /// Retourne une liste d'événements 
+        /// </summary>
+        /// <returns></returns>
+        public List<Evenement> GetLesEvenements()
+        {
+            int id, idTheme, idCampagne;
+            DateTime dateDeb;
+            DateTime dateFin;
+            string libelleTheme, libelleCampagne;
+            Theme leTheme;
+            Campagne laCampagne;
+            Evenement unEv;
+
+            List<Evenement> lesEvenements = new List<Evenement>();
+
+            SqlCommand command = Command.GetObjCommande();
+
+            // Nettoie le 'cache'
+            command.Parameters.Clear();
+
+            command.CommandText = "GetLesEvenements";
+            
+            SqlDataReader monLecteur = command.ExecuteReader();
+
+            while (monLecteur.Read())
+            {
 
 
+                int.TryParse(monLecteur["id"].ToString(), out id);
+                int.TryParse(monLecteur["id_Theme"].ToString(), out idTheme);
+                int.TryParse(monLecteur["id_Campagne"].ToString(), out idCampagne);
+
+                DateTime.TryParse(monLecteur["dateDebut"].ToString(), out dateDeb);
+                DateTime.TryParse(monLecteur["dateFin"].ToString(), out dateFin);
+
+
+                if (monLecteur["libelleTheme"] == DBNull.Value)
+                {
+                    libelleTheme = default(string);
+                }
+                else
+                {
+                    libelleTheme = monLecteur["libelleTheme"].ToString();
+                }
+                if (monLecteur["libelleCampagne"] == DBNull.Value)
+                {
+                    libelleCampagne = default(string);
+                }
+                else
+                {
+                    libelleCampagne = monLecteur["libelleCampagne"].ToString();
+                }
+
+                leTheme = new Theme(idTheme, libelleTheme);
+
+                laCampagne = new Campagne(idCampagne, libelleCampagne);
+
+                unEv = new Evenement(id, dateDeb, dateFin, leTheme, laCampagne);
+
+                lesEvenements.Add(unEv);
+                
+            }
+            // Fermeture du lecteur
+            monLecteur.Close();
+
+            // Fermeture de la connexion
+            command.Connection.Close();
+
+            return lesEvenements;
+
+        }
+
+        /// <summary>
+        /// Ajoute un événement dans la table Evenement de la base de données
+        /// </summary>
+        /// <param name="unEvenement"></param>
+        /// <returns></returns>
         public int AddEvenement(Evenement unEvenement)
         {
             // Récupérer l'objet responsable de la connexion à la db

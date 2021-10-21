@@ -62,6 +62,7 @@ namespace JRProjetCampagneGUI
                 throw;
             }
 
+
             //configurer le format
             dtpDateDebut.Format = DateTimePickerFormat.Custom;
             dtpDateDebut.CustomFormat = "dd/MM/yyyy";
@@ -72,6 +73,7 @@ namespace JRProjetCampagneGUI
 
             //configurer la date minimun 
             
+
 
         }
 
@@ -174,6 +176,18 @@ namespace JRProjetCampagneGUI
         private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
         {
             dtpDateFin.MinDate = dtpDateDebut.Value;
+        }
+
+        private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dtpDateFin.MinDate = dtpDateDebut.Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

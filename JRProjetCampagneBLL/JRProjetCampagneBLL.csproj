@@ -52,6 +52,7 @@
     <Compile Include="CourantArtistiqueManager.cs" />
     <Compile Include="EmployeManager.cs" />
     <Compile Include="EvenementManager.cs" />
+    <Compile Include="InvitationVIPManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeManager.cs" />
     <Compile Include="VilleManager.cs" />

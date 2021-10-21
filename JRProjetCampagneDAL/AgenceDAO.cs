@@ -120,6 +120,7 @@ namespace JRProjetCampagneDAL
                 else
                 {
                     leType = Char.Parse(reader["Type de l'agence"].ToString());
+                    
                 }
                 if (reader["Nom de la ville"] == DBNull.Value)
                 {
