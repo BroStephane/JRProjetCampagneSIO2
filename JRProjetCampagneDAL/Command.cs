@@ -28,6 +28,7 @@ namespace JRProjetCampagneDAL
             {
                 objCommande.Connection.Open();
             }
+            objCommande.Parameters.Clear();
             return objCommande;
         }
 

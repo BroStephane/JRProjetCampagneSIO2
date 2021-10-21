@@ -69,7 +69,17 @@ namespace JRProjetCampagneBLL
         {
             List<Campagne> lesCampagnes = new List<Campagne>();
             return CampagneDAO.GetInstance().GetCampagnes();
-
         }
+
+        /// <summary>
+        /// appel de la couche DAL pour récupérer une collection des campagnes
+        /// </summary>
+        /// <returns>Retourne une collection de toutes les campagnes de la base de données</returns>
+        public List<Campagne> GetLesCampagnes()
+        {
+            //Ici, on peut appliquer des règles métier
+            return CampagneDAO.GetInstance().GetLesCampagnes();
+        }
+
     }
 }

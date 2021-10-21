@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneBO
 {
+    /// <summary>
+    /// Classe publique de la table Employe de la bse de données GSB 
+    /// </summary>
     public class Employe
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace JRProjetCampagneBO
         public Service UnService { get => unService; set => unService = value; }
         public Profil UnProfil { get => unProfil; set => unProfil = value; }
         public string Identite { get => nom + " " + prenom; }
+
 
         /// <summary>
         /// le constructeur valorisant tous les attributs
@@ -72,6 +76,17 @@ namespace JRProjetCampagneBO
         public Employe(int id)
         {
             this.id = id;
+        }
+
+        /// <summary>
+        /// le constructeur valorisant le nom et le prénom
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        public Employe(string nom, string prenom)
+        {
+            this.nom = nom;
+            this.prenom = prenom;
         }
     }
 }

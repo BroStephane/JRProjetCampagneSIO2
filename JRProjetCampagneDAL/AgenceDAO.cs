@@ -213,7 +213,7 @@ namespace JRProjetCampagneDAL
             SqlCommand maCommand = Command.GetObjCommande();
 
             // on exécute la requête et on récupère dans un DataReader les enregistrements
-            maCommand.CommandText = "dbo.GetLesAgencesEvenementielles";
+            maCommand.CommandText = "dbo.GetLesAgencesEvenementiellesListeDeroulante";
             SqlDataReader reader = maCommand.ExecuteReader();
 
             // pour chaque enregistrement du DataReader on crée un objet instance de
@@ -269,7 +269,7 @@ namespace JRProjetCampagneDAL
             SqlCommand maCommand = Command.GetObjCommande();
 
             // on exécute la requête et on récupère dans un DataReader les enregistrements
-            maCommand.CommandText = "dbo.GetLesAgencesCommunications";
+            maCommand.CommandText = "dbo.GetLesAgencesCommunicationsListeDeroulante";
             SqlDataReader reader = maCommand.ExecuteReader();
 
             // pour chaque enregistrement du DataReader on crée un objet instance de

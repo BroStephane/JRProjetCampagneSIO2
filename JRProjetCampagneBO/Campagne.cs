@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneBO
 {
+    /// <summary>
+    /// Classe publique de la table Campagne de la base de données GSB 
+    /// </summary>
     public class Campagne
     {
         /// <summary>
@@ -32,6 +35,9 @@ namespace JRProjetCampagneBO
         public Employe UnEmploye { get => unEmploye; set => unEmploye = value; }
         public Agence UneAgenceEvenementiel { get => uneAgenceEvenementiel; set => uneAgenceEvenementiel = value; }
         public Agence UneAgenceCommunication { get => uneAgenceCommunication; set => uneAgenceCommunication = value; }
+        public string unEmployeIdentite { get => unEmploye.Identite; } 
+        public string uneAgenceEvenementielNom { get => uneAgenceEvenementiel.Nom; }
+        public string uneAgenceCommunicationNom { get => uneAgenceCommunication.Nom; }
 
 
         //premier constructeur pour valoriser tous les attributs

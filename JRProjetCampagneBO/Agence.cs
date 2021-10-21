@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneBO
 {
+    /// <summary>
+    /// Classe publique de la table Agence de la base de données GSB 
+    /// </summary>
     public class Agence
     {
         /// <summary>
@@ -75,7 +78,16 @@ namespace JRProjetCampagneBO
             this.Id = id;
         }
 
-        
+        /// <summary>
+        /// le constructeur valorisant le nom
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
+        public Agence(string nom)
+        {
+            this.Nom = nom;
+        }
+
         //Constructeur permettant de valoriser seulement 7 attributs
         /// <summary>
         /// le constructeur valorisant le nom, la rue, le telephone, l'email de contact, le site web, le type d'agence et uneVille
