@@ -106,6 +106,18 @@
     <Compile Include="FrmConsultCampagne.Designer.cs">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSupEvenement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupEvenement.Designer.cs">
+      <DependentUpon>FrmSupEvenement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSupVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupVIP.Designer.cs">
+      <DependentUpon>FrmSupVIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
@@ -137,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultCampagne.resx">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupEvenement.resx">
+      <DependentUpon>FrmSupEvenement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupVIP.resx">
+      <DependentUpon>FrmSupVIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

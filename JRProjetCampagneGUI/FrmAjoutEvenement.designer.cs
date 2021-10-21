@@ -59,7 +59,7 @@ namespace JRProjetCampagneGUI
             // 
             this.lblTheme.AutoSize = true;
             this.lblTheme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTheme.Location = new System.Drawing.Point(87, 71);
+            this.lblTheme.Location = new System.Drawing.Point(114, 73);
             this.lblTheme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTheme.Name = "lblTheme";
             this.lblTheme.Size = new System.Drawing.Size(181, 20);
@@ -128,7 +128,7 @@ namespace JRProjetCampagneGUI
             // 
             this.lblDateDebut.AutoSize = true;
             this.lblDateDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDebut.Location = new System.Drawing.Point(164, 198);
+            this.lblDateDebut.Location = new System.Drawing.Point(172, 198);
             this.lblDateDebut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateDebut.Name = "lblDateDebut";
             this.lblDateDebut.Size = new System.Drawing.Size(123, 20);
