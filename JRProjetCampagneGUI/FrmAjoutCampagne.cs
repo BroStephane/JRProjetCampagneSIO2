@@ -173,11 +173,7 @@ namespace JRProjetCampagneGUI
             
         }
 
-        private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
-        {
-            dtpDateFin.MinDate = dtpDateDebut.Value;
-        }
-
+       
         private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
         {
             try

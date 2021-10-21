@@ -73,7 +73,7 @@ namespace JRProjetCampagneGUI
             this.consultationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultationDesAgencesToolStripMenuItem,
 
-            this.consultationDesÉvénementsToolStripMenuItem});
+            this.consultationDesÉvénementsToolStripMenuItem,
 
             this.consultationDesCampagnesToolStripMenuItem});
 
