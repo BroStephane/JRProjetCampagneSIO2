@@ -87,7 +87,7 @@ namespace JRProjetCampagneGUI
             this.Controls.Add(this.lblEvenement);
             this.Controls.Add(this.lblTitre);
             this.Name = "FrmSupEvenement";
-            this.Text = "FrmSupEvenement";
+            this.Text = "Suppression d\'un événement";
             this.ResumeLayout(false);
             this.PerformLayout();
 

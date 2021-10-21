@@ -84,6 +84,92 @@ namespace JRProjetCampagneDAL
 
         }
 
+        public List<VIP> GetLesVIPConsult()
+        {
+
+            int id, numero_insee, idCategVIP;
+            string nom;
+            string libelle, nomVille;
+            string rue = "";
+            string mail = "";
+
+
+            List<VIP> lesVIP = new List<VIP>();
+
+            //Recupère l'objet commande et ouvre la connexion à la BDD
+            SqlCommand command = Command.GetObjCommande();
+
+            // Nettoie le 'cache'
+            command.Parameters.Clear();
+
+            command.CommandText = "GetLesVIP";
+            SqlDataReader monLecteur = command.ExecuteReader();
+
+            while (monLecteur.Read())
+            {
+               
+                int.TryParse(monLecteur["id"].ToString(), out id);
+                int.TryParse(monLecteur["id_CategorieVIP"].ToString(), out idCategVIP);
+                int.TryParse(monLecteur["numero_insee"].ToString(), out numero_insee);
+
+                if (monLecteur["nom"] == DBNull.Value)
+                {
+                    nom = default(string);
+                }
+                else
+                {
+                    nom = monLecteur["nom"].ToString();
+                }
+                if (monLecteur["rue"] == DBNull.Value)
+                {
+                    rue = default(string);
+                }
+                else
+                {
+                    rue = monLecteur["rue"].ToString();
+                }
+                if (monLecteur["email"] == DBNull.Value)
+                {
+                    mail = default(string);
+                }
+                else
+                {
+                    mail = monLecteur["email"].ToString();
+                }
+                if (monLecteur["libelle"] == DBNull.Value)
+                {
+                    libelle = default(string);
+                }
+                else
+                {
+                    libelle = monLecteur["libelle"].ToString();
+                }
+                if (monLecteur["nomVille"] == DBNull.Value)
+                {
+                    nomVille = default(string);
+                }
+                else
+                {
+                    nomVille = monLecteur["nomVille"].ToString();
+                }
+
+                Ville uneVille = new Ville(numero_insee, nomVille);
+                CategorieVIP uneCategVIP = new CategorieVIP(id, libelle);
+
+                lesVIP.Add(new VIP(id, nom, rue, mail, uneVille, uneCategVIP));
+            }
+            // Fermeture du lecteur
+            monLecteur.Close();
+
+            // Fermeture de la connexion
+            command.Connection.Close();
+
+            return lesVIP;
+
+        }
+
+
+
         /// <summary>
         /// Ajoute un vip dans la base de données
         /// </summary>

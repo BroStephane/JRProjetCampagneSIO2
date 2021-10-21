@@ -124,5 +124,13 @@ namespace JRProjetCampagneGUI
             //affichage du formulaire
             frmsup.ShowDialog();
         }
+
+        private void consultationDesVIPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmConsultVIP consult = new FrmConsultVIP();
+            //affichage du formulaire
+            consult.ShowDialog();
+        }
     }
 }

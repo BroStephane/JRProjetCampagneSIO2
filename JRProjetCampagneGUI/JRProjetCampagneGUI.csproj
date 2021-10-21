@@ -94,6 +94,12 @@
     <Compile Include="FrmConsultEvenement.Designer.cs">
       <DependentUpon>FrmConsultEvenement.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsultVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultVIP.Designer.cs">
+      <DependentUpon>FrmConsultVIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmInvitationVIP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultEvenement.resx">
       <DependentUpon>FrmConsultEvenement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultVIP.resx">
+      <DependentUpon>FrmConsultVIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInvitationVIP.resx">
       <DependentUpon>FrmInvitationVIP.cs</DependentUpon>
