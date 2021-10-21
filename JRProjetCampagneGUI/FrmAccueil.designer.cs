@@ -42,9 +42,11 @@ namespace JRProjetCampagneGUI
             this.invitationVIPÀUnÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.suppressionDunÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitrePrincipale = new System.Windows.Forms.Label();
             this.suppressionDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,6 +173,7 @@ namespace JRProjetCampagneGUI
             this.suppressionToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.suppressionToolStripMenuItem.Text = "Suppression";
             // 
+
             // suppressionDunÉvénementToolStripMenuItem
             // 
             this.suppressionDunÉvénementToolStripMenuItem.Name = "suppressionDunÉvénementToolStripMenuItem";
@@ -180,6 +183,7 @@ namespace JRProjetCampagneGUI
             // 
             // lblTitrePrincipale
             // 
+
             this.lblTitrePrincipale.AutoSize = true;
             this.lblTitrePrincipale.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitrePrincipale.Location = new System.Drawing.Point(372, 66);
@@ -187,6 +191,7 @@ namespace JRProjetCampagneGUI
             this.lblTitrePrincipale.Size = new System.Drawing.Size(527, 33);
             this.lblTitrePrincipale.TabIndex = 1;
             this.lblTitrePrincipale.Text = "Bienvenue sur le menu des campagnes";
+
             // 
             // suppressionDunVIPToolStripMenuItem
             // 
@@ -194,6 +199,7 @@ namespace JRProjetCampagneGUI
             this.suppressionDunVIPToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.suppressionDunVIPToolStripMenuItem.Text = "Suppression d\'un VIP";
             this.suppressionDunVIPToolStripMenuItem.Click += new System.EventHandler(this.suppressionDunVIPToolStripMenuItem_Click);
+
             // 
             // FrmAccueil
             // 
