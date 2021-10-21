@@ -31,11 +31,11 @@ namespace JRProjetCampagneGUI
         {
             this.lblTitre = new System.Windows.Forms.Label();
             this.pnlAjout = new System.Windows.Forms.Panel();
+            this.btnEnvoyer = new System.Windows.Forms.Button();
             this.cbxEvenement = new System.Windows.Forms.ComboBox();
             this.lblEvenement = new System.Windows.Forms.Label();
             this.cbxVIP = new System.Windows.Forms.ComboBox();
             this.lblVIP = new System.Windows.Forms.Label();
-            this.btnEnvoyer = new System.Windows.Forms.Button();
             this.pnlAjout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,13 +61,24 @@ namespace JRProjetCampagneGUI
             this.pnlAjout.Size = new System.Drawing.Size(693, 463);
             this.pnlAjout.TabIndex = 1;
             // 
+            // btnEnvoyer
+            // 
+            this.btnEnvoyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnvoyer.Location = new System.Drawing.Point(436, 275);
+            this.btnEnvoyer.Name = "btnEnvoyer";
+            this.btnEnvoyer.Size = new System.Drawing.Size(86, 36);
+            this.btnEnvoyer.TabIndex = 4;
+            this.btnEnvoyer.Text = "Envoyer";
+            this.btnEnvoyer.UseVisualStyleBackColor = true;
+            this.btnEnvoyer.Click += new System.EventHandler(this.btnEnvoyer_Click);
+            // 
             // cbxEvenement
             // 
             this.cbxEvenement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxEvenement.FormattingEnabled = true;
-            this.cbxEvenement.Location = new System.Drawing.Point(209, 166);
+            this.cbxEvenement.Location = new System.Drawing.Point(190, 162);
             this.cbxEvenement.Name = "cbxEvenement";
-            this.cbxEvenement.Size = new System.Drawing.Size(313, 24);
+            this.cbxEvenement.Size = new System.Drawing.Size(458, 24);
             this.cbxEvenement.TabIndex = 3;
             // 
             // lblEvenement
@@ -98,17 +109,6 @@ namespace JRProjetCampagneGUI
             this.lblVIP.Size = new System.Drawing.Size(47, 20);
             this.lblVIP.TabIndex = 0;
             this.lblVIP.Text = "VIP : ";
-            // 
-            // btnEnvoyer
-            // 
-            this.btnEnvoyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnvoyer.Location = new System.Drawing.Point(436, 275);
-            this.btnEnvoyer.Name = "btnEnvoyer";
-            this.btnEnvoyer.Size = new System.Drawing.Size(86, 36);
-            this.btnEnvoyer.TabIndex = 4;
-            this.btnEnvoyer.Text = "Envoyer";
-            this.btnEnvoyer.UseVisualStyleBackColor = true;
-            this.btnEnvoyer.Click += new System.EventHandler(this.btnEnvoyer_Click);
             // 
             // FrmInvitationVIP
             // 

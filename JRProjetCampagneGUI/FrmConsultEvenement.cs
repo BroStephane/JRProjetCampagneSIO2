@@ -25,7 +25,7 @@ namespace JRProjetCampagneGUI
 
         private void btnGet_Click(object sender, EventArgs e)
         {
-            dtgEvenement.DataSource = EvenementManager.GetInstance().GetLesEvenementsConsult();
+            dtgEvenement.DataSource = EvenementManager.GetInstance().GetLesEvenements();
             dtgEvenement.Columns[0].Visible = false;
             dtgEvenement.Columns[3].Visible = false;
             dtgEvenement.Columns[4].Visible = false;

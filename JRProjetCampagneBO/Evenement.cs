@@ -16,6 +16,11 @@ namespace JRProjetCampagneBO
         Campagne uneCampagne;
         Artiste unArtiste;
 
+        public Evenement(int id)
+        {
+            this.id = id;
+        }
+
         public Evenement(int id, string libelle)
         {
             this.id = id;
@@ -49,11 +54,11 @@ namespace JRProjetCampagneBO
         public Artiste UnArtiste { get => unArtiste; set => unArtiste = value; }
         public string Libelle { get => libelle; set => libelle = value; }
 
-        public string leLib { get => libelle; }
-
         public string libTheme { get => unTheme.Libelle; }
 
         public string libCampagne { get => uneCampagne.Libelle; }
+
+        public string leLib { get => libCampagne + " - " + libTheme + " du " + DateDebut.ToString("dd/MM/yyyy") + " au " + DateFin.ToString("dd/MM/yyyy"); }
 
     }
 }

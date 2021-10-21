@@ -21,10 +21,15 @@ namespace JRProjetCampagneDAL
             }
             return uneInstance;
         }
+        // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
+        // objet à l'extérieur de la classe avec l'instruction new ...
         private EvenementDAO() { }
 
-
-        public List<Evenement> GetLesEvenementsConsult()
+        /// <summary>
+        /// Retourne une liste d'événements 
+        /// </summary>
+        /// <returns></returns>
+        public List<Evenement> GetLesEvenements()
         {
             int id, idTheme, idCampagne;
             DateTime dateDeb;
@@ -93,49 +98,11 @@ namespace JRProjetCampagneDAL
 
         }
 
-
-        public List<Evenement> GetLesEvenements()
-        {
-            int id;
-            string leLib;
-
-            List<Evenement> lesEvenements = new List<Evenement>();
-
-            //Recupère l'objet commande et ouvre la connexion à la BDD
-            SqlCommand command = Command.GetObjCommande();
-
-            // Nettoie le 'cache'
-            command.Parameters.Clear();
-
-            command.CommandText = "GetLesEvenementsListeDeroulante";
-            SqlDataReader monLecteur = command.ExecuteReader();
-
-            while (monLecteur.Read())
-            {
-
-
-                int.TryParse(monLecteur["id"].ToString(), out id);
-
-                if (monLecteur["libelle"] == DBNull.Value)
-                {
-                    leLib = default(string);
-                }
-                else
-                {
-                    leLib = monLecteur["libelle"].ToString();
-                }
-
-                lesEvenements.Add(new Evenement(id, leLib));
-            }
-            // Fermeture du lecteur
-            monLecteur.Close();
-
-            // Fermeture de la connexion
-            command.Connection.Close();
-
-            return lesEvenements;
-        }
-
+        /// <summary>
+        /// Ajoute un événement dans la table Evenement de la base de données
+        /// </summary>
+        /// <param name="unEvenement"></param>
+        /// <returns></returns>
         public int AddEvenement(Evenement unEvenement)
         {
             // Récupérer l'objet responsable de la connexion à la db

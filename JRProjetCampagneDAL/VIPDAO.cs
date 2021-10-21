@@ -27,48 +27,58 @@ namespace JRProjetCampagneDAL
             return uneInstance;
         }
 
+        // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
+        // objet à l'extérieur de la classe avec l'instruction new ...
+        private VIPDAO()
+        {
+
+        }
+
+
+
+
         public List<VIP> GetLesVIP()
         {
-            
-                int id;
-                string nom;
 
-                List<VIP> lesVIP = new List<VIP>();
+            int id;
+            string nom;
 
-                //Recupère l'objet commande et ouvre la connexion à la BDD
-                SqlCommand command = Command.GetObjCommande();
+            List<VIP> lesVIP = new List<VIP>();
 
-                // Nettoie le 'cache'
-                command.Parameters.Clear();
+            //Recupère l'objet commande et ouvre la connexion à la BDD
+            SqlCommand command = Command.GetObjCommande();
 
-                command.CommandText = "GetVIPListeDeroulante";
-                SqlDataReader monLecteur = command.ExecuteReader();
+            // Nettoie le 'cache'
+            command.Parameters.Clear();
 
-                while (monLecteur.Read())
+            command.CommandText = "GetVIPListeDeroulante";
+            SqlDataReader monLecteur = command.ExecuteReader();
+
+            while (monLecteur.Read())
+            {
+
+
+                int.TryParse(monLecteur["id"].ToString(), out id);
+
+                if (monLecteur["nom"] == DBNull.Value)
                 {
-
-
-                    int.TryParse(monLecteur["id"].ToString(), out id);
-
-                    if (monLecteur["nom"] == DBNull.Value)
-                    {
-                        nom = default(string);
-                    }
-                    else
-                    {
-                        nom = monLecteur["nom"].ToString();
-                    }
-
-                    lesVIP.Add(new VIP(id, nom));
+                    nom = default(string);
                 }
-                // Fermeture du lecteur
-                monLecteur.Close();
+                else
+                {
+                    nom = monLecteur["nom"].ToString();
+                }
 
-                // Fermeture de la connexion
-                command.Connection.Close();
+                lesVIP.Add(new VIP(id, nom));
+            }
+            // Fermeture du lecteur
+            monLecteur.Close();
 
-                return lesVIP;
-            
+            // Fermeture de la connexion
+            command.Connection.Close();
+
+            return lesVIP;
+
         }
 
 
@@ -109,8 +119,7 @@ namespace JRProjetCampagneDAL
 
         }
 
-
-
-
     }
 }
+
+   

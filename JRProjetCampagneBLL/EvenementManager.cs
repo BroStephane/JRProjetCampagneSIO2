@@ -26,16 +26,13 @@ namespace JRProjetCampagneBLL
 
         }
 
-        public List<Evenement> GetLesEvenementsConsult()
-        {
-            return EvenementDAO.GetInstance().GetLesEvenementsConsult();
-        }
-
-
         public List<Evenement> GetLesEvenements()
         {
             return EvenementDAO.GetInstance().GetLesEvenements();
         }
+
+
+      
 
 
         public int AddEvenement(DateTime dateDebut, DateTime dateFin, int idTheme, int idCampagne)

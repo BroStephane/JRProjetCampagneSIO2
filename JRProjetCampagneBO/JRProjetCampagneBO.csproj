@@ -49,6 +49,7 @@
     <Compile Include="CourantArtistique.cs" />
     <Compile Include="Employe.cs" />
     <Compile Include="Evenement.cs" />
+    <Compile Include="InvitationVIP.cs" />
     <Compile Include="Profil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public.cs" />
