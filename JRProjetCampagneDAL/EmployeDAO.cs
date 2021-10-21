@@ -57,7 +57,7 @@ namespace JRProjetCampagneDAL
             SqlCommand maCommand = Command.GetObjCommande();
 
             // on exécute la requête et on récupère dans un DataReader les enregistrements
-            maCommand.CommandText = "GetLesEmployes";
+            maCommand.CommandText = "GetLesEmployesListeDeroulante";
             SqlDataReader reader = maCommand.ExecuteReader();
 
             // pour chaque enregistrement du DataReader on crée un objet instance de
