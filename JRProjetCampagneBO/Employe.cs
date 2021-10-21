@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneBO
 {
+    /// <summary>
+    /// Classe publique de la table Employe de la bse de données GSB 
+    /// </summary>
     public class Employe
     {
         /// <summary>
