@@ -36,7 +36,10 @@ namespace JRProjetCampagneDAL
 
 
 
-
+        /// <summary>
+        /// Retourne une liste d'objets vip 
+        /// </summary>
+        /// <returns></returns>
         public List<VIP> GetLesVIP()
         {
 
@@ -81,7 +84,11 @@ namespace JRProjetCampagneDAL
 
         }
 
-
+        /// <summary>
+        /// Ajoute un vip dans la base de données
+        /// </summary>
+        /// <param name="unVIP"></param>
+        /// <returns></returns>
         public int AddVIP(VIP unVIP)
         {
 
@@ -117,6 +124,37 @@ namespace JRProjetCampagneDAL
             return nb;
 
 
+        }
+        /// <summary>
+        /// Supprime un vip de la base de données
+        /// </summary>
+        /// <param name="unVIP"></param>
+        /// <returns></returns>
+        public int DeleteVIP(VIP unVIP)
+        {
+            // Récupérer l'objet responsable de la connexion à la db
+            SqlCommand laCom = Command.GetObjCommande();
+
+            // on indique que l'on va appeler une procédure stockée
+            laCom.CommandType = CommandType.StoredProcedure;
+
+            // Nettoie le 'cache'
+            laCom.Parameters.Clear();
+
+            // Créer l'objet qui contient la requête INSERT
+            laCom.CommandText = "DeleteVIP";
+
+
+            laCom.Parameters.Add("id", SqlDbType.Int);
+            laCom.Parameters["id"].Value = unVIP.Id;
+
+
+            // Exécuter la requête + Return
+            int nb = laCom.ExecuteNonQuery();
+
+            // Fermeture de la connexion
+            laCom.Connection.Close();
+            return nb;
         }
 
     }

@@ -116,5 +116,13 @@ namespace JRProjetCampagneGUI
             //affichage du formulaire
             frmsup.ShowDialog();
         }
+
+        private void suppressionDunVIPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmSupVIP frmsup = new FrmSupVIP();
+            //affichage du formulaire
+            frmsup.ShowDialog();
+        }
     }
 }
