@@ -112,6 +112,12 @@
     <Compile Include="FrmConsultCampagne.Designer.cs">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifVIP.Designer.cs">
+      <DependentUpon>FrmModifVIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSupEvenement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultCampagne.resx">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifVIP.resx">
+      <DependentUpon>FrmModifVIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSupEvenement.resx">
       <DependentUpon>FrmSupEvenement.cs</DependentUpon>

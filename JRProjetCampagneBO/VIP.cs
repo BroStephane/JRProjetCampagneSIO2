@@ -72,5 +72,11 @@ namespace JRProjetCampagneBO
         public string NomVille { get => uneVille.Nom; }
 
         public string LibCategVIP { get => UneCategorieVIP.Libelle; }
+    
+        public string LibNom { get => Nom;}
+
+        public int IdCategVIP { get => uneCategorieVIP.Id; }
+
+        public int IdVille { get => uneVille.Numero_insee; }
     }
 }

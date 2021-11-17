@@ -120,14 +120,7 @@ namespace JRProjetCampagneDAL
                 {
                     nom = monLecteur["nom"].ToString();
                 }
-                if (monLecteur["rue"] == DBNull.Value)
-                {
-                    rue = default(string);
-                }
-                else
-                {
-                    rue = monLecteur["rue"].ToString();
-                }
+                
                 if (monLecteur["email"] == DBNull.Value)
                 {
                     mail = default(string);
@@ -135,6 +128,14 @@ namespace JRProjetCampagneDAL
                 else
                 {
                     mail = monLecteur["email"].ToString();
+                }
+                if (monLecteur["rue"] == DBNull.Value)
+                {
+                    rue = default(string);
+                }
+                else
+                {
+                    rue = monLecteur["rue"].ToString();
                 }
                 if (monLecteur["libelle"] == DBNull.Value)
                 {
@@ -168,7 +169,74 @@ namespace JRProjetCampagneDAL
 
         }
 
+        public VIP GetUnVIP(VIP unVIP)
+        {
+            int id, idCategorieVIP, num_insee;
+            string nom, rue, email ;
+            CategorieVIP uneCategVIP;
+            Ville uneVille;
 
+            
+
+            //Recupère l'objet commande et ouvre la connexion à la BDD
+            SqlCommand command = Command.GetObjCommande();
+
+            // Nettoie le 'cache'
+            command.Parameters.Clear();
+
+            command.CommandText = "GetUnVIP";
+
+            command.Parameters.Add("id", SqlDbType.Int);
+            command.Parameters["id"].Value = unVIP.Id;
+
+            SqlDataReader monLecteur = command.ExecuteReader();
+
+            while (monLecteur.Read())
+            {
+
+
+                int.TryParse(monLecteur["id"].ToString(), out id);
+                int.TryParse(monLecteur["id_CategorieVIP"].ToString(), out idCategorieVIP);
+                int.TryParse(monLecteur["numero_insee"].ToString(), out num_insee);
+
+                if (monLecteur["nom"] == DBNull.Value)
+                {
+                    nom = default(string);
+                }
+                else
+                {
+                    nom = monLecteur["nom"].ToString();
+                }
+                if (monLecteur["rue"] == DBNull.Value)
+                {
+                    rue = default(string);
+                }
+                else
+                {
+                    rue = monLecteur["rue"].ToString();
+                }
+                if (monLecteur["email"] == DBNull.Value)
+                {
+                    email = default(string);
+                }
+                else
+                {
+                    email = monLecteur["email"].ToString();
+                }
+
+                uneCategVIP = new CategorieVIP(idCategorieVIP);
+                uneVille = new Ville(num_insee);
+
+                unVIP = new VIP(id, nom, rue, email, uneVille, uneCategVIP);
+            }
+            // Fermeture du lecteur
+            monLecteur.Close();
+
+            // Fermeture de la connexion
+            command.Connection.Close();
+
+            return unVIP;
+        }
 
         /// <summary>
         /// Ajoute un vip dans la base de données
@@ -211,6 +279,44 @@ namespace JRProjetCampagneDAL
 
 
         }
+
+        public int UpdateVIP(VIP unVIP)
+        {
+            // Récupérer l'objet responsable de la connexion à la db
+            SqlCommand laCom = Command.GetObjCommande();
+
+            // on indique que l'on va appeler une procédure stockée
+            laCom.CommandType = CommandType.StoredProcedure;
+
+            // Nettoie le 'cache'
+            laCom.Parameters.Clear();
+
+            // Créer l'objet qui contient la requête Update
+            laCom.CommandText = "UpdateVIP";
+
+            laCom.Parameters.Add("id", SqlDbType.Int);
+            laCom.Parameters["id"].Value = unVIP.Id;
+            laCom.Parameters.Add("nom", SqlDbType.VarChar);
+            laCom.Parameters["nom"].Value = unVIP.Nom;
+            laCom.Parameters.Add("email", SqlDbType.VarChar);
+            laCom.Parameters["email"].Value = unVIP.Mail;
+            laCom.Parameters.Add("rue", SqlDbType.VarChar);
+            laCom.Parameters["rue"].Value = unVIP.Rue;
+            laCom.Parameters.Add("numero_insee", SqlDbType.Int);
+            laCom.Parameters["numero_insee"].Value = unVIP.UneVille.Numero_insee;
+            laCom.Parameters.Add("id_CategorieVIP", SqlDbType.Int);
+            laCom.Parameters["id_CategorieVIP"].Value = unVIP.UneCategorieVIP.Id;
+
+
+            // Exécuter la requête + Return
+            int nb = laCom.ExecuteNonQuery();
+
+            // Fermeture de la connexion
+            laCom.Connection.Close();
+            return nb;
+        }
+
+
         /// <summary>
         /// Supprime un vip de la base de données
         /// </summary>

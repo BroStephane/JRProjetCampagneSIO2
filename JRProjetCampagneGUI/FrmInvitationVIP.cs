@@ -95,5 +95,10 @@ namespace JRProjetCampagneGUI
             }
 
         }
+
+        private void FrmInvitationVIP_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

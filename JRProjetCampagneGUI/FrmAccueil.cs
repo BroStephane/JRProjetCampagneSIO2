@@ -132,5 +132,11 @@ namespace JRProjetCampagneGUI
             //affichage du formulaire
             consult.ShowDialog();
         }
+
+        private void modificationDunVIPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmModifVIP frm = new FrmModifVIP();
+            frm.ShowDialog();
+        }
     }
 }
