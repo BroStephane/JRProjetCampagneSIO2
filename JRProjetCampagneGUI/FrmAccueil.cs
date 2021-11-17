@@ -108,5 +108,15 @@ namespace JRProjetCampagneGUI
             //affichage du formulaire
             leFormAppele.ShowDialog();
         }
+
+        private void modificationDuneCampagneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmModifCampagne leFormAppele = new FrmModifCampagne();
+
+            //affichage du formulaire
+            leFormAppele.ShowDialog();
+            
+        }
     }
 }

@@ -43,6 +43,7 @@ namespace JRProjetCampagneGUI
             this.modificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitrePrincipale = new System.Windows.Forms.Label();
+            this.modificationDuneCampagneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,6 +154,8 @@ namespace JRProjetCampagneGUI
             // modificationToolStripMenuItem
             // 
             this.modificationToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.modificationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modificationDuneCampagneToolStripMenuItem});
             this.modificationToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.modificationToolStripMenuItem.Name = "modificationToolStripMenuItem";
             this.modificationToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
@@ -175,6 +178,13 @@ namespace JRProjetCampagneGUI
             this.lblTitrePrincipale.Size = new System.Drawing.Size(527, 33);
             this.lblTitrePrincipale.TabIndex = 1;
             this.lblTitrePrincipale.Text = "Bienvenue sur le menu des campagnes";
+            // 
+            // modificationDuneCampagneToolStripMenuItem
+            // 
+            this.modificationDuneCampagneToolStripMenuItem.Name = "modificationDuneCampagneToolStripMenuItem";
+            this.modificationDuneCampagneToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.modificationDuneCampagneToolStripMenuItem.Text = "Modification d\'une campagne";
+            this.modificationDuneCampagneToolStripMenuItem.Click += new System.EventHandler(this.modificationDuneCampagneToolStripMenuItem_Click);
             // 
             // FrmAccueil
             // 
@@ -216,7 +226,7 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.ToolStripMenuItem consultationDesÉvénementsToolStripMenuItem;
 
         private System.Windows.Forms.ToolStripMenuItem consultationDesCampagnesToolStripMenuItem;
-
+        private System.Windows.Forms.ToolStripMenuItem modificationDuneCampagneToolStripMenuItem;
     }
 }
 

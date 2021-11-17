@@ -81,5 +81,39 @@ namespace JRProjetCampagneBLL
             return CampagneDAO.GetInstance().GetLesCampagnes();
         }
 
+        /// <summary>
+        /// Appel de la couche DAL pour récupérer l'instance d'une campagne grâce à l'id passé en paramètre 
+        /// </summary>
+        /// <param name="idChoixCampagne"></param>
+        /// <returns></returns>
+        public Campagne GetUneCampagneId(int idChoixCampagne)
+        {
+            return CampagneDAO.GetInstance().GetUneCampagneId(idChoixCampagne);
+        }
+
+        /// <summary>
+        /// Appel de la couche DAL pour mettre à jour une campagne
+        /// </summary>
+        /// <param name="idChoixCampagne"></param>
+        /// <param name="sonLibelle"></param>
+        /// <param name="saDateDebut"></param>
+        /// <param name="saDateFin"></param>
+        /// <param name="sonObjectif"></param>
+        /// <param name="idChoixEmploye"></param>
+        /// <param name="idChoixAgenceEvenementiel"></param>
+        /// <param name="idChoixAgenceCommunication"></param>
+        /// <returns></returns>
+        public int UpdateCampagne(int idChoixCampagne, string sonLibelle, DateTime saDateDebut, DateTime saDateFin, string sonObjectif, int idChoixEmploye, int idChoixAgenceEvenementiel, int idChoixAgenceCommunication)
+        {
+            Employe unEmploye;
+            unEmploye = new Employe(idChoixEmploye);
+            Agence uneAgenceEvenementiel;
+            uneAgenceEvenementiel = new Agence(idChoixAgenceEvenementiel);
+            Agence uneAgenceCommunication;
+            uneAgenceCommunication = new Agence(idChoixAgenceCommunication);
+            Campagne laCampagne;
+            laCampagne = new Campagne(idChoixCampagne, sonLibelle, saDateDebut, saDateFin, sonObjectif, unEmploye, uneAgenceEvenementiel, uneAgenceCommunication);
+            return CampagneDAO.GetInstance().UpdateCampagne(laCampagne);
+        }
     }
 }

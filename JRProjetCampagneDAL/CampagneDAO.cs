@@ -99,18 +99,9 @@ namespace JRProjetCampagneDAL
 
             while (monLecteur.Read())
             {
-
-
                 int.TryParse(monLecteur["id"].ToString(), out id);
 
-                if (monLecteur["libelle"] == DBNull.Value)
-                {
-                    libelle = default(string);
-                }
-                else
-                {
-                    libelle = monLecteur["libelle"].ToString();
-                }
+                libelle = monLecteur["libelle"].ToString();
 
                 lesCampagnes.Add(new Campagne(id, libelle));
             }
@@ -131,7 +122,6 @@ namespace JRProjetCampagneDAL
         /// <returns>Une collection contenant les campagnes de la base de données de la table Campagne</returns>
         public List<Campagne> GetLesCampagnes()
         {
-
             string leLibelle;
             string leObjectif;
             DateTime saDateDebut;
@@ -160,79 +150,14 @@ namespace JRProjetCampagneDAL
             // Campagne que l'on ajoute dans la collection lesCampagnes
             while (reader.Read())
             {
-
-                //étant donné que le nom peut contenir des valeurs null, on doit remplacer la valeur null par la chaîne vide
-                if (reader["libelle"] == DBNull.Value)
-                {
-                    leLibelle = default(string);
-                }
-                else
-                {
-                    leLibelle = reader["libelle"].ToString();
-                }
-
-                if (reader["dateDebut"] == DBNull.Value)
-                {
-                    saDateDebut = DateTime.Parse(default(string));
-                }
-                else
-                {
-                    saDateDebut = DateTime.Parse(reader["dateDebut"].ToString());
-                }
-
-                if (reader["dateFin"] == DBNull.Value)
-                {
-                    saDateFin = DateTime.Parse(default(string));
-                }
-                else
-                {
-                    saDateFin = DateTime.Parse(reader["dateFin"].ToString());
-                }
-
-                if (reader["objectif"] == DBNull.Value)
-                {
-                    leObjectif = default(string);
-                }
-                else
-                {
-                    leObjectif = reader["objectif"].ToString();
-                }
-
-                if (reader["nom Employé"] == DBNull.Value)
-                {
-                    sonNom = default(string);
-                }
-                else
-                {
-                    sonNom = reader["nom Employé"].ToString();
-                }
-
-                if (reader["prenom Employe"] == DBNull.Value)
-                {
-                    sonPrenom = default(string);
-                }
-                else
-                {
-                    sonPrenom = reader["prenom Employe"].ToString();
-                }
-
-                if (reader["Agences de Evenementielles"] == DBNull.Value)
-                {
-                    sonAgenceEvenementiel = default(string);
-                }
-                else
-                {
-                    sonAgenceEvenementiel = reader["Agences de Evenementielles"].ToString();
-                }
-
-                if (reader["Agences de Communications"] == DBNull.Value)
-                {
-                    sonAgenceCommunication = default(string);
-                }
-                else
-                {
-                    sonAgenceCommunication = reader["Agences de Communications"].ToString();
-                }
+                leLibelle = reader["libelle"].ToString();
+                saDateDebut = DateTime.Parse(reader["dateDebut"].ToString());
+                saDateFin = DateTime.Parse(reader["dateFin"].ToString());
+                leObjectif = reader["objectif"].ToString();
+                sonNom = reader["nom Employé"].ToString();
+                sonPrenom = reader["prenom Employe"].ToString();
+                sonAgenceEvenementiel = reader["Agences de Evenementielles"].ToString();
+                sonAgenceCommunication = reader["Agences de Communications"].ToString();
 
                 //on créer un employé
                 unEmploye = new Employe(sonNom,sonPrenom);
@@ -258,5 +183,111 @@ namespace JRProjetCampagneDAL
             return lesCampagnes;
         }
 
+        /// <summary>
+        /// la méthode GetUneCampagneId retourne une instance d'une campagne contenant ses caractéristiques existant dans la table Campagne par rapport à l'id passé en paramètre
+        /// </summary>
+        /// <param name="idChoixCampagne">l'id de la campagne sélectionné dans le combobox par l'utilisateur</param>
+        /// <returns></returns>
+        public Campagne GetUneCampagneId(int idChoixCampagne)
+        {
+            string leLibelle;
+            string leObjectif;
+            DateTime saDateDebut;
+            DateTime saDateFin;
+            string sonNom;
+            string sonPrenom;
+            string sonAgenceEvenementiel;
+            string sonAgenceCommunication;
+            Employe unEmploye;
+            Agence uneAgenceEvenementielle;
+            Agence uneAgenceCommunication;
+            Campagne uneCampagne = null;
+
+            // on récupère l'objet responsable de la connexion à la base
+            SqlCommand maCommand = Command.GetObjCommande();
+
+            maCommand.Parameters.Clear();
+
+            // on exécute la requête et on récupère dans un DataReader les enregistrements
+            maCommand.CommandText = "GetLesCampagnesId";
+
+            maCommand.Parameters.Add("parIdChoixCampagne", System.Data.SqlDbType.Int);
+            maCommand.Parameters["parIdChoixCampagne"].Value = idChoixCampagne;
+
+            SqlDataReader reader = maCommand.ExecuteReader();
+
+            while (reader.Read())
+            {
+                leLibelle = reader["libelle"].ToString();
+                saDateDebut = DateTime.Parse(reader["dateDebut"].ToString());
+                saDateFin = DateTime.Parse(reader["dateFin"].ToString());
+                leObjectif = reader["objectif"].ToString();
+                sonNom = reader["nom Employé"].ToString();
+                sonPrenom = reader["prenom Employe"].ToString();
+                sonAgenceEvenementiel = reader["Agences de Evenementielles"].ToString();
+                sonAgenceCommunication = reader["Agences de Communications"].ToString();
+
+                //on créer un employé
+                unEmploye = new Employe(sonNom, sonPrenom);
+                //on créer une agence évenementiel
+                uneAgenceEvenementielle = new Agence(sonAgenceEvenementiel);
+                //on créer une agence de communication
+                uneAgenceCommunication = new Agence(sonAgenceCommunication);
+                //on crée une Campagne
+                uneCampagne = new Campagne(leLibelle, saDateDebut, saDateFin, leObjectif, unEmploye, uneAgenceEvenementielle, uneAgenceCommunication);
+            }
+
+            // on ferme le DataReader
+            reader.Close();
+
+            // on ferme la connexion
+            maCommand.Connection.Close();
+
+            // on retourne la collection
+            return uneCampagne;
+        }
+
+        /// <summary>
+        /// la méthode UpdateCampagne fait un UPDATE dans la table Campagne de la base de données
+        /// </summary>
+        /// <param name="uneCampagne">l'instance de Campagne contenant tous les attributs à mettre à jour</param>
+        /// <returns>Exéute la procédure stockée</returns>
+        public int UpdateCampagne(Campagne uneCampagne)
+        {
+            //on récupère l'objet responsable de la connexion à la base
+            SqlCommand maCommand = Command.GetObjCommande();
+
+            maCommand.Parameters.Clear();
+
+            //on crée l'objet qui va contenir la requête SQL d'insert qui sera exécutée
+            maCommand.CommandText = "UpdateCampagne";
+
+            //on renseigne le paramètre
+            maCommand.Parameters.Add("parLibelle", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["parLibelle"].Value = uneCampagne.Libelle;
+
+            maCommand.Parameters.Add("parDateDebut", System.Data.SqlDbType.DateTime);
+            maCommand.Parameters["parDateDebut"].Value = uneCampagne.DateDebut;
+
+            maCommand.Parameters.Add("parDateFin", System.Data.SqlDbType.DateTime);
+            maCommand.Parameters["parDateFin"].Value = uneCampagne.DateFin;
+
+            maCommand.Parameters.Add("parObjectif", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["parObjectif"].Value = uneCampagne.Objectif;
+
+            maCommand.Parameters.Add("parIdChoixEmploye", System.Data.SqlDbType.Int);
+            maCommand.Parameters["parIdChoixEmploye"].Value = uneCampagne.UnEmploye.Id;
+
+            maCommand.Parameters.Add("parIdChoixAgenceEvenementiel", System.Data.SqlDbType.Int);
+            maCommand.Parameters["parIdChoixAgenceEvenementiel"].Value = uneCampagne.UneAgenceEvenementiel.Id;
+
+            maCommand.Parameters.Add("parIdChoixAgenceCommunication", System.Data.SqlDbType.Int);
+            maCommand.Parameters["parIdChoixAgenceCommunication"].Value = uneCampagne.UneAgenceCommunication.Id;
+
+            maCommand.Parameters.Add("parIdChoixCampagne", System.Data.SqlDbType.Int);
+            maCommand.Parameters["parIdChoixCampagne"].Value = uneCampagne.Id;
+
+            return maCommand.ExecuteNonQuery();
+        }
     }
 }
