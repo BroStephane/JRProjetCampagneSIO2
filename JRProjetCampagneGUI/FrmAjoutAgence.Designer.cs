@@ -31,13 +31,13 @@ namespace JRProjetCampagneGUI
         {
             this.lblTitre = new System.Windows.Forms.Label();
             this.pnlAjoutAgence = new System.Windows.Forms.Panel();
+            this.txtTelephoneAgence = new System.Windows.Forms.TextBox();
+            this.mktEmailAgence = new System.Windows.Forms.MaskedTextBox();
             this.btnEnregAgence = new System.Windows.Forms.Button();
             this.rdbTypeAgenceC = new System.Windows.Forms.RadioButton();
             this.rdbTypeAgenceE = new System.Windows.Forms.RadioButton();
             this.cbxVilleAgence = new System.Windows.Forms.ComboBox();
-            this.txtEmailAgence = new System.Windows.Forms.TextBox();
             this.txtSiteAgence = new System.Windows.Forms.TextBox();
-            this.txtTelephoneAgence = new System.Windows.Forms.TextBox();
             this.txtRueAgence = new System.Windows.Forms.TextBox();
             this.txtNomAgence = new System.Windows.Forms.TextBox();
             this.lblVilleAgence = new System.Windows.Forms.Label();
@@ -62,13 +62,13 @@ namespace JRProjetCampagneGUI
             // 
             // pnlAjoutAgence
             // 
+            this.pnlAjoutAgence.Controls.Add(this.txtTelephoneAgence);
+            this.pnlAjoutAgence.Controls.Add(this.mktEmailAgence);
             this.pnlAjoutAgence.Controls.Add(this.btnEnregAgence);
             this.pnlAjoutAgence.Controls.Add(this.rdbTypeAgenceC);
             this.pnlAjoutAgence.Controls.Add(this.rdbTypeAgenceE);
             this.pnlAjoutAgence.Controls.Add(this.cbxVilleAgence);
-            this.pnlAjoutAgence.Controls.Add(this.txtEmailAgence);
             this.pnlAjoutAgence.Controls.Add(this.txtSiteAgence);
-            this.pnlAjoutAgence.Controls.Add(this.txtTelephoneAgence);
             this.pnlAjoutAgence.Controls.Add(this.txtRueAgence);
             this.pnlAjoutAgence.Controls.Add(this.txtNomAgence);
             this.pnlAjoutAgence.Controls.Add(this.lblVilleAgence);
@@ -82,6 +82,20 @@ namespace JRProjetCampagneGUI
             this.pnlAjoutAgence.Name = "pnlAjoutAgence";
             this.pnlAjoutAgence.Size = new System.Drawing.Size(664, 375);
             this.pnlAjoutAgence.TabIndex = 2;
+            // 
+            // txtTelephoneAgence
+            // 
+            this.txtTelephoneAgence.Location = new System.Drawing.Point(29, 193);
+            this.txtTelephoneAgence.Name = "txtTelephoneAgence";
+            this.txtTelephoneAgence.Size = new System.Drawing.Size(250, 20);
+            this.txtTelephoneAgence.TabIndex = 18;
+            // 
+            // mktEmailAgence
+            // 
+            this.mktEmailAgence.Location = new System.Drawing.Point(371, 193);
+            this.mktEmailAgence.Name = "mktEmailAgence";
+            this.mktEmailAgence.Size = new System.Drawing.Size(250, 20);
+            this.mktEmailAgence.TabIndex = 17;
             // 
             // btnEnregAgence
             // 
@@ -127,26 +141,12 @@ namespace JRProjetCampagneGUI
             this.cbxVilleAgence.Size = new System.Drawing.Size(250, 21);
             this.cbxVilleAgence.TabIndex = 13;
             // 
-            // txtEmailAgence
-            // 
-            this.txtEmailAgence.Location = new System.Drawing.Point(374, 193);
-            this.txtEmailAgence.Name = "txtEmailAgence";
-            this.txtEmailAgence.Size = new System.Drawing.Size(250, 20);
-            this.txtEmailAgence.TabIndex = 11;
-            // 
             // txtSiteAgence
             // 
             this.txtSiteAgence.Location = new System.Drawing.Point(29, 282);
             this.txtSiteAgence.Name = "txtSiteAgence";
             this.txtSiteAgence.Size = new System.Drawing.Size(250, 20);
             this.txtSiteAgence.TabIndex = 10;
-            // 
-            // txtTelephoneAgence
-            // 
-            this.txtTelephoneAgence.Location = new System.Drawing.Point(29, 193);
-            this.txtTelephoneAgence.Name = "txtTelephoneAgence";
-            this.txtTelephoneAgence.Size = new System.Drawing.Size(250, 20);
-            this.txtTelephoneAgence.TabIndex = 9;
             // 
             // txtRueAgence
             // 
@@ -257,9 +257,7 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.RadioButton rdbTypeAgenceC;
         private System.Windows.Forms.RadioButton rdbTypeAgenceE;
         private System.Windows.Forms.ComboBox cbxVilleAgence;
-        private System.Windows.Forms.TextBox txtEmailAgence;
         private System.Windows.Forms.TextBox txtSiteAgence;
-        private System.Windows.Forms.TextBox txtTelephoneAgence;
         private System.Windows.Forms.TextBox txtRueAgence;
         private System.Windows.Forms.TextBox txtNomAgence;
         private System.Windows.Forms.Label lblVilleAgence;
@@ -269,5 +267,7 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.Label lblTelephoneAgence;
         private System.Windows.Forms.Label lblRueAgence;
         private System.Windows.Forms.Label lblNomAgence;
+        private System.Windows.Forms.MaskedTextBox mktEmailAgence;
+        private System.Windows.Forms.TextBox txtTelephoneAgence;
     }
 }

@@ -46,6 +46,14 @@ namespace JRProjetCampagneBLL
         {
             return AgenceDAO.GetInstance().GetAgences();
         }
+        /// <summary>
+        /// Appel de la couche DAL pour récupérer une collection de agence
+        /// </summary>
+        /// <returns>Retourne une collection d'agences</returns>
+        public Agence GetUneAgenceId(int idAgence)
+        {
+            return AgenceDAO.GetInstance().GetUneAgenceId(idAgence);
+        }
 
         //appel de la couche DAL pour créer une nouvelle agence
         /// <summary>
@@ -88,6 +96,35 @@ namespace JRProjetCampagneBLL
         {
             //Ici, on peut appliquer des règles métier
             return AgenceDAO.GetInstance().GetAgenceCommunication();
+        }
+        /// <summary>
+        /// Appel de la couche DAL pour modifier une agence
+        /// </summary>
+        /// <param name="sonNom">le nom</param>
+        /// <param name="saRue">la rue</param>
+        /// <param name="sonTelephone">le numéro de téléphone</param>
+        /// <param name="sonEmail">l'email</param>
+        /// <param name="sonSite">le site</param>
+        /// <param name="sontypeAgence">le type d'agence E ou C</param>
+        /// <param name="saVille">la ville</param>
+        /// <returns>retourne un objet Agence contenant tous ses attributs </returns>
+        public int UpdateAgence(int idAgence, string sonNom, string saRue, int saVille, string sonTelephone, string sonEmail, string sonSite, char sontypeAgence)
+
+        {
+            Ville laVille = new Ville(saVille);
+            Agence uneAgence = new Agence(idAgence, sonNom, saRue, laVille, sonTelephone, sonEmail, sonSite, sontypeAgence);
+            return AgenceDAO.GetInstance().UpdateAgence(uneAgence);
+        }
+
+        /// <summary>
+        /// Appel de la couche DAL pour supprimer une agence
+        /// </summary>
+        /// <param name="idAgence">id</param>
+        /// <returns>retourne un objet Agence contenant l'attribut id </returns>
+        public int DeleteAgence(int idAgence)
+        {
+            Agence uneAgence = new Agence(idAgence);
+            return AgenceDAO.GetInstance().DeleteAgence(uneAgence);
         }
     }
 }

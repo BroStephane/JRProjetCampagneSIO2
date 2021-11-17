@@ -44,14 +44,15 @@ namespace JRProjetCampagneDAL
         public List<Agence> GetAgences()
         {
             // déclaration des variables de travail
+            int id;
             int numero_insee;
             string leNom;
             string laRue;
+            string leNomVille;
             string leTelephone;
             string lEmail;
             string leSite;
             char leType;
-            string leNomVille;
             Agence uneAgence;
             Ville laVille;
 
@@ -64,6 +65,118 @@ namespace JRProjetCampagneDAL
             //Select id, nom, rue, telephone, emailContact, siteWeb, typeAgence, Ville.nom FROM Agence Join Ville on numero_insee = Ville.numero_insee
             // on crée l'objet qui va contenir la requête SQL d'insert qui sera exécutée
             maCommand.CommandText = "GetLesAgences";
+
+            SqlDataReader reader = maCommand.ExecuteReader();
+
+            // pour chaque enregistrement du DataReader on crée un objet instance de
+            // Agence que l'on ajoute dans la collection lesAgences
+            while (reader.Read())
+            {
+                int.TryParse(reader["id"].ToString(), out id);
+                int.TryParse(reader["id"].ToString(), out numero_insee);
+                //Etant donné que le nom peut contenir des valeurs null, on doit remplacer la valeur null par la chaîne vide
+                if (reader["Nom de l'agence"] == DBNull.Value)
+                {
+                    leNom = default(string);
+                }
+                else
+                {
+                    leNom = reader["Nom de l'agence"].ToString();
+                }
+                if (reader["Rue"] == DBNull.Value)
+                {
+                    laRue = default(string);
+                }
+                else
+                {
+                    laRue = reader["Rue"].ToString();
+                }
+                if (reader["Nom de la ville"] == DBNull.Value)
+                {
+                    leNomVille = default(string);
+                }
+                else
+                {
+                    leNomVille = reader["Nom de la ville"].ToString();
+                }
+                if (reader["Téléphone"] == DBNull.Value)
+                {
+                    leTelephone = default(string);
+                }
+                else
+                {
+                    leTelephone = reader["Téléphone"].ToString();
+                }
+                if (reader["Email de contact"] == DBNull.Value)
+                {
+                    lEmail = default(string);
+                }
+                else
+                {
+                    lEmail = reader["Email de contact"].ToString();
+                }
+                if (reader["Site Web"] == DBNull.Value)
+                {
+                    leSite = default(string);
+                }
+                else
+                {
+                    leSite = reader["Site Web"].ToString();
+                }
+                if (reader["Type de l'agence"] == DBNull.Value)
+                {
+                    leType = Char.Parse(default(string));
+                }
+                else
+                {
+                    leType = Char.Parse(reader["Type de l'agence"].ToString());
+                }
+                laVille = new Ville(numero_insee, leNomVille);
+                //On crée une agence
+                uneAgence = new Agence(id, leNom, laRue, laVille, leTelephone, lEmail, leSite, leType);
+                //On ajoute l'agence dans une liste
+                lesAgences.Add(uneAgence);
+            }
+
+            // on ferme le DataReader
+            reader.Close();
+
+            // on ferme la connexion
+            maCommand.Connection.Close();
+
+            // on retourne la collection
+            return lesAgences;
+        }
+
+        /// <summary>
+        /// la méthode GetAgences retourne une collection contenant les agences existant dans la table Agence
+        /// </summary>
+        /// <returns>Retourne une collection d'agence</returns>
+        public Agence GetUneAgenceId(int idAgence)
+        {
+            // déclaration des variables de travail
+            int numero_insee;
+            string leNom;
+            string laRue;
+            string leTelephone;
+            string lEmail;
+            string leSite;
+            char leType;
+            string leNomVille;
+            Agence uneAgence = null;
+            Ville laVille;
+
+            SqlCommand maCommand = Command.GetObjCommande();
+
+            // on indique que l'on va appeler une procédure stockée
+            maCommand.CommandType = CommandType.StoredProcedure;
+
+            //Select id, nom, rue, telephone, emailContact, siteWeb, typeAgence, Ville.nom FROM Agence Join Ville on numero_insee = Ville.numero_insee
+            // on crée l'objet qui va contenir la requête SQL d'insert qui sera exécutée
+            maCommand.CommandText = "GetUneAgenceId";
+
+            maCommand.Parameters.Add("parId", System.Data.SqlDbType.Int);
+            maCommand.Parameters["parId"].Value = idAgence;
 
             SqlDataReader reader = maCommand.ExecuteReader();
 
@@ -132,8 +245,6 @@ namespace JRProjetCampagneDAL
                 laVille = new Ville(numero_insee, leNomVille);
                 //On crée une agence
                 uneAgence = new Agence(leNom, laRue, laVille, leTelephone, lEmail, leSite, leType);
-                //On ajoute l'agence dans une liste
-                lesAgences.Add(uneAgence);
             }
 
             // on ferme le DataReader
@@ -143,7 +254,7 @@ namespace JRProjetCampagneDAL
             maCommand.Connection.Close();
 
             // on retourne la collection
-            return lesAgences;
+            return uneAgence;
         }
 
         /// <summary>
@@ -302,6 +413,75 @@ namespace JRProjetCampagneDAL
 
             // on retourne la collection
             return lesAgencesCommunications;
+        }
+        /// <summary>
+        /// la méthode UpdateAgence fait un UPDATE dans la table Agence de la base de données
+        /// </summary>
+        /// <param name="uneAgence">l'instance de Agence contenant tous les attributs</param>
+        /// <returns>Execute la requête</returns>
+        public int UpdateAgence(Agence uneAgence)
+        {
+            //On récupère l'objet responsable de la connexion de base
+            SqlCommand maCommand = Command.GetObjCommande();
+
+            maCommand.Parameters.Clear();
+
+            // on indique que l'on va appeler une procédure stockée
+            maCommand.CommandType = CommandType.StoredProcedure;
+
+
+            // on crée l'objet qui va contenir la requête SQL d'insert qui sera exécutée
+            maCommand.CommandText = "UpdateAgence";
+
+            //On renseigne les paramètres
+            maCommand.Parameters.Add("id", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["id"].Value = uneAgence.Id;
+
+            maCommand.Parameters.Add("nom", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["nom"].Value = uneAgence.Nom;
+
+            maCommand.Parameters.Add("rue", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["rue"].Value = uneAgence.Rue;
+
+            maCommand.Parameters.Add("telephone", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["telephone"].Value = uneAgence.Telephone;
+
+            maCommand.Parameters.Add("emailContact", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["emailContact"].Value = uneAgence.EmailContact;
+
+            maCommand.Parameters.Add("siteWeb", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["siteWeb"].Value = uneAgence.SiteWeb;
+
+            maCommand.Parameters.Add("typeAgence", System.Data.SqlDbType.Char);
+            maCommand.Parameters["typeAgence"].Value = uneAgence.TypeAgence;
+
+            maCommand.Parameters.Add("numero_insee", System.Data.SqlDbType.Int);
+            maCommand.Parameters["numero_insee"].Value = uneAgence.UneVille.Numero_insee;
+
+            // on exécute la requête
+            return maCommand.ExecuteNonQuery();
+
+        }
+        public int DeleteAgence(Agence uneAgence)
+        {
+            //On récupère l'objet responsable de la connexion de base
+            SqlCommand maCommand = Command.GetObjCommande();
+
+            maCommand.Parameters.Clear();
+
+            // on indique que l'on va appeler une procédure stockée
+            maCommand.CommandType = CommandType.StoredProcedure;
+
+            // on crée l'objet qui va contenir la requête SQL d'insert qui sera exécutée
+            maCommand.CommandText = "DeleteAgence";
+
+            //On renseigne les paramètres
+            maCommand.Parameters.Add("parId", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["parId"].Value = uneAgence.Id;
+
+            // on exécute la requête
+            return maCommand.ExecuteNonQuery();
+
         }
     }
 }

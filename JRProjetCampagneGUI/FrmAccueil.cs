@@ -30,9 +30,6 @@ namespace JRProjetCampagneGUI
         {
 
         }
-
-   
-
         private void ajoutDuneAgenceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //créer un objet, une instance dee la classe du formulaire appeler
@@ -75,6 +72,23 @@ namespace JRProjetCampagneGUI
         {
             //créer un objet, une instance dee la classe du formualire appeler
             FrmConsultAgence leFormAppele = new FrmConsultAgence();
+
+            //affichage du formulaire
+            leFormAppele.Show();
+        }
+        private void modificationDuneAgenceToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //créer un objet, une instance dee la classe du formualire appeler
+            FrmModifAgence leFormAppele = new FrmModifAgence();
+
+            //affichage du formulaire
+            leFormAppele.Show();
+        }
+
+        private void suppressionDuneAgenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance dee la classe du formualire appeler
+            FrmSuppAgence leFormAppele = new FrmSuppAgence();
 
             //affichage du formulaire
             leFormAppele.Show();

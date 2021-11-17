@@ -26,11 +26,12 @@ namespace JRProjetCampagneBO
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Rue { get => rue; set => rue = value; }
+        public Ville UneVille { get => uneVille; set => uneVille = value; }
         public string Telephone { get => telephone; set => telephone = value; }
         public string EmailContact { get => emailContact; set => emailContact = value; }
         public string SiteWeb { get => siteWeb; set => siteWeb = value; }
         public char TypeAgence { get => typeAgence; set => typeAgence = value; }
-        public Ville UneVille { get => uneVille; set => uneVille = value; }
+        public string Identite { get => nom; }
         public string leNomVille { get => uneVille.Nom; }
 
         /// <summary>
@@ -49,11 +50,11 @@ namespace JRProjetCampagneBO
             this.Id = id;
             this.Nom = nom;
             this.Rue = rue;
+            this.UneVille = uneVille;
             this.Telephone = telephone;
             this.EmailContact = emailContact;
             this.SiteWeb = siteWeb;
             this.TypeAgence = typeAgence;
-            this.UneVille = uneVille;
         }
 
         /// <summary>
@@ -91,11 +92,11 @@ namespace JRProjetCampagneBO
         {
             this.nom = nom;
             this.rue = rue;
+            this.uneVille = uneVille;
             this.telephone = telephone;
             this.emailContact = emailContact;
             this.siteWeb = siteWeb;
             this.typeAgence = typeAgence;
-            this.uneVille = uneVille;
         }
     }
 }
