@@ -44,12 +44,14 @@
   <ItemGroup>
     <Compile Include="AgenceDAO.cs" />
     <Compile Include="ArtisteDAO.cs" />
+    <Compile Include="ArtisteEvenementDAO.cs" />
     <Compile Include="CampagneDAO.cs" />
     <Compile Include="CategorieVIPDAO.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CourantArtistiqueDAO.cs" />
     <Compile Include="EmployeDAO.cs" />
     <Compile Include="EvenementDAO.cs" />
+    <Compile Include="InvitationVIPDAO.cs" />
     <Compile Include="ObjectifDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

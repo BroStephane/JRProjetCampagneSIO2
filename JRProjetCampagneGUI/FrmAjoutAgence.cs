@@ -14,6 +14,9 @@ namespace JRProjetCampagneGUI
     public partial class FrmAjoutAgence : Form
     {
         char sonType;
+        /// <summary>
+        /// Ajoute l'agence en utilisant la méthode AddAgence, après avoir vérifier que tout les champs de saisies et la combobox sont bien remplies.
+        /// </summary>
 
         public FrmAjoutAgence()
         {
@@ -83,7 +86,7 @@ namespace JRProjetCampagneGUI
                 //La valeur récupérer dans le combobox sera retournée par le numero_insee
                 int numero_insee = (int)cbxVilleAgence.SelectedValue;
                 //nb sera égal à 1 grâce à l'ajout d'une agence
-                nb = AgenceManager.GetInstance().AddAgence(txtNomAgence.Text, txtRueAgence.Text, txtTelephoneAgence.Text, txtEmailAgence.Text, txtSiteAgence.Text, sonType, numero_insee);
+                nb = AgenceManager.GetInstance().AddAgence(txtNomAgence.Text, txtRueAgence.Text, numero_insee, txtTelephoneAgence.Text, txtEmailAgence.Text, txtSiteAgence.Text, sonType);
                 //Si l'ajout est réalisé nb = 1 et donc un messageBox s'affiche disant que l'ajout a été réalisé, sinon il dira qu'il n'a pas été réalisé
                 if (nb == 0)
                 {

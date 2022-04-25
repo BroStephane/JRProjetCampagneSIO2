@@ -23,6 +23,17 @@ namespace JRProjetCampagneBLL
             return uneInstance;
         }
 
+        public List<VIP> GetLesVIP()
+        {
+            return VIPDAO.GetInstance().GetLesVIP();
+        }
+
+        public int DeleteVIP(int id)
+        {
+            VIP unVIP = new VIP(id);
+            return VIPDAO.GetInstance().DeleteVIP(unVIP);
+        }
+
         public int AddVIP(string nom, string rue, string mail, int numInsee, int categVIP)
         {
             Ville uneVille = new Ville(numInsee);

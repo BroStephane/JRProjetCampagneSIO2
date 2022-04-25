@@ -14,6 +14,10 @@ namespace JRProjetCampagneBLL
 
         // cette méthode crée un objet de la classe CampagneManager s'il n'existe pas déjà un
         // puis retourne la référence à cet objet
+        /// <summary>
+        /// cette méthode crée un objet de la classe CampagneManager s'il n'existe pas déjà un, puis retourne la référence à cet objet
+        /// </summary>
+        /// <returns></returns>
         public static CampagneManager GetInstance()
         {
             if (uneInstance == null)
@@ -25,11 +29,25 @@ namespace JRProjetCampagneBLL
 
         // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
         // objet à l'extérieur de la classe avec l'instruction new ...
+        /// <summary>
+        /// le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
+        /// </summary>
         private CampagneManager()
         {
         }
 
         //appel de la couche DAL pour créer une nouvelle campagne
+        /// <summary>
+        /// Appel de la couche DAL pour créer une nouvelle campagne
+        /// </summary>
+        /// <param name="sonLibelle">le libelle</param>
+        /// <param name="saDateDebut">la date de début</param>
+        /// <param name="saDateFin">la date de fin</param>
+        /// <param name="sonObjectif">l'objectif</param>
+        /// <param name="idChoixEmploye">le choix id de l'employe</param>
+        /// <param name="idChoixAgenceEvenementiel">le choix id de l'agence évènementiel</param>
+        /// <param name="idChoixAgenceCommunication">le choix id de l'agence de communication</param>
+        /// <returns>Retourne un objet Campagne contenant tous les paramètres</returns>
         public int CreateCampagne(string sonLibelle, DateTime saDateDebut, DateTime saDateFin, string sonObjectif, int idChoixEmploye, int idChoixAgenceEvenementiel, int idChoixAgenceCommunication)
         {
             Employe unEmploye;
@@ -43,11 +61,25 @@ namespace JRProjetCampagneBLL
             return CampagneDAO.GetInstance().AddCampagne(laCampagne);
         }
 
+        /// <summary>
+        /// Appel de la couche DAL pour récupérer une collection de campagnes
+        /// </summary>
+        /// <returns>retourne une collection de campagnes</returns>
         public List<Campagne> GetCampagnes()
         {
             List<Campagne> lesCampagnes = new List<Campagne>();
             return CampagneDAO.GetInstance().GetCampagnes();
-
         }
+
+        /// <summary>
+        /// appel de la couche DAL pour récupérer une collection des campagnes
+        /// </summary>
+        /// <returns>Retourne une collection de toutes les campagnes de la base de données</returns>
+        public List<Campagne> GetLesCampagnes()
+        {
+            //Ici, on peut appliquer des règles métier
+            return CampagneDAO.GetInstance().GetLesCampagnes();
+        }
+
     }
 }

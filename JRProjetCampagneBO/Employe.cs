@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace JRProjetCampagneBO
 {
+    /// <summary>
+    /// Classe publique de la table Employe de la bse de données GSB 
+    /// </summary>
     public class Employe
     {
+        /// <summary>
+        /// les attributs de la classe Employe
+        /// </summary>
         private int id;
         private string nom;
         private string prenom;
@@ -16,7 +22,9 @@ namespace JRProjetCampagneBO
         private Service unService;
         private Profil unProfil;
 
-
+        /// <summary>
+        /// les propriétés des attrbibuts de la classe Employe 
+        /// </summary>
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
@@ -26,6 +34,17 @@ namespace JRProjetCampagneBO
         public Profil UnProfil { get => unProfil; set => unProfil = value; }
         public string Identite { get => nom + " " + prenom; }
 
+
+        /// <summary>
+        /// le constructeur valorisant tous les attributs
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="pseudo"></param>
+        /// <param name="password"></param>
+        /// <param name="unService"></param>
+        /// <param name="unProfil"></param>
         public Employe(int id, string nom, string prenom, string pseudo, string password, Service unService, Profil unProfil)
         {
             this.id = id;
@@ -37,6 +56,12 @@ namespace JRProjetCampagneBO
             this.unProfil = unProfil;
         }
 
+        /// <summary>
+        /// le constructeur valorisant l'id, le nom et prénom
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
         public Employe(int id, string nom, string prenom)
         {
             this.id = id;
@@ -44,9 +69,24 @@ namespace JRProjetCampagneBO
             this.prenom = prenom;
         }
 
+        /// <summary>
+        /// le constructeur valorisant l'id
+        /// </summary>
+        /// <param name="id"></param>
         public Employe(int id)
         {
             this.id = id;
+        }
+
+        /// <summary>
+        /// le constructeur valorisant le nom et le prénom
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        public Employe(string nom, string prenom)
+        {
+            this.nom = nom;
+            this.prenom = prenom;
         }
     }
 }

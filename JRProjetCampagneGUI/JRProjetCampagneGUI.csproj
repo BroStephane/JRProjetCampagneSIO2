@@ -52,12 +52,6 @@
     <Compile Include="FrmAccueil.designer.cs">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAjoutCampagne.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAjoutCampagne.Designer.cs">
-      <DependentUpon>FrmAjoutCampagne.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAjoutAgence.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +63,12 @@
     </Compile>
     <Compile Include="FrmAjoutArtiste.designer.cs">
       <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjoutCampagne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutCampagne.Designer.cs">
+      <DependentUpon>FrmAjoutCampagne.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAjoutEvenement.cs">
       <SubType>Form</SubType>
@@ -82,19 +82,54 @@
     <Compile Include="FrmAjoutVIP.Designer.cs">
       <DependentUpon>FrmAjoutVIP.cs</DependentUpon>
     </Compile>
+
     <Compile Include="FrmConsultArtiste.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmConsultArtiste.Designer.cs">
       <DependentUpon>FrmConsultArtiste.cs</DependentUpon>
+
+    <Compile Include="FrmConsultAgence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultAgence.Designer.cs">
+      <DependentUpon>FrmConsultAgence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultEvenement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultEvenement.Designer.cs">
+      <DependentUpon>FrmConsultEvenement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInvitationVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInvitationVIP.Designer.cs">
+      <DependentUpon>FrmInvitationVIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultCampagne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultCampagne.Designer.cs">
+      <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSupEvenement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupEvenement.Designer.cs">
+      <DependentUpon>FrmSupEvenement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSupVIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupVIP.Designer.cs">
+      <DependentUpon>FrmSupVIP.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAjoutCampagne.resx">
-      <DependentUpon>FrmAjoutCampagne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutAgence.resx">
       <DependentUpon>FrmAjoutAgence.cs</DependentUpon>
@@ -102,14 +137,37 @@
     <EmbeddedResource Include="FrmAjoutArtiste.resx">
       <DependentUpon>FrmAjoutArtiste.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutCampagne.resx">
+      <DependentUpon>FrmAjoutCampagne.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutEvenement.resx">
       <DependentUpon>FrmAjoutEvenement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutVIP.resx">
       <DependentUpon>FrmAjoutVIP.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="FrmConsultArtiste.resx">
       <DependentUpon>FrmConsultArtiste.cs</DependentUpon>
+
+    <EmbeddedResource Include="FrmConsultAgence.resx">
+      <DependentUpon>FrmConsultAgence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultEvenement.resx">
+      <DependentUpon>FrmConsultEvenement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInvitationVIP.resx">
+      <DependentUpon>FrmInvitationVIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultCampagne.resx">
+      <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupEvenement.resx">
+      <DependentUpon>FrmSupEvenement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupVIP.resx">
+      <DependentUpon>FrmSupVIP.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,7 +178,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

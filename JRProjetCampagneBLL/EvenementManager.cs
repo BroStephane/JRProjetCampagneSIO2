@@ -26,6 +26,21 @@ namespace JRProjetCampagneBLL
 
         }
 
+        public List<Evenement> GetLesEvenements()
+        {
+            return EvenementDAO.GetInstance().GetLesEvenements();
+        }
+
+
+        public int DeleteEvenement(int idEvenement)
+        {
+            Evenement unEvenement = new Evenement(idEvenement);
+
+            return EvenementDAO.GetInstance().DeleteEvenement(unEvenement);
+
+        }
+
+
         public int AddEvenement(DateTime dateDebut, DateTime dateFin, int idTheme, int idCampagne)
         {
             Theme unTheme = new Theme(idTheme);

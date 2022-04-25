@@ -15,6 +15,10 @@ namespace JRProjetCampagneDAL
 
         // cette méthode crée un objet de la classe AgenceDAO s'il n'existe pas déjà un
         // puis retourne la référence à cet objet
+        /// <summary>
+        /// cette méthode crée un objet de la classe AgenceDAO s'il n'existe pas déjà un, puis retourne la référence à cet objet
+        /// </summary>
+        /// <returns></returns>
         public static AgenceDAO GetInstance()
         {
             if (uneInstance == null)
@@ -23,14 +27,20 @@ namespace JRProjetCampagneDAL
             }
             return uneInstance;
         }
+
         // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
         // objet à l'extérieur de la classe avec l'instruction new ...
+        /// <summary>
+        /// le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
+        /// </summary>
         private AgenceDAO()
         {
         }
 
-        // la méthode GetAgences retourne une collection contenant les agences
-        // existant dans la table Agence
+        /// <summary>
+        /// la méthode GetAgences retourne une collection contenant les agences existant dans la table Agence
+        /// </summary>
+        /// <returns>Retourne une collection d'agence</returns>
         public List<Agence> GetAgences()
         {
             // déclaration des variables de travail
@@ -61,67 +71,68 @@ namespace JRProjetCampagneDAL
             // Agence que l'on ajoute dans la collection lesAgences
             while (reader.Read())
             {
-                int.TryParse(reader["numero_insee"].ToString(), out numero_insee);
+                int.TryParse(reader["id"].ToString(), out numero_insee);
                 //Etant donné que le nom peut contenir des valeurs null, on doit remplacer la valeur null par la chaîne vide
-                if (reader["nom"] == DBNull.Value)
+                if (reader["Nom de l'agence"] == DBNull.Value)
                 {
                     leNom = default(string);
                 }
                 else
                 {
-                    leNom = reader["nom"].ToString();
+                    leNom = reader["Nom de l'agence"].ToString();
                 }
-                if (reader["rue"] == DBNull.Value)
+                if (reader["Rue"] == DBNull.Value)
                 {
                     laRue = default(string);
                 }
                 else
                 {
-                    laRue = reader["rue"].ToString();
+                    laRue = reader["Rue"].ToString();
                 }
-                if (reader["telephone"] == DBNull.Value)
+                if (reader["Téléphone"] == DBNull.Value)
                 {
                     leTelephone = default(string);
                 }
                 else
                 {
-                    leTelephone = reader["telephone"].ToString();
+                    leTelephone = reader["Téléphone"].ToString();
                 }
-                if (reader["email"] == DBNull.Value)
+                if (reader["Email de contact"] == DBNull.Value)
                 {
                     lEmail = default(string);
                 }
                 else
                 {
-                    lEmail = reader["email"].ToString();
+                    lEmail = reader["Email de contact"].ToString();
                 }
-                if (reader["site"] == DBNull.Value)
+                if (reader["Site Web"] == DBNull.Value)
                 {
                     leSite = default(string);
                 }
                 else
                 {
-                    leSite = reader["site"].ToString();
+                    leSite = reader["Site Web"].ToString();
                 }
-                if (reader["typeAgence"] == DBNull.Value)
+                if (reader["Type de l'agence"] == DBNull.Value)
                 {
                     leType = Char.Parse(default(string));
                 }
                 else
                 {
-                    leType = Char.Parse(reader["typeAgence"].ToString());
+                    leType = Char.Parse(reader["Type de l'agence"].ToString());
+                    
                 }
-                if (reader["Ville.nom"] == DBNull.Value)
+                if (reader["Nom de la ville"] == DBNull.Value)
                 {
                     leNomVille = default(string);
                 }
                 else
                 {
-                    leNomVille = reader["Ville.nom"].ToString();
+                    leNomVille = reader["Nom de la ville"].ToString();
                 }
                 laVille = new Ville(numero_insee, leNomVille);
                 //On crée une agence
-                uneAgence = new Agence(leNom, laRue, leTelephone, lEmail, leSite, leType, laVille);
+                uneAgence = new Agence(leNom, laRue, laVille, leTelephone, lEmail, leSite, leType);
                 //On ajoute l'agence dans une liste
                 lesAgences.Add(uneAgence);
             }
@@ -135,6 +146,12 @@ namespace JRProjetCampagneDAL
             // on retourne la collection
             return lesAgences;
         }
+
+        /// <summary>
+        /// la méthode AddAgences fait un INSERT dans la table Agence de la base de données
+        /// </summary>
+        /// <param name="uneAgence">l'instance de Agence contenant tous les attributs</param>
+        /// <returns>Execute la requête</returns>
         public int AddAgence(Agence uneAgence)
         {
             //On récupère l'objet responsable de la connexion de base
@@ -174,11 +191,14 @@ namespace JRProjetCampagneDAL
             // on exécute la requête
             return maCommand.ExecuteNonQuery();
 
-            // on retourne le nombre d'enregistrements ajoutés
         }
 
         // la méthode GetAgenceEvenementiel retourne une collection contenant les agences evenementiels
         // existant dans la table Agence
+        /// <summary>
+        /// la méthode GetAgenceEvenementiel retourne une collection contenant les agences evenementiels existant dans la table Agence
+        /// </summary>
+        /// <returns>Retroune une collection des agences evenementiels</returns>
         public List<Agence> GetAgenceEvenementiel()
         {
             int num;
@@ -193,7 +213,7 @@ namespace JRProjetCampagneDAL
             SqlCommand maCommand = Command.GetObjCommande();
 
             // on exécute la requête et on récupère dans un DataReader les enregistrements
-            maCommand.CommandText = "dbo.GetLesAgencesEvenementielles";
+            maCommand.CommandText = "dbo.GetLesAgencesEvenementiellesListeDeroulante";
             SqlDataReader reader = maCommand.ExecuteReader();
 
             // pour chaque enregistrement du DataReader on crée un objet instance de
@@ -231,6 +251,10 @@ namespace JRProjetCampagneDAL
 
         // la méthode GetAgenceCommunciation retourne une collection contenant les agences de commuications
         // existant dans la table Agence
+        /// <summary>
+        /// la méthode GetAgenceEvenementiel retourne une collection contenant les agences de communications existant dans la table Agence
+        /// </summary>
+        /// <returns>Retroune une collection des agences de communications</returns>
         public List<Agence> GetAgenceCommunication()
         {
             int num;
@@ -245,7 +269,7 @@ namespace JRProjetCampagneDAL
             SqlCommand maCommand = Command.GetObjCommande();
 
             // on exécute la requête et on récupère dans un DataReader les enregistrements
-            maCommand.CommandText = "dbo.GetLesAgencesCommunications";
+            maCommand.CommandText = "dbo.GetLesAgencesCommunicationsListeDeroulante";
             SqlDataReader reader = maCommand.ExecuteReader();
 
             // pour chaque enregistrement du DataReader on crée un objet instance de
