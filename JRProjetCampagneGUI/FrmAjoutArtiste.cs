@@ -35,33 +35,15 @@ namespace JRProjetCampagneGUI
 
         private void btnValiderAjoutArtiste_Click(object sender, EventArgs e)
         {
-            string err = "";
-            if (string.IsNullOrWhiteSpace(txtNomArtiste.Text))
+            if (string.IsNullOrWhiteSpace(txtNomArtiste.Text) || string.IsNullOrWhiteSpace(txtSiteWebArtiste.Text))
             {
-                err += "Le champ \"Nom\" n'est pas rempli\n";
-            }
-            if (string.IsNullOrWhiteSpace(txtSiteWebArtiste.Text))
-            {
-                err += "Le champ \"Site web artiste\" n'est pas rempli\n";
-            }
-            if (string.IsNullOrWhiteSpace(cbxCourantArtistique.Text))
-            {
-                err += "Le champ \"Courant artistique\" n'est pas selectionné\n";
-            }
-            if (err != "")
-            {
-                MessageBox.Show(err);
+                MessageBox.Show("Les champs saisi sont vide veuillez ressayer");
             }
             else
             {
                 ArtisteManager.GetInstance().AddArtististe(txtNomArtiste.Text, txtSiteWebArtiste.Text, (int)cbxCourantArtistique.SelectedValue);
                 MessageBox.Show("Le client a bien étré enregidstré");
             }
-            txtNomArtiste.Clear();
-            txtSiteWebArtiste.Clear();
-            cbxCourantArtistique.SelectedItem = null;
-
         }
-        
     }
 }
