@@ -71,7 +71,6 @@ namespace JRProjetCampagneGUI
             //affichage du formulaire
             leFormAppele.ShowDialog();
         }
-
         private void consultationDesAgencesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             //créer un objet, une instance dee la classe du formualire appeler
@@ -109,7 +108,6 @@ namespace JRProjetCampagneGUI
             //affichage du formulaire
             leFormAppele.ShowDialog();
         }
-
 
         private void suppressionDunÉvénementToolStripMenuItem_Click(object sender, EventArgs e)
         {
