@@ -18,6 +18,11 @@ namespace JRProjetCampagneGUI
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Affiche lors du clic sur le bouton toutes les caractéristiques de toutes les campagnes dans le datagriedview grâce à la méthode GetLesCampagnes de CampagneManager
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAfficher_Click(object sender, EventArgs e)
         {
             dtgCampagne.DataSource = CampagneManager.GetInstance().GetLesCampagnes();

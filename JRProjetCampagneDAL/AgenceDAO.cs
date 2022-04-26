@@ -72,64 +72,14 @@ namespace JRProjetCampagneDAL
             while (reader.Read())
             {
                 int.TryParse(reader["id"].ToString(), out numero_insee);
-                //Etant donné que le nom peut contenir des valeurs null, on doit remplacer la valeur null par la chaîne vide
-                if (reader["Nom de l'agence"] == DBNull.Value)
-                {
-                    leNom = default(string);
-                }
-                else
-                {
-                    leNom = reader["Nom de l'agence"].ToString();
-                }
-                if (reader["Rue"] == DBNull.Value)
-                {
-                    laRue = default(string);
-                }
-                else
-                {
-                    laRue = reader["Rue"].ToString();
-                }
-                if (reader["Téléphone"] == DBNull.Value)
-                {
-                    leTelephone = default(string);
-                }
-                else
-                {
-                    leTelephone = reader["Téléphone"].ToString();
-                }
-                if (reader["Email de contact"] == DBNull.Value)
-                {
-                    lEmail = default(string);
-                }
-                else
-                {
-                    lEmail = reader["Email de contact"].ToString();
-                }
-                if (reader["Site Web"] == DBNull.Value)
-                {
-                    leSite = default(string);
-                }
-                else
-                {
-                    leSite = reader["Site Web"].ToString();
-                }
-                if (reader["Type de l'agence"] == DBNull.Value)
-                {
-                    leType = Char.Parse(default(string));
-                }
-                else
-                {
-                    leType = Char.Parse(reader["Type de l'agence"].ToString());
-                    
-                }
-                if (reader["Nom de la ville"] == DBNull.Value)
-                {
-                    leNomVille = default(string);
-                }
-                else
-                {
-                    leNomVille = reader["Nom de la ville"].ToString();
-                }
+                leNom = reader["Nom de l'agence"].ToString();
+                laRue = reader["Rue"].ToString();
+                leTelephone = reader["Téléphone"].ToString();
+                lEmail = reader["Email de contact"].ToString();
+                leSite = reader["Site Web"].ToString();
+                leType = Char.Parse(reader["Type de l'agence"].ToString());
+                leNomVille = reader["Nom de la ville"].ToString();
+
                 laVille = new Ville(numero_insee, leNomVille);
                 //On crée une agence
                 uneAgence = new Agence(leNom, laRue, laVille, leTelephone, lEmail, leSite, leType);
@@ -222,15 +172,7 @@ namespace JRProjetCampagneDAL
             {
                 int.TryParse(reader["id"].ToString(), out num);
 
-                //étant donné que le libelle peut contenir des valeurs null, on doit remplacer la valeur null par la chaîne vide
-                if (reader["nom"] == DBNull.Value)
-                {
-                    sonNom = default(string);
-                }
-                else
-                {
-                    sonNom = reader["nom"].ToString();
-                }
+                sonNom = reader["nom"].ToString();
 
                 //on crée une agence evenementielle
                 uneAgenceEvenementiel = new Agence(num, sonNom);
@@ -278,15 +220,7 @@ namespace JRProjetCampagneDAL
             {
                 int.TryParse(reader["id"].ToString(), out num);
 
-                //étant donné que le libelle peut contenir des valeurs null, on doit remplacer la valeur null par la chaîne vide
-                if (reader["nom"] == DBNull.Value)
-                {
-                    sonNom = default(string);
-                }
-                else
-                {
-                    sonNom = reader["nom"].ToString();
-                }
+                sonNom = reader["nom"].ToString();
 
                 //on crée une agence evenementielle
                 uneAgenceCommunication = new Agence(num, sonNom);

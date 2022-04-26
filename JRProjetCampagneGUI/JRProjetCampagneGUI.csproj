@@ -106,6 +106,17 @@
     <Compile Include="FrmConsultCampagne.Designer.cs">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifCampagne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifCampagne.Designer.cs">
+      <DependentUpon>FrmModifCampagne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSupCampagne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupCampagne.Designer.cs">
+      <DependentUpon>FrmSupCampagne.cs</DependentUpon>
     <Compile Include="FrmSupEvenement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +161,11 @@
     <EmbeddedResource Include="FrmConsultCampagne.resx">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifCampagne.resx">
+      <DependentUpon>FrmModifCampagne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupCampagne.resx">
+      <DependentUpon>FrmSupCampagne.cs</DependentUpon>
     <EmbeddedResource Include="FrmSupEvenement.resx">
       <DependentUpon>FrmSupEvenement.cs</DependentUpon>
     </EmbeddedResource>
