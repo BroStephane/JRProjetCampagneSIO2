@@ -118,5 +118,14 @@ namespace JRProjetCampagneGUI
             leFormAppele.ShowDialog();
             
         }
+
+        private void supprUneCampagneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmSupCampagne leFormAppele = new FrmSupCampagne();
+
+            //affichage du formulaire
+            leFormAppele.ShowDialog();
+        }
     }
 }

@@ -41,9 +41,10 @@ namespace JRProjetCampagneGUI
             this.ajoutDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invitationVIPÀUnÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificationDuneCampagneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitrePrincipale = new System.Windows.Forms.Label();
-            this.modificationDuneCampagneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprUneCampagneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,9 +162,18 @@ namespace JRProjetCampagneGUI
             this.modificationToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.modificationToolStripMenuItem.Text = "Modification";
             // 
+            // modificationDuneCampagneToolStripMenuItem
+            // 
+            this.modificationDuneCampagneToolStripMenuItem.Name = "modificationDuneCampagneToolStripMenuItem";
+            this.modificationDuneCampagneToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.modificationDuneCampagneToolStripMenuItem.Text = "Modification d\'une campagne";
+            this.modificationDuneCampagneToolStripMenuItem.Click += new System.EventHandler(this.modificationDuneCampagneToolStripMenuItem_Click);
+            // 
             // suppressionToolStripMenuItem
             // 
             this.suppressionToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.suppressionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.supprUneCampagneToolStripMenuItem});
             this.suppressionToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.suppressionToolStripMenuItem.Name = "suppressionToolStripMenuItem";
             this.suppressionToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
@@ -179,12 +189,12 @@ namespace JRProjetCampagneGUI
             this.lblTitrePrincipale.TabIndex = 1;
             this.lblTitrePrincipale.Text = "Bienvenue sur le menu des campagnes";
             // 
-            // modificationDuneCampagneToolStripMenuItem
+            // supprUneCampagneToolStripMenuItem
             // 
-            this.modificationDuneCampagneToolStripMenuItem.Name = "modificationDuneCampagneToolStripMenuItem";
-            this.modificationDuneCampagneToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.modificationDuneCampagneToolStripMenuItem.Text = "Modification d\'une campagne";
-            this.modificationDuneCampagneToolStripMenuItem.Click += new System.EventHandler(this.modificationDuneCampagneToolStripMenuItem_Click);
+            this.supprUneCampagneToolStripMenuItem.Name = "supprUneCampagneToolStripMenuItem";
+            this.supprUneCampagneToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.supprUneCampagneToolStripMenuItem.Text = "Suppression d\'une campagne";
+            this.supprUneCampagneToolStripMenuItem.Click += new System.EventHandler(this.supprUneCampagneToolStripMenuItem_Click);
             // 
             // FrmAccueil
             // 
@@ -227,6 +237,7 @@ namespace JRProjetCampagneGUI
 
         private System.Windows.Forms.ToolStripMenuItem consultationDesCampagnesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificationDuneCampagneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprUneCampagneToolStripMenuItem;
     }
 }
 

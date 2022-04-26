@@ -112,6 +112,12 @@
     <Compile Include="FrmModifCampagne.Designer.cs">
       <DependentUpon>FrmModifCampagne.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSupCampagne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupCampagne.Designer.cs">
+      <DependentUpon>FrmSupCampagne.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccueil.resx">
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifCampagne.resx">
       <DependentUpon>FrmModifCampagne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupCampagne.resx">
+      <DependentUpon>FrmSupCampagne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

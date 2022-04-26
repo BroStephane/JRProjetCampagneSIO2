@@ -12,8 +12,6 @@ namespace JRProjetCampagneDAL
     {
         private static CampagneDAO uneInstance;
 
-        // cette méthode crée un objet de la classe CampagneDAO s'il n'existe pas déjà un
-        // puis retourne la référence à cet objet
         /// <summary>
         /// cette méthode crée un objet de la classe CampagneDAO s'il n'existe pas déjà un, puis retourne la référence à cet objet
         /// </summary>
@@ -27,8 +25,6 @@ namespace JRProjetCampagneDAL
             return uneInstance;
         }
 
-        // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
-        // objet à l'extérieur de la classe avec l'instruction new ...
         /// <summary>
         /// // le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
         /// </summary>
@@ -37,7 +33,7 @@ namespace JRProjetCampagneDAL
         }
 
         /// <summary>
-        /// la méthode AddCampagne fait un INSERT dans la table Campagne de la base de données
+        /// la méthode AddCampagne fait un INSERT dans la table Campagne de la base de données pour la création d'une campagne avec les données saisies transmis de CampagneManager
         /// </summary>
         /// <param name="uneCampagne">l'instance de Campagne contenant tous les attributs</param>
         /// <returns>Execute la requête</returns>
@@ -78,9 +74,9 @@ namespace JRProjetCampagneDAL
         }
 
         /// <summary>
-        /// la méthode GetCampagnes retourne une collection contenant les campagnes existant dans la table Campagne
+        /// la méthode GetCampagnes retourne une collection contenant touts les libelles des campagnes existantes dans la table Campagne
         /// </summary>
-        /// <returns>Retourne une collection de campagnes</returns>
+        /// <returns>Retourne une collection des libelles de campagnes</returns>
         public List<Campagne> GetCampagnes()
         {
             int id;
@@ -111,15 +107,14 @@ namespace JRProjetCampagneDAL
             // Fermeture de la connexion
             command.Connection.Close();
 
+            // on retourne la collection
             return lesCampagnes;
         }
 
-        // la méthode GetClients retourne une collection contenant les clients
-        // existant dans la table Client
         /// <summary>
-        /// la méthode GetLesCampagnes retourne une collection contenant les campagnes existant dans la table Campagne
+        /// la méthode GetLesCampagnes retourne une collection contenant toutes les campagnes et leurs caractéristiques existantes dans la table Campagne
         /// </summary>
-        /// <returns>Une collection contenant les campagnes de la base de données de la table Campagne</returns>
+        /// <returns>Une collection contenant toutes les campagnes et leurs caractéristiques de la base de données de la table Campagne</returns>
         public List<Campagne> GetLesCampagnes()
         {
             string leLibelle;
@@ -248,7 +243,7 @@ namespace JRProjetCampagneDAL
         }
 
         /// <summary>
-        /// la méthode UpdateCampagne fait un UPDATE dans la table Campagne de la base de données
+        /// la méthode UpdateCampagne fait un UPDATE dans la table Campagne de la base de données pour la modification d'une campagne
         /// </summary>
         /// <param name="uneCampagne">l'instance de Campagne contenant tous les attributs à mettre à jour</param>
         /// <returns>Exéute la procédure stockée</returns>
@@ -283,6 +278,27 @@ namespace JRProjetCampagneDAL
 
             maCommand.Parameters.Add("parIdChoixAgenceCommunication", System.Data.SqlDbType.Int);
             maCommand.Parameters["parIdChoixAgenceCommunication"].Value = uneCampagne.UneAgenceCommunication.Id;
+
+            maCommand.Parameters.Add("parIdChoixCampagne", System.Data.SqlDbType.Int);
+            maCommand.Parameters["parIdChoixCampagne"].Value = uneCampagne.Id;
+
+            return maCommand.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// la méthode DeleteCampagne fait un DELETE dans la table Campagne de la base de données pour la suppression d'une campagne
+        /// </summary>
+        /// <param name="uneCampagne">l'instance de Campagne contenant l'id de la campagne à supprimer</param>
+        /// <returns></returns>
+        public int DeleteCampagne(Campagne uneCampagne)
+        {
+            // on récupère l'objet responsable de la connexion à la base
+            SqlCommand maCommand = Command.GetObjCommande();
+
+            maCommand.Parameters.Clear();
+
+            // on exécute la requête et on récupère dans un DataReader les enregistrements
+            maCommand.CommandText = "DeleteCampagne";
 
             maCommand.Parameters.Add("parIdChoixCampagne", System.Data.SqlDbType.Int);
             maCommand.Parameters["parIdChoixCampagne"].Value = uneCampagne.Id;

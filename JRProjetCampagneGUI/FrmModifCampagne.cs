@@ -15,67 +15,16 @@ namespace JRProjetCampagneGUI
     public partial class FrmModifCampagne : Form
     {
         /// <summary>
-        /// Affiche dans les combobox les différents données issues de la base de données
+        /// Charge dans les combobox les différentes campagnes et leurs caractéristiques issues de la base de données avec la méthode Charger()
         /// </summary>
         public FrmModifCampagne()
         {
             InitializeComponent();
-            try
-            {
-                //combobox de la campagne
-                cbxCampagne.DisplayMember = "Libelle";
-                cbxCampagne.ValueMember = "id";
-                cbxCampagne.DataSource = CampagneManager.GetInstance().GetCampagnes();
-                cbxCampagne.SelectedItem = null;
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-
-            try
-            {   
-                //combobox de l'employé
-                cbxEmploye.DisplayMember = "Identite";
-                cbxEmploye.ValueMember = "id";
-                cbxEmploye.DataSource = EmployeManager.GetInstance().GetLesEmployes();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-
-            try
-            {
-                //combobox de l'agence évènementiel
-                cbxAgenceEvenementiel.DisplayMember = "nom";
-                cbxAgenceEvenementiel.ValueMember = "id";
-                cbxAgenceEvenementiel.DataSource = AgenceManager.GetInstance().GetLesAgencesEvenementiels();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-
-            try
-            {
-                //combobox de l'agence de communication
-                cbxAgenceCommunication.DisplayMember = "nom";
-                cbxAgenceCommunication.ValueMember = "id";
-                cbxAgenceCommunication.DataSource = AgenceManager.GetInstance().GetLesAgencesCommunications();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
+            Charger();
         }
 
         /// <summary>
-        /// Met dans les champs et combobox les caractéristiques de la campagne choisie lors de sa sélection dans le combobox campagne
+        /// Met dans les champs et combobox les caractéristiques de la campagne choisie lors de sa sélection dans le combobox campagne avec la méthode GetUneCampagneId de CampagneManager
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -99,7 +48,7 @@ namespace JRProjetCampagneGUI
         }
 
         /// <summary>
-        /// Envoie les valeurs saisie par l'utilisateur dans le CampagneBLL
+        /// Envoie les valeurs saisies de la campagne par l'utilisateur dans le CampagneManager avec la méthode UpdateCampagne()
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -174,15 +123,16 @@ namespace JRProjetCampagneGUI
 
                     if (nb == 0)
                     {
-                        MessageBox.Show("Problème grave : la modification du client n'a pas été réalisé", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Problème grave : la modification de la campagne n'a pas été réalisé", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("Modification du client réalisé", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Modification de la campagne réalisé", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
                         pnlCampagne.Visible = false;
                         cbxCampagne.Visible = true;
                         lblCampagne.Visible = true;
+                        Charger();
                     }
                 }
                 catch (Exception ex)
@@ -191,6 +141,66 @@ namespace JRProjetCampagneGUI
                 }
             }
         }
+
+        /// <summary>
+        /// Cette méthode permet de charger le libelle des campagnes, de l'employé et des agences dans leurs combobox respectives et retourne un message d'erreur si cela ne s'effectue pas
+        /// </summary>
+        public void Charger()
+        {
+            try
+            {
+                //combobox de la campagne
+                cbxCampagne.DisplayMember = "Libelle";
+                cbxCampagne.ValueMember = "id";
+                cbxCampagne.DataSource = CampagneManager.GetInstance().GetCampagnes();
+                cbxCampagne.SelectedItem = null;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+            try
+            {
+                //combobox de l'employé
+                cbxEmploye.DisplayMember = "Identite";
+                cbxEmploye.ValueMember = "id";
+                cbxEmploye.DataSource = EmployeManager.GetInstance().GetLesEmployes();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+            try
+            {
+                //combobox de l'agence évènementiel
+                cbxAgenceEvenementiel.DisplayMember = "nom";
+                cbxAgenceEvenementiel.ValueMember = "id";
+                cbxAgenceEvenementiel.DataSource = AgenceManager.GetInstance().GetLesAgencesEvenementiels();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+            try
+            {
+                //combobox de l'agence de communication
+                cbxAgenceCommunication.DisplayMember = "nom";
+                cbxAgenceCommunication.ValueMember = "id";
+                cbxAgenceCommunication.DataSource = AgenceManager.GetInstance().GetLesAgencesCommunications();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
 
         /// <summary>
         /// Lorsque le bouton Annuler est cliqué, le panel disparait et le combobox de la campagne avec son label réapparait 

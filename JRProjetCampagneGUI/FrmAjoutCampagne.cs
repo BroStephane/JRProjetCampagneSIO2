@@ -14,67 +14,16 @@ namespace JRProjetCampagneGUI
     public partial class FrmAjoutCampagne : Form
     {
         /// <summary>
-        /// Affiche dans les combobox les différents données issues de la base de données
+        /// Charge dans les combobox les différents données issues de la base de données pour la création d'une campagne grâce à la méthode Charger()
         /// </summary>
         public FrmAjoutCampagne()
         {
             InitializeComponent();
-
-            try
-            {
-                //combobox d'employé
-                cbxEmploye.DisplayMember = "Identite";
-                cbxEmploye.ValueMember = "id";
-                cbxEmploye.DataSource = EmployeManager.GetInstance().GetLesEmployes();
-                cbxEmploye.SelectedItem = null;
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-
-            try
-            {
-                //combobox des agences evenementielles
-                cbxAgenceEvenementiel.DisplayMember = "nom";
-                cbxAgenceEvenementiel.ValueMember = "id";
-                cbxAgenceEvenementiel.DataSource = AgenceManager.GetInstance().GetLesAgencesEvenementiels();
-                cbxAgenceEvenementiel.SelectedItem = null;
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-
-            try
-            {
-                //combobox des agences de communications
-                cbxAgenceCommunication.DisplayMember = "nom";
-                cbxAgenceCommunication.ValueMember = "id";
-                cbxAgenceCommunication.DataSource = AgenceManager.GetInstance().GetLesAgencesCommunications();
-                cbxAgenceCommunication.SelectedItem = null;
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-
-
-            //configurer le format
-            dtpDateDebut.Format = DateTimePickerFormat.Custom;
-            dtpDateDebut.CustomFormat = "dd/MM/yyyy";
-            dtpDateDebut.MinDate = DateTime.Today;
-            dtpDateFin.Format = DateTimePickerFormat.Custom;
-            dtpDateFin.CustomFormat = "dd/MM/yyyy";
-            dtpDateFin.MinDate = DateTime.Today;
-
+            Charger();
         }
 
         /// <summary>
-        /// Envoie les valeurs saisie par l'utilisateur dans le CampagneBLL
+        /// Envoie les valeurs saisies par l'utilisateur pour créer une campagne dans CampagneManager avec la méthode CreateCampagne()
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -159,6 +108,7 @@ namespace JRProjetCampagneGUI
                         cbxEmploye.SelectedItem = null;
                         cbxAgenceEvenementiel.SelectedItem = null;
                         cbxAgenceCommunication.SelectedItem = null;
+                        Charger();
                     }
                 }
                 catch (Exception ex)
@@ -185,6 +135,63 @@ namespace JRProjetCampagneGUI
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Cette méthode permet de charger le libelle des employés et des agences dans leurs combobox respectives et retourne un message d'erreur si cela ne s'effectue pas
+        /// </summary>
+        private void Charger()
+        {
+            try
+            {
+                //combobox d'employé
+                cbxEmploye.DisplayMember = "Identite";
+                cbxEmploye.ValueMember = "id";
+                cbxEmploye.DataSource = EmployeManager.GetInstance().GetLesEmployes();
+                cbxEmploye.SelectedItem = null;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+            try
+            {
+                //combobox des agences evenementielles
+                cbxAgenceEvenementiel.DisplayMember = "nom";
+                cbxAgenceEvenementiel.ValueMember = "id";
+                cbxAgenceEvenementiel.DataSource = AgenceManager.GetInstance().GetLesAgencesEvenementiels();
+                cbxAgenceEvenementiel.SelectedItem = null;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+            try
+            {
+                //combobox des agences de communications
+                cbxAgenceCommunication.DisplayMember = "nom";
+                cbxAgenceCommunication.ValueMember = "id";
+                cbxAgenceCommunication.DataSource = AgenceManager.GetInstance().GetLesAgencesCommunications();
+                cbxAgenceCommunication.SelectedItem = null;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+
+            //configurer le format
+            dtpDateDebut.Format = DateTimePickerFormat.Custom;
+            dtpDateDebut.CustomFormat = "dd/MM/yyyy";
+            dtpDateDebut.MinDate = DateTime.Today;
+            dtpDateFin.Format = DateTimePickerFormat.Custom;
+            dtpDateFin.CustomFormat = "dd/MM/yyyy";
+            dtpDateFin.MinDate = DateTime.Today;
         }
     }
 }

@@ -116,7 +116,7 @@ namespace JRProjetCampagneGUI
             // 
             // btnAnnul
             // 
-            this.btnAnnul.Location = new System.Drawing.Point(562, 400);
+            this.btnAnnul.Location = new System.Drawing.Point(278, 400);
             this.btnAnnul.Name = "btnAnnul";
             this.btnAnnul.Size = new System.Drawing.Size(105, 36);
             this.btnAnnul.TabIndex = 15;
@@ -126,7 +126,7 @@ namespace JRProjetCampagneGUI
             // 
             // btnEnreg
             // 
-            this.btnEnreg.Location = new System.Drawing.Point(315, 400);
+            this.btnEnreg.Location = new System.Drawing.Point(546, 400);
             this.btnEnreg.Name = "btnEnreg";
             this.btnEnreg.Size = new System.Drawing.Size(103, 36);
             this.btnEnreg.TabIndex = 14;
