@@ -102,12 +102,13 @@ namespace JRProjetCampagneGUI
         /// <param name="e"></param>
         private void consultationDesCampagnesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //créer un objet, une instance dee la classe du formulaire appeler
+            //créer un objet, une instance de la classe du formulaire appeler
             FrmConsultCampagne leFormAppele = new FrmConsultCampagne();
 
             //affichage du formulaire
             leFormAppele.ShowDialog();
         }
+
 
         private void modificationDuneCampagneToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -126,6 +127,22 @@ namespace JRProjetCampagneGUI
 
             //affichage du formulaire
             leFormAppele.ShowDialog();
+
+        private void suppressionDunÉvénementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmSupEvenement frmsup = new FrmSupEvenement();
+            //affichage du formulaire
+            frmsup.ShowDialog();
+        }
+
+        private void suppressionDunVIPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmSupVIP frmsup = new FrmSupVIP();
+            //affichage du formulaire
+            frmsup.ShowDialog();
+
         }
     }
 }

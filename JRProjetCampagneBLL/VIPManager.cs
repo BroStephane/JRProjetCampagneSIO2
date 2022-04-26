@@ -28,6 +28,11 @@ namespace JRProjetCampagneBLL
             return VIPDAO.GetInstance().GetLesVIP();
         }
 
+        public int DeleteVIP(int id)
+        {
+            VIP unVIP = new VIP(id);
+            return VIPDAO.GetInstance().DeleteVIP(unVIP);
+        }
 
         public int AddVIP(string nom, string rue, string mail, int numInsee, int categVIP)
         {
