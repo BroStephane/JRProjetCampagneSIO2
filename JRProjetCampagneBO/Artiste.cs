@@ -12,6 +12,8 @@ namespace JRProjetCampagneBO
         private string nom;
         private string siteWeb;
         private CourantArtistique unCourantArtistique;
+        private string leNom;
+        private string leSite;
 
         public Artiste(int id, string nom, string siteWeb, CourantArtistique unCourantArtistique)
         {
@@ -26,6 +28,12 @@ namespace JRProjetCampagneBO
             this.nom = nom;
             this.siteWeb = siteWeb;
             this.unCourantArtistique = unCourantArtistique;
+        }
+
+        public Artiste(int id, string leNom, string leSite)
+        {
+            this.leNom = leNom;
+            this.leSite = leSite;
         }
 
         public int Id { get => id; set => id = value; }
