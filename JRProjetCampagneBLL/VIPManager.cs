@@ -27,16 +27,6 @@ namespace JRProjetCampagneBLL
         {
             return VIPDAO.GetInstance().GetLesVIP();
         }
-        public VIP GetUnVIP(int id)
-        {
-            VIP unVIP = new VIP(id);
-            return VIPDAO.GetInstance().GetUnVIP(unVIP);
-        }
-
-        public List<VIP> GetLesVIPConsult()
-        {
-            return VIPDAO.GetInstance().GetLesVIPConsult();
-        }
 
         public int DeleteVIP(int id)
         {
@@ -53,16 +43,5 @@ namespace JRProjetCampagneBLL
 
             return VIPDAO.GetInstance().AddVIP(unVIP);
         }
-        public int UpdateVIP(int id, string nom, string rue, string mail, int numInsee, int categVIP)
-        {
-            Ville uneVille = new Ville(numInsee);
-            CategorieVIP laCategVIP = new CategorieVIP(categVIP);
-
-            VIP unVIP = new VIP(id, nom, rue, mail, uneVille, laCategVIP);
-
-            return VIPDAO.GetInstance().UpdateVIP(unVIP);
-        }
-
-
     }
 }

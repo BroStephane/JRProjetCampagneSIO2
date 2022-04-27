@@ -77,10 +77,10 @@ namespace JRProjetCampagneGUI
             this.pnlAjout.Controls.Add(this.lblCampagne);
             this.pnlAjout.Controls.Add(this.cbxTheme);
             this.pnlAjout.Controls.Add(this.lblTheme);
-            this.pnlAjout.Location = new System.Drawing.Point(362, 202);
+            this.pnlAjout.Location = new System.Drawing.Point(408, 192);
             this.pnlAjout.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAjout.Name = "pnlAjout";
-            this.pnlAjout.Size = new System.Drawing.Size(905, 429);
+            this.pnlAjout.Size = new System.Drawing.Size(989, 729);
             this.pnlAjout.TabIndex = 2;
             // 
             // dtpDebut

@@ -52,31 +52,11 @@ namespace JRProjetCampagneBO
             this.uneVille = uneVille;
         }
 
-        public VIP(int id, string nom, string rue, string mail, Ville uneVille, CategorieVIP uneCategorieVIP)
-        {
-            this.id = id;
-            this.nom = nom;
-            this.rue = rue;
-            this.mail = mail;
-            this.uneVille = uneVille;
-            this.uneCategorieVIP = uneCategorieVIP;
-        }
-
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Rue { get => rue; set => rue = value; }
         public string Mail { get => mail; set => mail = value; }
         public Ville UneVille { get => uneVille; set => uneVille = value; }
         public CategorieVIP UneCategorieVIP { get => uneCategorieVIP; set => uneCategorieVIP = value; }
-
-        public string NomVille { get => uneVille.Nom; }
-
-        public string LibCategVIP { get => UneCategorieVIP.Libelle; }
-    
-        public string LibNom { get => Nom;}
-
-        public int IdCategVIP { get => uneCategorieVIP.Id; }
-
-        public int IdVille { get => uneVille.Numero_insee; }
     }
 }

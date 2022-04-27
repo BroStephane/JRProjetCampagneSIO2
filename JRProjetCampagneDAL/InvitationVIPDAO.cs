@@ -14,7 +14,8 @@ namespace JRProjetCampagneDAL
 
         private static InvitationVIPDAO uneInstance;
 
-        
+        // cette méthode crée un objet de la classe InvitationVIPDAO s'il n'existe pas déjà un
+        // puis retourne la référence à cet objet
         /// <summary>
         /// Cette méthode crée un objet de la classe InvitationVIPDAO s'il n'existe pas déjà un, puis retourne la référence à cet objet
         /// </summary>
