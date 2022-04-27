@@ -109,6 +109,25 @@ namespace JRProjetCampagneGUI
             leFormAppele.ShowDialog();
         }
 
+
+        private void modificationDuneCampagneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmModifCampagne leFormAppele = new FrmModifCampagne();
+
+            //affichage du formulaire
+            leFormAppele.ShowDialog();
+            
+        }
+
+        private void supprUneCampagneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmSupCampagne leFormAppele = new FrmSupCampagne();
+
+            //affichage du formulaire
+            leFormAppele.ShowDialog();
+
         private void suppressionDunÉvénementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //créer un objet, une instance de la classe du formulaire appeler
@@ -123,6 +142,7 @@ namespace JRProjetCampagneGUI
             FrmSupVIP frmsup = new FrmSupVIP();
             //affichage du formulaire
             frmsup.ShowDialog();
+
         }
 
         private void consultationDesVIPToolStripMenuItem_Click(object sender, EventArgs e)

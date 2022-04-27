@@ -1,4 +1,5 @@
 ﻿using JRProjetCampagneBLL;
+using JRProjetCampagneBO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,23 +12,47 @@ using System.Windows.Forms;
 
 namespace JRProjetCampagneGUI
 {
-    public partial class FrmAjoutCampagne : Form
+    public partial class FrmModifCampagne : Form
     {
         /// <summary>
-        /// Charge dans les combobox les différents données issues de la base de données pour la création d'une campagne grâce à la méthode Charger()
+        /// Charge dans les combobox les différentes campagnes et leurs caractéristiques issues de la base de données avec la méthode Charger()
         /// </summary>
-        public FrmAjoutCampagne()
+        public FrmModifCampagne()
         {
             InitializeComponent();
             Charger();
         }
 
         /// <summary>
-        /// Envoie les valeurs saisies par l'utilisateur pour créer une campagne dans CampagneManager avec la méthode CreateCampagne()
+        /// Met dans les champs et combobox les caractéristiques de la campagne choisie lors de sa sélection dans le combobox campagne avec la méthode GetUneCampagneId de CampagneManager
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAddCampagne_Click(object sender, EventArgs e)
+        private void cbxCampagne_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cbxCampagne.Visible = false;
+            lblCampagne.Visible = false;
+
+            int idChoixCampagne = (int)cbxCampagne.SelectedValue;
+            Campagne uneCampagne = CampagneManager.GetInstance().GetUneCampagneId(idChoixCampagne);
+
+            txtLibelle.Text = uneCampagne.Libelle;
+            dtpDateDebut.Value = uneCampagne.DateDebut;
+            dtpDateFin.Value = uneCampagne.DateFin;
+            txtObjectif.Text = uneCampagne.Objectif;
+            cbxEmploye.Text = uneCampagne.unEmployeIdentite;
+            cbxAgenceEvenementiel.Text = uneCampagne.uneAgenceEvenementielNom;
+            cbxAgenceCommunication.Text = uneCampagne.uneAgenceCommunicationNom;
+
+            pnlCampagne.Visible = true;
+        }
+
+        /// <summary>
+        /// Envoie les valeurs saisies de la campagne par l'utilisateur dans le CampagneManager avec la méthode UpdateCampagne()
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEnreg_Click(object sender, EventArgs e)
         {
             string dtpDebut = dtpDateDebut.Text.Trim();
             string dtpFin = dtpDateFin.Text.Trim();
@@ -37,6 +62,7 @@ namespace JRProjetCampagneGUI
             int idChoixEmploye = 0;
             int idChoixAgenceEvenementiel = 0;
             int idChoixAgenceCommunication = 0;
+
 
             if (txtLibelle.Text == string.Empty)
             {
@@ -92,22 +118,20 @@ namespace JRProjetCampagneGUI
                 {
                     DateTime dtpDateDeDebut = Convert.ToDateTime(dtpDebut);
                     DateTime dtpDateDeFin = Convert.ToDateTime(dtpFin);
-                    int nb = CampagneManager.GetInstance().CreateCampagne(txtLibelle.Text, dtpDateDeDebut, dtpDateDeFin, txtObjectif.Text, idChoixEmploye, idChoixAgenceEvenementiel, idChoixAgenceCommunication);
+                    int idChoixCampagne = (int)cbxCampagne.SelectedValue;
+                    int nb = CampagneManager.GetInstance().UpdateCampagne(idChoixCampagne,txtLibelle.Text, dtpDateDeDebut, dtpDateDeFin, txtObjectif.Text, idChoixEmploye, idChoixAgenceEvenementiel, idChoixAgenceCommunication);
 
                     if (nb == 0)
                     {
-                        MessageBox.Show("Problème grave : l'ajout de la campagne n'a pas été réalisé", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);   
+                        MessageBox.Show("Problème grave : la modification de la campagne n'a pas été réalisé", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("Ajout de la campagne réalisé", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtLibelle.Text = "";
-                        dtpDateDebut.Value = DateTime.Today;
-                        dtpDateFin.Value = DateTime.Today;
-                        txtObjectif.Text = "";
-                        cbxEmploye.SelectedItem = null;
-                        cbxAgenceEvenementiel.SelectedItem = null;
-                        cbxAgenceCommunication.SelectedItem = null;
+                        MessageBox.Show("Modification de la campagne réalisé", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                        pnlCampagne.Visible = false;
+                        cbxCampagne.Visible = true;
+                        lblCampagne.Visible = true;
                         Charger();
                     }
                 }
@@ -116,39 +140,33 @@ namespace JRProjetCampagneGUI
                     MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
         }
 
         /// <summary>
-        /// La méthode permet de régler la date minimum du datetimepicker de la date de fin à la date de début
-        /// Permettant de ne pas avoir une date de fin inférieure à la date de début
+        /// Cette méthode permet de charger le libelle des campagnes, de l'employé et des agences dans leurs combobox respectives et retourne un message d'erreur si cela ne s'effectue pas
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
+        public void Charger()
         {
             try
             {
-                dtpDateFin.MinDate = dtpDateDebut.Value;
+                //combobox de la campagne
+                cbxCampagne.DisplayMember = "Libelle";
+                cbxCampagne.ValueMember = "id";
+                cbxCampagne.DataSource = CampagneManager.GetInstance().GetCampagnes();
+                cbxCampagne.SelectedItem = null;
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
-        }
 
-        /// <summary>
-        /// Cette méthode permet de charger le libelle des employés et des agences dans leurs combobox respectives et retourne un message d'erreur si cela ne s'effectue pas
-        /// </summary>
-        private void Charger()
-        {
             try
             {
-                //combobox d'employé
+                //combobox de l'employé
                 cbxEmploye.DisplayMember = "Identite";
                 cbxEmploye.ValueMember = "id";
                 cbxEmploye.DataSource = EmployeManager.GetInstance().GetLesEmployes();
-                cbxEmploye.SelectedItem = null;
             }
             catch (Exception exception)
             {
@@ -158,11 +176,10 @@ namespace JRProjetCampagneGUI
 
             try
             {
-                //combobox des agences evenementielles
+                //combobox de l'agence évènementiel
                 cbxAgenceEvenementiel.DisplayMember = "nom";
                 cbxAgenceEvenementiel.ValueMember = "id";
                 cbxAgenceEvenementiel.DataSource = AgenceManager.GetInstance().GetLesAgencesEvenementiels();
-                cbxAgenceEvenementiel.SelectedItem = null;
             }
             catch (Exception exception)
             {
@@ -172,26 +189,29 @@ namespace JRProjetCampagneGUI
 
             try
             {
-                //combobox des agences de communications
+                //combobox de l'agence de communication
                 cbxAgenceCommunication.DisplayMember = "nom";
                 cbxAgenceCommunication.ValueMember = "id";
                 cbxAgenceCommunication.DataSource = AgenceManager.GetInstance().GetLesAgencesCommunications();
-                cbxAgenceCommunication.SelectedItem = null;
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+        }
 
 
-            //configurer le format
-            dtpDateDebut.Format = DateTimePickerFormat.Custom;
-            dtpDateDebut.CustomFormat = "dd/MM/yyyy";
-            dtpDateDebut.MinDate = DateTime.Today;
-            dtpDateFin.Format = DateTimePickerFormat.Custom;
-            dtpDateFin.CustomFormat = "dd/MM/yyyy";
-            dtpDateFin.MinDate = DateTime.Today;
+        /// <summary>
+        /// Lorsque le bouton Annuler est cliqué, le panel disparait et le combobox de la campagne avec son label réapparait 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAnnul_Click(object sender, EventArgs e)
+        {
+            pnlCampagne.Visible = false;
+            cbxCampagne.Visible = true;
+            lblCampagne.Visible = true;
         }
     }
 }

@@ -65,26 +65,9 @@ namespace JRProjetCampagneDAL
             while (reader.Read())
             {
                 int.TryParse(reader["id"].ToString(), out num);
-
-                //étant donné que le libelle peut contenir des valeurs null, on doit remplacer la valeur null par la chaîne vide
-                if (reader["nom"] == DBNull.Value)
-                {
-                    sonNom = default(string);
-                }
-                else
-                {
-                    sonNom = reader["nom"].ToString();
-                }
-
-                if (reader["prenom"] == DBNull.Value)
-                {
-                    sonPrenom = default(string);
-                }
-                else
-                {
-                    sonPrenom = reader["prenom"].ToString();
-                }
-
+                
+                sonNom = reader["nom"].ToString();
+                sonPrenom = reader["prenom"].ToString();
 
                 //on crée un employe
                 unEmploye = new Employe(num, sonNom, sonPrenom);
