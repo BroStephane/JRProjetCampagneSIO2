@@ -32,6 +32,12 @@ namespace JRProjetCampagneBLL
         }
 
 
+        public Evenement GetUnEvenement(int id)
+        {
+            Evenement unEvenement = new Evenement(id);
+            return EvenementDAO.GetInstance().GetUnEvenement(unEvenement);
+        }
+
         public int DeleteEvenement(int idEvenement)
         {
             Evenement unEvenement = new Evenement(idEvenement);
@@ -51,7 +57,15 @@ namespace JRProjetCampagneBLL
             return EvenementDAO.GetInstance().AddEvenement(unEvenement);
 
         }
+        public int UpdateEvenement(int id, DateTime dateDebut, DateTime dateFin, int idTheme, int idCampagne)
+        {
+            Theme unTheme = new Theme(idTheme);
+            Campagne uneCampagne = new Campagne(idCampagne);
 
+            Evenement unEvenement = new Evenement(id,dateDebut, dateFin, unTheme, uneCampagne);
+
+            return EvenementDAO.GetInstance().UpdateEvenement(unEvenement);
+        }
 
     }
 }

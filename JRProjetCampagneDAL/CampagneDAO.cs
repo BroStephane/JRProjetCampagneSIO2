@@ -25,8 +25,9 @@ namespace JRProjetCampagneDAL
             return uneInstance;
         }
 
+
         /// <summary>
-        /// // le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
+        /// le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
         /// </summary>
         private CampagneDAO()
         {
@@ -110,6 +111,7 @@ namespace JRProjetCampagneDAL
             // on retourne la collection
             return lesCampagnes;
         }
+
 
         /// <summary>
         /// la méthode GetLesCampagnes retourne une collection contenant toutes les campagnes et leurs caractéristiques existantes dans la table Campagne

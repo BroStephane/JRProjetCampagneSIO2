@@ -97,6 +97,59 @@ namespace JRProjetCampagneDAL
             return lesEvenements;
 
         }
+        /// <summary>
+        /// retourne un événement de la base de données par rapport a un id donné
+        /// </summary>
+        /// <param name="unEvenemnent"></param>
+        /// <returns></returns>
+        public Evenement GetUnEvenement(Evenement unEvenemnent)
+        {
+            int id = unEvenemnent.Id
+                , idTheme, idCampagne;
+            DateTime dateDeb;
+            DateTime dateFin;
+            
+            Theme leTheme;
+            Campagne laCampagne;
+            Evenement unEV = null;
+
+            SqlCommand command = Command.GetObjCommande();
+
+            // Nettoie le 'cache'
+            command.Parameters.Clear();
+
+            command.CommandText = "GetUnEvenement";
+
+            command.Parameters.Add("id", SqlDbType.Int);
+            command.Parameters["id"].Value = unEvenemnent.Id;
+
+            SqlDataReader monLecteur = command.ExecuteReader();
+
+            while (monLecteur.Read())
+            {
+                int.TryParse(monLecteur["id_Theme"].ToString(), out idTheme);
+                int.TryParse(monLecteur["id_Campagne"].ToString(), out idCampagne);
+
+                DateTime.TryParse(monLecteur["dateDebut"].ToString(), out dateDeb);
+                DateTime.TryParse(monLecteur["dateFin"].ToString(), out dateFin);
+
+
+                leTheme = new Theme(idTheme);
+
+                laCampagne = new Campagne(idCampagne);
+
+                unEV = new Evenement(id, dateDeb, dateFin, leTheme, laCampagne);
+
+            }  
+            
+                // Fermeture du lecteur
+                monLecteur.Close();
+
+                // Fermeture de la connexion
+                command.Connection.Close();
+
+                return unEV;
+        }
 
         /// <summary>
         /// Ajoute un événement dans la table Evenement de la base de données
@@ -136,6 +189,50 @@ namespace JRProjetCampagneDAL
 
         }
 
+        /// <summary>
+        /// Modifie les données d'un événement
+        /// </summary>
+        /// <param name="unEvenement"></param>
+        /// <returns></returns>
+        public int UpdateEvenement(Evenement unEvenement)
+        {
+            // Récupérer l'objet responsable de la connexion à la db
+            SqlCommand laCom = Command.GetObjCommande();
+
+            // on indique que l'on va appeler une procédure stockée
+            laCom.CommandType = CommandType.StoredProcedure;
+
+            // Nettoie le 'cache'
+            laCom.Parameters.Clear();
+
+            // Créer l'objet qui contient la requête INSERT
+            laCom.CommandText = "UpdateEvenement";
+
+            laCom.Parameters.Add("id", SqlDbType.Int);
+            laCom.Parameters["id"].Value = unEvenement.Id;
+            laCom.Parameters.Add("dateDebut", SqlDbType.DateTime);
+            laCom.Parameters["dateDebut"].Value = unEvenement.DateDebut;
+            laCom.Parameters.Add("dateFin", SqlDbType.DateTime);
+            laCom.Parameters["dateFin"].Value = unEvenement.DateFin;
+            laCom.Parameters.Add("id_Theme", SqlDbType.Int);
+            laCom.Parameters["id_Theme"].Value = unEvenement.UnTheme.Id;
+            laCom.Parameters.Add("id_Campagne", SqlDbType.Int);
+            laCom.Parameters["id_Campagne"].Value = unEvenement.UneCampagne.Id;
+
+
+            // Exécuter la requête + Return
+            int nb = laCom.ExecuteNonQuery();
+
+            // Fermeture de la connexion
+            laCom.Connection.Close();
+            return nb;
+        }
+
+        /// <summary>
+        /// Supprime un événement de la base de données
+        /// </summary>
+        /// <param name="unEvenement"></param>
+        /// <returns></returns>
         public int DeleteEvenement(Evenement unEvenement)
         {
             // Récupérer l'objet responsable de la connexion à la db
