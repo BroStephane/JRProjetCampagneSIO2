@@ -56,6 +56,9 @@ namespace JRProjetCampagneDAL
             //On clear le cache
             command.Parameters.Clear();
 
+            // on indique que l'on va appeler une procédure stockée
+            command.CommandType = CommandType.StoredProcedure;
+
             // on crée l'objet qui va contenir la requête SQL d'insert qui sera exécutée
             command.CommandText = "GetLesArtistes";
 
