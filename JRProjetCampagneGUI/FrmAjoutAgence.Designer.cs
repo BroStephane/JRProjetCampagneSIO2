@@ -241,7 +241,7 @@ namespace JRProjetCampagneGUI
             this.Controls.Add(this.pnlAjoutAgence);
             this.Controls.Add(this.lblTitre);
             this.Name = "FrmAjoutAgence";
-            this.Text = "FrmAjoutAgence";
+            this.Text = "Ajout d\'une agence";
             this.pnlAjoutAgence.ResumeLayout(false);
             this.pnlAjoutAgence.PerformLayout();
             this.ResumeLayout(false);

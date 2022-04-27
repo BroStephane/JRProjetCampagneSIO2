@@ -130,7 +130,7 @@ namespace JRProjetCampagneGUI
             this.Controls.Add(this.cbxCourantArtistique);
             this.Controls.Add(this.btnValiderAjoutArtiste);
             this.Name = "FrmAjoutArtiste";
-            this.Text = "Ajouter un artiste";
+            this.Text = "Ajout d\'un artiste";
             this.ResumeLayout(false);
             this.PerformLayout();
 
