@@ -33,7 +33,7 @@ namespace JRProjetCampagneGUI
             this.cbxArtiste = new System.Windows.Forms.ComboBox();
             this.lblCourantArtistique = new System.Windows.Forms.Label();
             this.pnlArtiste = new System.Windows.Forms.Panel();
-            this.btnValiderAjoutArtiste = new System.Windows.Forms.Button();
+            this.btnValiderModificationArtiste = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSiteWebArtiste = new System.Windows.Forms.TextBox();
             this.lblSiteWebArtiste = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@ namespace JRProjetCampagneGUI
             // 
             // pnlArtiste
             // 
-            this.pnlArtiste.Controls.Add(this.btnValiderAjoutArtiste);
+            this.pnlArtiste.Controls.Add(this.btnValiderModificationArtiste);
             this.pnlArtiste.Controls.Add(this.label1);
             this.pnlArtiste.Controls.Add(this.txtSiteWebArtiste);
             this.pnlArtiste.Controls.Add(this.lblSiteWebArtiste);
@@ -87,15 +87,16 @@ namespace JRProjetCampagneGUI
             this.pnlArtiste.Size = new System.Drawing.Size(498, 388);
             this.pnlArtiste.TabIndex = 11;
             // 
-            // btnValiderAjoutArtiste
+            // btnValiderModificationArtiste
             // 
-            this.btnValiderAjoutArtiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnValiderAjoutArtiste.Location = new System.Drawing.Point(199, 317);
-            this.btnValiderAjoutArtiste.Name = "btnValiderAjoutArtiste";
-            this.btnValiderAjoutArtiste.Size = new System.Drawing.Size(89, 40);
-            this.btnValiderAjoutArtiste.TabIndex = 18;
-            this.btnValiderAjoutArtiste.Text = "Valider";
-            this.btnValiderAjoutArtiste.UseVisualStyleBackColor = true;
+            this.btnValiderModificationArtiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnValiderModificationArtiste.Location = new System.Drawing.Point(199, 317);
+            this.btnValiderModificationArtiste.Name = "btnValiderModificationArtiste";
+            this.btnValiderModificationArtiste.Size = new System.Drawing.Size(89, 40);
+            this.btnValiderModificationArtiste.TabIndex = 18;
+            this.btnValiderModificationArtiste.Text = "Valider";
+            this.btnValiderModificationArtiste.UseVisualStyleBackColor = true;
+            this.btnValiderModificationArtiste.Click += new System.EventHandler(this.btnValiderModificationArtiste_Click);
             // 
             // label1
             // 
@@ -183,6 +184,6 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.ComboBox cbxCourantArtistique;
         private System.Windows.Forms.Label lblNomArtiste;
         private System.Windows.Forms.TextBox txtNomArtiste;
-        private System.Windows.Forms.Button btnValiderAjoutArtiste;
+        private System.Windows.Forms.Button btnValiderModificationArtiste;
     }
 }

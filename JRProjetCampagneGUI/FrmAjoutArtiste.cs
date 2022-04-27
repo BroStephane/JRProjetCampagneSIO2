@@ -37,12 +37,12 @@ namespace JRProjetCampagneGUI
         {
             if (string.IsNullOrWhiteSpace(txtNomArtiste.Text) || string.IsNullOrWhiteSpace(txtSiteWebArtiste.Text))
             {
-                MessageBox.Show("Les champs saisi sont vide veuillez ressayer");
+                MessageBox.Show("Les champs saisi sont vides veuillez ressayer");
             }
             else
             {
                 ArtisteManager.GetInstance().AddArtististe(txtNomArtiste.Text, txtSiteWebArtiste.Text, (int)cbxCourantArtistique.SelectedValue);
-                MessageBox.Show("Le client a bien étré enregidstré");
+                MessageBox.Show("L'artiste à bien étré enregistré");
             }
         }
 

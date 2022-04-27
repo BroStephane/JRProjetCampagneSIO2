@@ -120,6 +120,37 @@ namespace JRProjetCampagneDAL
             return lesArtistes;
         }
 
+        public int UpdateArtiste(Artiste unArtiste)
+        {
+            // Récupérer l'objet responsable de la connexion à la db
+            SqlCommand laCom = Command.GetObjCommande();
+
+            // on indique que l'on va appeler une procédure stockée
+            laCom.CommandType = CommandType.StoredProcedure;
+
+            // Nettoie le 'cache'
+            laCom.Parameters.Clear();
+
+            // Créer l'objet qui contient la requête INSERT
+            laCom.CommandText = "UpdateArtiste";
+            laCom.Parameters.Add("Id", SqlDbType.VarChar);
+            laCom.Parameters["Id"].Value = unArtiste.Id;
+            laCom.Parameters.Add("Nom", SqlDbType.VarChar);
+            laCom.Parameters["Nom"].Value = unArtiste.Nom;
+            laCom.Parameters.Add("SiteWeb", SqlDbType.VarChar);
+            laCom.Parameters["SiteWeb"].Value = unArtiste.SitWeb;
+            laCom.Parameters.Add("IdCourantArtistique", SqlDbType.VarChar);
+            laCom.Parameters["IdCourantArtistique"].Value = unArtiste.UnCourantArtistique.Id;
+
+            // Exécuter la requête + Return
+            int nb = laCom.ExecuteNonQuery();
+
+            // Fermeture de la connexion
+            laCom.Connection.Close();
+            return nb;
+
+        }
+
 
     }
 }

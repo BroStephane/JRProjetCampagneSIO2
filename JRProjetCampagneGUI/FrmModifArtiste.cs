@@ -35,11 +35,45 @@ namespace JRProjetCampagneGUI
             {
                 MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            try
+            {
+                cbxCourantArtistique.DisplayMember = "libelle";
+                cbxCourantArtistique.ValueMember = "id";
+                cbxCourantArtistique.DataSource = CourantArtistiqueManager.GetInstance().GetCourantArtistiques();
+                cbxCourantArtistique.SelectedItem = null;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cbxArtiste_SelectionChangeCommitted(object sender, EventArgs e)
         {
             pnlArtiste.Visible = true;
+        }
+
+        private void btnValiderModificationArtiste_Click(object sender, EventArgs e)
+        {
+            txtNomArtiste.Text = txtNomArtiste.Text.Trim();
+            txtSiteWebArtiste.Text = txtSiteWebArtiste.Text.Trim();
+            cbxCourantArtistique.Text = cbxCourantArtistique.Text.Trim();
+            string msgErr = "";
+            //Test pour voir si une zone de texte est vide ou non, message d'erreur retourné sinon
+            if (txtNomArtiste.Text == string.Empty)
+            {
+                MessageBox.Show("Veuillez saisir un nom");
+            }
+            if (txtNomArtiste.Text == string.Empty)
+            {
+                msgErr += "Veuillez saisir un nom pour l'artiste \n";
+            }
+            if (txtSiteWebArtiste.Text == string.Empty)
+            {
+                msgErr += "Veuillez saisir un site web pour l'artiste \n";
+            }
+            if (cbxArtiste.SelectedIndex)
         }
     }
 }

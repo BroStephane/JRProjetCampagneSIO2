@@ -54,7 +54,7 @@ namespace JRProjetCampagneBLL
 
             Artiste unArtiste = new Artiste(nom, siteWeb, unCourantArtistique);
 
-            return ArtisteDAO.GetInstance().AddArtiste(unArtiste);
+            return ArtisteDAO.GetInstance().UpdateArtiste(unArtiste);
         }
 
     }
