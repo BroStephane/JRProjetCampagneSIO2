@@ -16,7 +16,7 @@ namespace JRProjetCampagneDAL
     {
         private static VIPDAO uneInstance;
 
-        // cette méthode crée un objet de la classe ClientDAO s'il n'existe pas déjà un
+        // cette méthode crée un objet de la classe VIPDAO s'il n'existe pas déjà un
         // puis retourne la référence à cet objet
         public static VIPDAO GetInstance()
         {
@@ -37,9 +37,9 @@ namespace JRProjetCampagneDAL
 
 
         /// <summary>
-        /// Retourne une liste d'objets vip 
+        /// Retourne une liste de VIP
         /// </summary>
-        /// <returns></returns>
+        /// <returns> List VIP</returns>
         public List<VIP> GetLesVIP()
         {
 
@@ -84,6 +84,10 @@ namespace JRProjetCampagneDAL
 
         }
 
+        /// <summary>
+        /// Retourne une liste de VIP permettant d'alimenter une liste déroulante
+        /// </summary>
+        /// <returns> List VIP</returns>
         public List<VIP> GetLesVIPConsult()
         {
 
@@ -168,7 +172,11 @@ namespace JRProjetCampagneDAL
             return lesVIP;
 
         }
-
+        /// <summary>
+        /// retourne un vip de la base de données par rapport a un id donné
+        /// </summary>
+        /// <param name="unVIP"></param>
+        /// <returns> VIP </returns>
         public VIP GetUnVIP(VIP unVIP)
         {
             int id, idCategorieVIP, num_insee;
@@ -279,7 +287,11 @@ namespace JRProjetCampagneDAL
 
 
         }
-
+        /// <summary>
+        /// modifie les valeurs d'un vip de la base de données
+        /// </summary>
+        /// <param name="unVIP"></param>
+        /// <returns></returns>
         public int UpdateVIP(VIP unVIP)
         {
             // Récupérer l'objet responsable de la connexion à la db

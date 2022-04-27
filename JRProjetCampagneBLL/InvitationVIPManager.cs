@@ -12,10 +12,8 @@ namespace JRProjetCampagneBLL
     {
         private static InvitationVIPManager uneInstance;
         
-        // cette méthode crée un objet de la classe InvitationVIPManager s'il n'existe pas déjà un
-        // puis retourne la référence à cet objet
         /// <summary>
-        /// Cette méthode crée un objet de la classe AgenceDAO s'il n'existe pas déjà un, puis retourne la référence à cet objet
+        /// Cette méthode crée un objet de la classe InvitationVIPManager s'il n'existe pas déjà un, puis retourne la référence à cet objet
         /// </summary>
         /// <returns></returns>
         public static InvitationVIPManager GetInstance()

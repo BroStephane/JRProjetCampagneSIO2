@@ -40,7 +40,7 @@ namespace JRProjetCampagneBO
         public string uneAgenceCommunicationNom { get => uneAgenceCommunication.Nom; }
 
 
-        //premier constructeur pour valoriser tous les attributs
+        
         /// <summary>
         /// le constructeur valorisant tous les attributs
         /// </summary>

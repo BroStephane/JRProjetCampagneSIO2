@@ -76,6 +76,12 @@
     <Compile Include="FrmAjoutEvenement.designer.cs">
       <DependentUpon>FrmAjoutEvenement.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAjoutMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutMessage.Designer.cs">
+      <DependentUpon>FrmAjoutMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAjoutVIP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     <Compile Include="FrmConsultCampagne.Designer.cs">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifEvenement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifEvenement.Designer.cs">
+      <DependentUpon>FrmModifEvenement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModifVIP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,9 @@
     <EmbeddedResource Include="FrmAjoutEvenement.resx">
       <DependentUpon>FrmAjoutEvenement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutMessage.resx">
+      <DependentUpon>FrmAjoutMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutVIP.resx">
       <DependentUpon>FrmAjoutVIP.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultCampagne.resx">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifEvenement.resx">
+      <DependentUpon>FrmModifEvenement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifVIP.resx">
       <DependentUpon>FrmModifVIP.cs</DependentUpon>

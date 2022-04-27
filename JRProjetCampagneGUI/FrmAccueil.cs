@@ -138,5 +138,19 @@ namespace JRProjetCampagneGUI
             FrmModifVIP frm = new FrmModifVIP();
             frm.ShowDialog();
         }
+
+        private void modificationDunÉvénementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmModifEvenement frm = new FrmModifEvenement();
+            frm.ShowDialog();
+
+        }
+
+        private void ajoutDunMessageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAjoutMessage frm = new FrmAjoutMessage();
+            frm.ShowDialog();
+
+        }
     }
 }

@@ -33,7 +33,7 @@ namespace JRProjetCampagneGUI
             }
             try
             {
-                //Remplie la comboBox des valeurs de la table Theme
+                //Remplie la comboBox des valeurs de la table Campagne
                 cbxCampagne.DisplayMember = "libelle";
                 cbxCampagne.ValueMember = "id";
                 cbxCampagne.DataSource = CampagneManager.GetInstance().GetCampagnes();
@@ -128,6 +128,7 @@ namespace JRProjetCampagneGUI
                         MessageBox.Show("l'ajout de l'évènement à été effectué", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cbxCampagne.SelectedItem = null;
                         cbxTheme.SelectedItem = null;
+                        
                     }
                 }
                 else

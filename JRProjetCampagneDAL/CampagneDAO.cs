@@ -12,8 +12,6 @@ namespace JRProjetCampagneDAL
     {
         private static CampagneDAO uneInstance;
 
-        // cette méthode crée un objet de la classe CampagneDAO s'il n'existe pas déjà un
-        // puis retourne la référence à cet objet
         /// <summary>
         /// cette méthode crée un objet de la classe CampagneDAO s'il n'existe pas déjà un, puis retourne la référence à cet objet
         /// </summary>
@@ -27,10 +25,9 @@ namespace JRProjetCampagneDAL
             return uneInstance;
         }
 
-        // le constructeur par défaut est privé : il ne sera donc pas possible de créer un
-        // objet à l'extérieur de la classe avec l'instruction new ...
+
         /// <summary>
-        /// // le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
+        /// le constructeur par défaut est privé : il ne sera donc pas possible de créer un objet à l'extérieur de la classe avec l'instruction new ...
         /// </summary>
         private CampagneDAO()
         {
@@ -123,8 +120,7 @@ namespace JRProjetCampagneDAL
             return lesCampagnes;
         }
 
-        // la méthode GetClients retourne une collection contenant les clients
-        // existant dans la table Client
+        
         /// <summary>
         /// la méthode GetLesCampagnes retourne une collection contenant les campagnes existant dans la table Campagne
         /// </summary>
