@@ -106,6 +106,12 @@
     <Compile Include="FrmConsultCampagne.Designer.cs">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifArtiste.Designer.cs">
+      <DependentUpon>FrmModifArtiste.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSupEvenement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     <EmbeddedResource Include="FrmConsultCampagne.resx">
       <DependentUpon>FrmConsultCampagne.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifArtiste.resx">
+      <DependentUpon>FrmModifArtiste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSupEvenement.resx">
       <DependentUpon>FrmSupEvenement.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,7 +174,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="App.config" />
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

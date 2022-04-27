@@ -58,6 +58,68 @@ namespace JRProjetCampagneDAL
 
         }
 
+        public List<Artiste> GetLesArtistes()
+        {
+            int id, idCourantArtistique;
+            string nom, sitWeb, libelleCourant;
+            CourantArtistique leCourantArtistique;
+            Artiste unArtiste;
+
+            List<Artiste> lesArtistes = new List<Artiste>();
+
+            SqlCommand command = Command.GetObjCommande();
+
+            //Nettoie le cache
+            command.Parameters.Clear();
+
+            command.CommandText = "GetLesArtistes";
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int.TryParse(reader["id"].ToString(), out id);
+                int.TryParse(reader["id_CourantArtistique"].ToString(), out idCourantArtistique);
+
+                if (reader["Nom de l'artiste"]== DBNull.Value)
+                {
+                    nom = default(string);
+                }
+                else
+                {
+                    nom = reader["Nom de l'artiste"].ToString();
+                }
+
+                if(reader ["Site web de l'artiste"]==DBNull.Value)
+                {
+                    sitWeb = default(string);
+                }
+                else
+                {
+                    sitWeb = reader["Site web de l'artiste"].ToString();
+                }
+
+                if(reader["Le courant artistique"]==DBNull.Value)
+                {
+                    libelleCourant = default(string);
+                }
+                else
+                {
+                    libelleCourant = reader["Le courant artistique"].ToString();
+                }
+                leCourantArtistique = new CourantArtistique(idCourantArtistique, libelleCourant);
+                unArtiste = new Artiste(id, nom, sitWeb, leCourantArtistique);
+                lesArtistes.Add(unArtiste);
+            }
+
+            //Fermeture du lecteur
+            reader.Close();
+
+            //Fermerture de la connexion
+            command.Connection.Close();
+            return lesArtistes;
+        }
+
 
     }
 }

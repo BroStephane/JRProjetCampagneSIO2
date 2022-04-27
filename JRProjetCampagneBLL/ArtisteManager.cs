@@ -35,5 +35,27 @@ namespace JRProjetCampagneBLL
 
         }
 
+
+        /// <summary>
+        /// appel de la couche DAL pour récupérer une collection des campagnes
+        /// </summary>
+        /// <returns>Retourne une collection de toutes les campagnes de la base de données</returns>
+        public List<Artiste> GetLesArtistes()
+        {
+            //Ici, on peut appliquer des règles métier
+            return ArtisteDAO.GetInstance().GetLesArtistes();
+        }
+
+        public int UpdateArtiste(string nom, string siteWeb, int idCourantArtistique)
+        {
+
+
+            CourantArtistique unCourantArtistique = new CourantArtistique(idCourantArtistique);
+
+            Artiste unArtiste = new Artiste(nom, siteWeb, unCourantArtistique);
+
+            return ArtisteDAO.GetInstance().AddArtiste(unArtiste);
+        }
+
     }
 }

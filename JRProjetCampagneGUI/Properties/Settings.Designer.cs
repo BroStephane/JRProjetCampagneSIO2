@@ -32,5 +32,15 @@ namespace JRProjetCampagneGUI.Properties {
                 return ((string)(this["GSBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=301P03\\SQLEXPRESS;Initial Catalog=GSB;Integrated Security=True")]
+        public string GSBConnectionString1 {
+            get {
+                return ((string)(this["GSBConnectionString1"]));
+            }
+        }
     }
 }

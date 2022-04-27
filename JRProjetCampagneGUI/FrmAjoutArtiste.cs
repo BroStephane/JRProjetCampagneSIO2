@@ -45,5 +45,10 @@ namespace JRProjetCampagneGUI
                 MessageBox.Show("Le client a bien étré enregidstré");
             }
         }
+
+        private void FrmAjoutArtiste_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
