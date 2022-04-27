@@ -50,7 +50,6 @@
     <Compile Include="Employe.cs" />
     <Compile Include="Evenement.cs" />
     <Compile Include="InvitationVIP.cs" />
-    <Compile Include="Message.cs" />
     <Compile Include="Profil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public.cs" />

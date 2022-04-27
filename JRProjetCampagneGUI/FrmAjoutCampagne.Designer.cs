@@ -221,7 +221,7 @@ namespace JRProjetCampagneGUI
             this.Controls.Add(this.lblLibelle);
             this.Controls.Add(this.lblTitre);
             this.Name = "FrmAjoutCampagne";
-            this.Text = "Ajout d\'une campagne";
+            this.Text = "Ajouter une campagne";
             this.ResumeLayout(false);
             this.PerformLayout();
 

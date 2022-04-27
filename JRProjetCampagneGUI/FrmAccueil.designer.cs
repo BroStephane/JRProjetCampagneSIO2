@@ -33,7 +33,6 @@ namespace JRProjetCampagneGUI
             this.consultationDesAgencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultationDesÉvénementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultationDesCampagnesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultationDesVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutDunÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutDunArtisteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,18 +40,14 @@ namespace JRProjetCampagneGUI
             this.ajoutDuneAgenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invitationVIPÀUnÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
+            this.modificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificationDuneCampagneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.suppressionDunÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
-            this.suppressionDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblTitrePrincipale = new System.Windows.Forms.Label();
-            this.ajoutDunMessageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
             this.lblTitrePrincipale = new System.Windows.Forms.Label();
             this.supprUneCampagneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,8 +72,7 @@ namespace JRProjetCampagneGUI
             this.consultationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultationDesAgencesToolStripMenuItem,
             this.consultationDesÉvénementsToolStripMenuItem,
-            this.consultationDesCampagnesToolStripMenuItem,
-            this.consultationDesVIPToolStripMenuItem});
+            this.consultationDesCampagnesToolStripMenuItem});
             this.consultationToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.consultationToolStripMenuItem.Name = "consultationToolStripMenuItem";
             this.consultationToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
@@ -105,13 +99,6 @@ namespace JRProjetCampagneGUI
             this.consultationDesCampagnesToolStripMenuItem.Text = "Consultation des campagnes";
             this.consultationDesCampagnesToolStripMenuItem.Click += new System.EventHandler(this.consultationDesCampagnesToolStripMenuItem_Click);
             // 
-            // consultationDesVIPToolStripMenuItem
-            // 
-            this.consultationDesVIPToolStripMenuItem.Name = "consultationDesVIPToolStripMenuItem";
-            this.consultationDesVIPToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
-            this.consultationDesVIPToolStripMenuItem.Text = "Consultation des VIP";
-            this.consultationDesVIPToolStripMenuItem.Click += new System.EventHandler(this.consultationDesVIPToolStripMenuItem_Click);
-            // 
             // ajoutToolStripMenuItem
             // 
             this.ajoutToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -121,8 +108,7 @@ namespace JRProjetCampagneGUI
             this.ajoutDuneCampagneToolStripMenuItem,
             this.ajoutDuneAgenceToolStripMenuItem,
             this.ajoutDunVIPToolStripMenuItem,
-            this.invitationVIPÀUnÉvénementToolStripMenuItem,
-            this.ajoutDunMessageToolStripMenuItem});
+            this.invitationVIPÀUnÉvénementToolStripMenuItem});
             this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
             this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.ajoutToolStripMenuItem.Text = "Ajout";
@@ -173,39 +159,18 @@ namespace JRProjetCampagneGUI
             // 
             this.modificationToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.modificationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-
-            this.modificationDunVIPToolStripMenuItem,
-            this.modificationDunÉvénementToolStripMenuItem});
-
             this.modificationDuneCampagneToolStripMenuItem});
-
             this.modificationToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.modificationToolStripMenuItem.Name = "modificationToolStripMenuItem";
             this.modificationToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.modificationToolStripMenuItem.Text = "Modification";
             // 
-<<
-            // modificationDunVIPToolStripMenuItem
-            // 
-            this.modificationDunVIPToolStripMenuItem.Name = "modificationDunVIPToolStripMenuItem";
-            this.modificationDunVIPToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.modificationDunVIPToolStripMenuItem.Text = "Modification d\'un VIP";
-            this.modificationDunVIPToolStripMenuItem.Click += new System.EventHandler(this.modificationDunVIPToolStripMenuItem_Click);
-            // 
-            // modificationDunÉvénementToolStripMenuItem
-            // 
-            this.modificationDunÉvénementToolStripMenuItem.Name = "modificationDunÉvénementToolStripMenuItem";
-            this.modificationDunÉvénementToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.modificationDunÉvénementToolStripMenuItem.Text = "Modification d\'un événement";
-            this.modificationDunÉvénementToolStripMenuItem.Click += new System.EventHandler(this.modificationDunÉvénementToolStripMenuItem_Click);
-
             // modificationDuneCampagneToolStripMenuItem
             // 
             this.modificationDuneCampagneToolStripMenuItem.Name = "modificationDuneCampagneToolStripMenuItem";
             this.modificationDuneCampagneToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.modificationDuneCampagneToolStripMenuItem.Text = "Modification d\'une campagne";
             this.modificationDuneCampagneToolStripMenuItem.Click += new System.EventHandler(this.modificationDuneCampagneToolStripMenuItem_Click);
-
             // 
             // suppressionToolStripMenuItem
             // 
@@ -219,6 +184,7 @@ namespace JRProjetCampagneGUI
             this.suppressionToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.suppressionToolStripMenuItem.Text = "Suppression";
             // 
+
             // suppressionDunÉvénementToolStripMenuItem
             // 
             this.suppressionDunÉvénementToolStripMenuItem.Name = "suppressionDunÉvénementToolStripMenuItem";
@@ -226,15 +192,9 @@ namespace JRProjetCampagneGUI
             this.suppressionDunÉvénementToolStripMenuItem.Text = "Suppression d\'un événement";
             this.suppressionDunÉvénementToolStripMenuItem.Click += new System.EventHandler(this.suppressionDunÉvénementToolStripMenuItem_Click);
             // 
-            // suppressionDunVIPToolStripMenuItem
-            // 
-            this.suppressionDunVIPToolStripMenuItem.Name = "suppressionDunVIPToolStripMenuItem";
-            this.suppressionDunVIPToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.suppressionDunVIPToolStripMenuItem.Text = "Suppression d\'un VIP";
-            this.suppressionDunVIPToolStripMenuItem.Click += new System.EventHandler(this.suppressionDunVIPToolStripMenuItem_Click);
-            // 
             // lblTitrePrincipale
             // 
+
             this.lblTitrePrincipale.AutoSize = true;
             this.lblTitrePrincipale.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitrePrincipale.Location = new System.Drawing.Point(372, 66);
@@ -242,13 +202,15 @@ namespace JRProjetCampagneGUI
             this.lblTitrePrincipale.Size = new System.Drawing.Size(527, 33);
             this.lblTitrePrincipale.TabIndex = 1;
             this.lblTitrePrincipale.Text = "Bienvenue sur le menu des campagnes";
+
             // 
-            // ajoutDunMessageToolStripMenuItem
+            // suppressionDunVIPToolStripMenuItem
             // 
-            this.ajoutDunMessageToolStripMenuItem.Name = "ajoutDunMessageToolStripMenuItem";
-            this.ajoutDunMessageToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.ajoutDunMessageToolStripMenuItem.Text = "Ajout d\'un message";
-            this.ajoutDunMessageToolStripMenuItem.Click += new System.EventHandler(this.ajoutDunMessageToolStripMenuItem_Click);
+            this.suppressionDunVIPToolStripMenuItem.Name = "suppressionDunVIPToolStripMenuItem";
+            this.suppressionDunVIPToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.suppressionDunVIPToolStripMenuItem.Text = "Suppression d\'un VIP";
+            this.suppressionDunVIPToolStripMenuItem.Click += new System.EventHandler(this.suppressionDunVIPToolStripMenuItem_Click);
+
             // 
             // supprUneCampagneToolStripMenuItem
             // 
@@ -301,10 +263,6 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.ToolStripMenuItem supprUneCampagneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suppressionDunÉvénementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suppressionDunVIPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultationDesVIPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificationDunVIPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificationDunÉvénementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ajoutDunMessageToolStripMenuItem;
     }
 }
 

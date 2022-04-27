@@ -41,13 +41,12 @@ namespace JRProjetCampagneGUI
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblTitre.Location = new System.Drawing.Point(476, 43);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(270, 31);
+            this.lblTitre.Size = new System.Drawing.Size(320, 31);
             this.lblTitre.TabIndex = 0;
-            this.lblTitre.Text = "Liste des campagnes";
+            this.lblTitre.Text = "Consulter les campagnes";
             // 
             // dtgCampagne
             // 
-            this.dtgCampagne.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtgCampagne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCampagne.Location = new System.Drawing.Point(204, 116);
             this.dtgCampagne.Name = "dtgCampagne";

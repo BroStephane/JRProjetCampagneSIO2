@@ -39,15 +39,14 @@ namespace JRProjetCampagneGUI
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblTitre.Location = new System.Drawing.Point(510, 97);
+            this.lblTitre.Location = new System.Drawing.Point(429, 83);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(233, 31);
+            this.lblTitre.Size = new System.Drawing.Size(327, 31);
             this.lblTitre.TabIndex = 3;
-            this.lblTitre.Text = "Liste des agences";
+            this.lblTitre.Text = "Consultation des agences";
             // 
             // dtgInfosAgences
             // 
-            this.dtgInfosAgences.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtgInfosAgences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgInfosAgences.Location = new System.Drawing.Point(243, 193);
             this.dtgInfosAgences.Name = "dtgInfosAgences";
@@ -58,9 +57,9 @@ namespace JRProjetCampagneGUI
             // 
             this.btnObtenirInfos.Location = new System.Drawing.Point(536, 524);
             this.btnObtenirInfos.Name = "btnObtenirInfos";
-            this.btnObtenirInfos.Size = new System.Drawing.Size(162, 33);
+            this.btnObtenirInfos.Size = new System.Drawing.Size(162, 23);
             this.btnObtenirInfos.TabIndex = 5;
-            this.btnObtenirInfos.Text = "Afficher les informations";
+            this.btnObtenirInfos.Text = "Obtenir les informations";
             this.btnObtenirInfos.UseVisualStyleBackColor = true;
             this.btnObtenirInfos.Click += new System.EventHandler(this.btnObtenirInfos_Click_1);
             // 
@@ -74,7 +73,7 @@ namespace JRProjetCampagneGUI
             this.Controls.Add(this.dtgInfosAgences);
             this.Controls.Add(this.lblTitre);
             this.Name = "FrmConsultAgence";
-            this.Text = "Consultation des agences";
+            this.Text = "FrmConsultAgence";
             ((System.ComponentModel.ISupportInitialize)(this.dtgInfosAgences)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

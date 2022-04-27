@@ -51,22 +51,21 @@ namespace JRProjetCampagneGUI
             this.dtgEvenement.AllowUserToDeleteRows = false;
             this.dtgEvenement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgEvenement.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgEvenement.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtgEvenement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgEvenement.Location = new System.Drawing.Point(209, 166);
+            this.dtgEvenement.Location = new System.Drawing.Point(315, 151);
             this.dtgEvenement.Name = "dtgEvenement";
             this.dtgEvenement.ReadOnly = true;
-            this.dtgEvenement.Size = new System.Drawing.Size(679, 318);
+            this.dtgEvenement.Size = new System.Drawing.Size(440, 390);
             this.dtgEvenement.TabIndex = 1;
             this.dtgEvenement.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnGet
             // 
-            this.btnGet.Location = new System.Drawing.Point(457, 564);
+            this.btnGet.Location = new System.Drawing.Point(441, 619);
             this.btnGet.Name = "btnGet";
-            this.btnGet.Size = new System.Drawing.Size(166, 39);
+            this.btnGet.Size = new System.Drawing.Size(160, 29);
             this.btnGet.TabIndex = 2;
-            this.btnGet.Text = "Afficher les événements";
+            this.btnGet.Text = "Obtenir les événements";
             this.btnGet.UseVisualStyleBackColor = true;
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
             // 

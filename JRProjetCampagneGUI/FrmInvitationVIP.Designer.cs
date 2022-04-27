@@ -120,7 +120,6 @@ namespace JRProjetCampagneGUI
             this.Controls.Add(this.lblTitre);
             this.Name = "FrmInvitationVIP";
             this.Text = "Invitation d\'un VIP";
-            this.Load += new System.EventHandler(this.FrmInvitationVIP_Load);
             this.pnlAjout.ResumeLayout(false);
             this.pnlAjout.PerformLayout();
             this.ResumeLayout(false);
