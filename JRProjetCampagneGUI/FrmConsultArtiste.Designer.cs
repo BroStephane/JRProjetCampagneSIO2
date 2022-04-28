@@ -49,9 +49,9 @@ namespace JRProjetCampagneGUI
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblTitre.Location = new System.Drawing.Point(470, 78);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(299, 31);
+            this.lblTitre.Size = new System.Drawing.Size(313, 31);
             this.lblTitre.TabIndex = 6;
-            this.lblTitre.Text = "Consultation des artiste";
+            this.lblTitre.Text = "Consultation des artistes";
             // 
             // btnObtenirInfos
             // 

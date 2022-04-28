@@ -36,9 +36,13 @@ namespace JRProjetCampagneBO
             this.leSite = leSite;
         }
 
+        [System.ComponentModel.Browsable(false)]
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string SitWeb { get => siteWeb; set => siteWeb = value; }
+        [System.ComponentModel.Browsable(false)]
         public CourantArtistique UnCourantArtistique { get => unCourantArtistique; set => unCourantArtistique = value; }
+
+        public string LibelleCourant { get => unCourantArtistique.Libelle; }
     }
 }

@@ -20,9 +20,8 @@ namespace JRProjetCampagneGUI
 
         private void btnObtenirInfos_Click(object sender, EventArgs e)
         {
-            
             dtgInfosArtiste.DataSource = ArtisteManager.GetInstance().GetLesArtistes();
-            dtgInfosArtiste.Columns[0].Visible = false;
+
         }
     }
 }
