@@ -39,6 +39,8 @@ namespace JRProjetCampagneBO
         public string uneAgenceEvenementielNom { get => uneAgenceEvenementiel.Nom; }
         public string uneAgenceCommunicationNom { get => uneAgenceCommunication.Nom; }
 
+
+        //premier constructeur pour valoriser tous les attributs
         /// <summary>
         /// le constructeur valorisant tous les attributs
         /// </summary>
@@ -62,6 +64,7 @@ namespace JRProjetCampagneBO
             this.uneAgenceCommunication = uneAgenceCommunication;
         }
 
+        //deuxième constructeur pour valoriser le libelle, la dateDbut, la dateFin, objectif et unEmploye
         /// <summary>
         /// le constructeur valorisant le libelle, la dateDbut, la dateFin, l'objectif, unEmploye, uneAgenceEvenementiel et uneAgenceCommunication
         /// </summary>
@@ -100,6 +103,7 @@ namespace JRProjetCampagneBO
         public Campagne(int id)
         {
             this.id = id;
+
         }
 
     }
