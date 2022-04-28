@@ -46,15 +46,20 @@ namespace JRProjetCampagneBLL
             return ArtisteDAO.GetInstance().GetLesArtistes();
         }
 
-        public int UpdateArtiste(string nom, string siteWeb, int idCourantArtistique)
+        public int UpdateArtiste(int idArtiste,string nom, string siteWeb, int idCourantArtistique)
         {
 
 
             CourantArtistique unCourantArtistique = new CourantArtistique(idCourantArtistique);
 
-            Artiste unArtiste = new Artiste(nom, siteWeb, unCourantArtistique);
+            Artiste unArtiste = new Artiste(idArtiste,nom, siteWeb, unCourantArtistique);
 
             return ArtisteDAO.GetInstance().UpdateArtiste(unArtiste);
+        }
+
+        public int GetUnArtisteId(int idArtiste)
+        {
+            return ArtisteDAO.GetInstance().GetUnArtisteId(idArtiste);
         }
 
     }

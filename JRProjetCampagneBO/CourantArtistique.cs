@@ -22,6 +22,7 @@ namespace JRProjetCampagneBO
             this.id = id;
         }
 
+
         public int Id { get => id; set => id = value; }
         public string Libelle { get => libelle; set => libelle = value; }
 

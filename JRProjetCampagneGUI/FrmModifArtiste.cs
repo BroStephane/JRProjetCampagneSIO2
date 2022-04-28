@@ -1,4 +1,5 @@
 ﻿using JRProjetCampagneBLL;
+using JRProjetCampagneBO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,15 @@ namespace JRProjetCampagneGUI
 
         private void cbxArtiste_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            
+
+            int idArtiste = (int)cbxArtiste.SelectedValue;
+            Artiste unArtiste = ArtisteManager.GetInstance().GetUnArtisteId(idArtiste);
+
+            txtNomArtiste.Text = unArtiste.Nom;
+            txtSiteWebArtiste.Text = unArtiste.SitWeb;
+            cbxCourantArtistique.Text = unArtiste.UnCourantArtistique;
+
             pnlArtiste.Visible = true;
         }
 
@@ -59,7 +69,7 @@ namespace JRProjetCampagneGUI
             txtNomArtiste.Text = txtNomArtiste.Text.Trim();
             txtSiteWebArtiste.Text = txtSiteWebArtiste.Text.Trim();
             cbxCourantArtistique.Text = cbxCourantArtistique.Text.Trim();
-            int idArtiste = 0;
+            int idCourant = 0;
             string msgErr = "";
             //Test pour voir si une zone de texte est vide ou non, message d'erreur retourné sinon
             if (txtNomArtiste.Text == string.Empty)
@@ -80,7 +90,7 @@ namespace JRProjetCampagneGUI
             }
             else
             {
-                idArtiste = (int)cbxArtiste.SelectedValue;
+                idCourant = (int)cbxCourantArtistique.SelectedValue;
             }
             if(msgErr != "")
             {
@@ -90,8 +100,26 @@ namespace JRProjetCampagneGUI
             {
                 try
                 {
-                    int idChoixArtiste;
+                    int idChoixArtiste = (int)cbxArtiste.SelectedValue;
+
+                    int nb = ArtisteManager.GetInstance().UpdateArtiste(idChoixArtiste, txtNomArtiste.Text, txtSiteWebArtiste.Text, idCourant);
+
+                    if (nb ==0)
+                    {
+                        MessageBox.Show("Problème grave : la modification de l'artiste n'a pas été réalisé", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Modification de l'artiste réalisé", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        pnlArtiste.Visible = false;
+                        chargerArtiste();
+                    }
                 }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
 
         }

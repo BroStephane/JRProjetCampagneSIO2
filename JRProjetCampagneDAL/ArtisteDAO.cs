@@ -151,6 +151,47 @@ namespace JRProjetCampagneDAL
 
         }
 
+        public Artiste GetUnArtisteId(int idArtiste)
+        {
+            string nom;
+            string siteWeb;
+            string sonCourant;
+            CourantArtistique unCourantArtisitque;
+            Artiste unArtiste = null;
+
+            // on récupère l'objet responsable de la connexion à la base
+            SqlCommand command = Command.GetObjCommande();
+
+            command.Parameters.Clear();
+
+            // on exécute la requête et on récupère dans un DataReader les enregistrements
+            command.CommandText = "GetLesArtisteId";
+
+            command.Parameters.Add("IdArtiste", System.Data.SqlDbType.Int);
+            command.Parameters["IdArtiste"].Value = idArtiste;
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                nom = reader["nom"].ToString();
+                siteWeb = reader["siteWeb"].ToString();
+                sonCourant = reader["courant artistique"].ToString();
+
+                //On créer un courant artistique
+                unCourantArtisitque = new CourantArtistique(sonCourant);
+                //On crée un artiste
+                unArtiste = new Artiste(nom, siteWeb, unCourantArtisitque);
+            }
+
+            //On ferme le DataReader
+            reader.Close();
+            //On ferme la connexion
+            command.Connection.Close();
+            //On retourne la collection
+            return unArtiste;
+        }
+
 
     }
 }
