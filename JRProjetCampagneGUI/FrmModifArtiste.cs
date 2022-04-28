@@ -59,6 +59,7 @@ namespace JRProjetCampagneGUI
             txtNomArtiste.Text = txtNomArtiste.Text.Trim();
             txtSiteWebArtiste.Text = txtSiteWebArtiste.Text.Trim();
             cbxCourantArtistique.Text = cbxCourantArtistique.Text.Trim();
+            int idArtiste = 0;
             string msgErr = "";
             //Test pour voir si une zone de texte est vide ou non, message d'erreur retourné sinon
             if (txtNomArtiste.Text == string.Empty)
@@ -73,7 +74,26 @@ namespace JRProjetCampagneGUI
             {
                 msgErr += "Veuillez saisir un site web pour l'artiste \n";
             }
-            if (cbxArtiste.SelectedIndex)
+            if (cbxArtiste.SelectedIndex == -1)
+            {
+                msgErr += "Veuillez sélectionner un artiste\n";
+            }
+            else
+            {
+                idArtiste = (int)cbxArtiste.SelectedValue;
+            }
+            if(msgErr != "")
+            {
+                MessageBox.Show(msgErr, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    int idChoixArtiste;
+                }
+            }
+
         }
     }
 }
