@@ -57,7 +57,7 @@ namespace JRProjetCampagneBLL
             return ArtisteDAO.GetInstance().UpdateArtiste(unArtiste);
         }
 
-        public int GetUnArtisteId(int idArtiste)
+        public Artiste GetUnArtisteId(int idArtiste)
         {
             return ArtisteDAO.GetInstance().GetUnArtisteId(idArtiste);
         }

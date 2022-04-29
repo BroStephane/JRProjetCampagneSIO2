@@ -59,7 +59,7 @@ namespace JRProjetCampagneGUI
 
             txtNomArtiste.Text = unArtiste.Nom;
             txtSiteWebArtiste.Text = unArtiste.SitWeb;
-            cbxCourantArtistique.Text = unArtiste.UnCourantArtistique;
+            cbxCourantArtistique.Text = unArtiste.LibelleCourant;
 
             pnlArtiste.Visible = true;
         }

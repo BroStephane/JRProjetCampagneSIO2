@@ -27,10 +27,17 @@ namespace JRProjetCampagneBO
             this.siteWeb = siteWeb;
             this.unCourantArtistique = unCourantArtistique;
         }
+        
+        public Artiste(int id)
+        {
+            this.id = id;
+        }
 
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string SitWeb { get => siteWeb; set => siteWeb = value; }
         public CourantArtistique UnCourantArtistique { get => unCourantArtistique; set => unCourantArtistique = value; }
+
+        public string LibelleCourant { get => unCourantArtistique.Libelle; }
     }
 }

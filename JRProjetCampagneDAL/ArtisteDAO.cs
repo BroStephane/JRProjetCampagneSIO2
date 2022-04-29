@@ -165,7 +165,7 @@ namespace JRProjetCampagneDAL
             command.Parameters.Clear();
 
             // on exécute la requête et on récupère dans un DataReader les enregistrements
-            command.CommandText = "GetLesArtisteId";
+            command.CommandText = "GetLesArtisteId"; //Faire la proccédure stocké /!\
 
             command.Parameters.Add("IdArtiste", System.Data.SqlDbType.Int);
             command.Parameters["IdArtiste"].Value = idArtiste;

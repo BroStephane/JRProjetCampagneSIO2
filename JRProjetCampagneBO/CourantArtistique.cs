@@ -17,6 +17,12 @@ namespace JRProjetCampagneBO
             this.libelle = libelle;
         }
 
+        public CourantArtistique(string libelle)
+        {
+            this.libelle = libelle;
+        }
+
+
         public CourantArtistique(int id)
         {
             this.id = id;
@@ -25,6 +31,7 @@ namespace JRProjetCampagneBO
 
         public int Id { get => id; set => id = value; }
         public string Libelle { get => libelle; set => libelle = value; }
+
 
     }
 }
