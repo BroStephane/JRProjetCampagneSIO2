@@ -90,13 +90,13 @@ namespace JRProjetCampagneDAL
                     nom = reader["Nom de l'artiste"].ToString();
                 }
 
-                if(reader ["Site web de l'artiste"]==DBNull.Value)
+                if(reader ["Le site web"] ==DBNull.Value)
                 {
                     sitWeb = default(string);
                 }
                 else
                 {
-                    sitWeb = reader["Site web de l'artiste"].ToString();
+                    sitWeb = reader["Le site web"].ToString();
                 }
 
                 if(reader["Le courant artistique"]==DBNull.Value)
@@ -165,7 +165,7 @@ namespace JRProjetCampagneDAL
             command.Parameters.Clear();
 
             // on exécute la requête et on récupère dans un DataReader les enregistrements
-            command.CommandText = "GetLesArtisteId"; //Faire la proccédure stocké /!\
+            command.CommandText = "GetLesArtistesId";
 
             command.Parameters.Add("IdArtiste", System.Data.SqlDbType.Int);
             command.Parameters["IdArtiste"].Value = idArtiste;
