@@ -29,11 +29,6 @@ namespace JRProjetCampagneBO
             this.siteWeb = siteWeb;
             this.unCourantArtistique = unCourantArtistique;
         }
-        
-        public Artiste(int id)
-        {
-            this.id = id;
-        }
 
         public Artiste(int id, string leNom, string leSite)
         {
