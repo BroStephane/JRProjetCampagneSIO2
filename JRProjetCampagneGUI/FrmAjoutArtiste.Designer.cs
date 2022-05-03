@@ -131,6 +131,7 @@ namespace JRProjetCampagneGUI
             this.Controls.Add(this.btnValiderAjoutArtiste);
             this.Name = "FrmAjoutArtiste";
             this.Text = "Ajouter un artiste";
+            this.Load += new System.EventHandler(this.FrmAjoutArtiste_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
