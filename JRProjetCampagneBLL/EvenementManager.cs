@@ -38,7 +38,6 @@ namespace JRProjetCampagneBLL
 
             return EvenementDAO.GetInstance().DeleteEvenement(unEvenement);
 
-
         }
 
 

@@ -67,23 +67,5 @@ namespace JRProjetCampagneBLL
 
 
 
-
-        public int UpdateArtiste(int idArtiste,string nom, string siteWeb, int idCourantArtistique)
-        {
-
-
-            CourantArtistique unCourantArtistique = new CourantArtistique(idCourantArtistique);
-
-            Artiste unArtiste = new Artiste(idArtiste,nom, siteWeb, unCourantArtistique);
-
-            return ArtisteDAO.GetInstance().UpdateArtiste(unArtiste);
-        }
-
-        public Artiste GetUnArtisteId(int idArtiste)
-        {
-            return ArtisteDAO.GetInstance().GetUnArtisteId(idArtiste);
-        }
-
-
     }
 }
