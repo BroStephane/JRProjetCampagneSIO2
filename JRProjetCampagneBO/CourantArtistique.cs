@@ -10,7 +10,6 @@ namespace JRProjetCampagneBO
     {
         private int id;
         private string libelle;
-        private string leLibelle;
 
         public CourantArtistique(int id, string libelle)
         {
@@ -18,10 +17,10 @@ namespace JRProjetCampagneBO
             this.libelle = libelle;
         }
 
-        public CourantArtistique(string libelle)
-        {
-            this.libelle = libelle;
-        }
+        //public CourantArtistique(string libelle)
+        //{
+            //this.libelle = libelle;
+        //}
 
 
         public CourantArtistique(int id)
@@ -29,16 +28,11 @@ namespace JRProjetCampagneBO
             this.id = id;
         }
 
-
-        public CourantArtistique(string leLibelle, int leIdCourArtistique)
+        public CourantArtistique(string libelle)
         {
-            this.leLibelle = leLibelle;
+            this.libelle = libelle;
         }
 
-        public CourantArtistique(string leLibelle)
-        {
-            this.leLibelle = leLibelle;
-        }
 
 
         public int Id { get => id; set => id = value; }

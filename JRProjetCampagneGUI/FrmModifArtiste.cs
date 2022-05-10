@@ -39,7 +39,7 @@ namespace JRProjetCampagneGUI
 
             try
             {
-                cbxCourantArtistique.DisplayMember = "libelle";
+                cbxCourantArtistique.DisplayMember = "Libelle";
                 cbxCourantArtistique.ValueMember = "id";
                 cbxCourantArtistique.DataSource = CourantArtistiqueManager.GetInstance().GetCourantArtistiques();
                 cbxCourantArtistique.SelectedItem = null;
@@ -52,13 +52,14 @@ namespace JRProjetCampagneGUI
 
         private void cbxArtiste_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            
 
+
+            //int idArtiste = (int)cbxArtiste.SelectedValue;
             int idArtiste = (int)cbxArtiste.SelectedValue;
             Artiste unArtiste = ArtisteManager.GetInstance().GetUnArtisteId(idArtiste);
 
             txtNomArtiste.Text = unArtiste.Nom;
-            txtSiteWebArtiste.Text = unArtiste.SitWeb;
+            txtSiteWebArtiste.Text = unArtiste.SiteWeb;
             cbxCourantArtistique.Text = unArtiste.LibelleCourant;
 
             pnlArtiste.Visible = true;

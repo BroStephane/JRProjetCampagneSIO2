@@ -132,7 +132,7 @@ namespace JRProjetCampagneDAL
             laCom.Parameters.Add("Nom", SqlDbType.VarChar);
             laCom.Parameters["Nom"].Value = unArtiste.Nom;
             laCom.Parameters.Add("SiteWeb", SqlDbType.VarChar);
-            laCom.Parameters["SiteWeb"].Value = unArtiste.SitWeb;
+            laCom.Parameters["SiteWeb"].Value = unArtiste.SiteWeb;
             laCom.Parameters.Add("IdCourantArtistique", SqlDbType.VarChar);
             laCom.Parameters["IdCourantArtistique"].Value = unArtiste.UnCourantArtistique.Id;
 
@@ -145,67 +145,7 @@ namespace JRProjetCampagneDAL
 
         }
 
-        public List<Artiste> GetLesArtistes()
-        {
-            int id, idCourantArtistique;
-            string nom, sitWeb, libelleCourant;
-            CourantArtistique leCourantArtistique;
-            Artiste unArtiste;
-
-            List<Artiste> lesArtistes = new List<Artiste>();
-
-            SqlCommand command = Command.GetObjCommande();
-
-            //Nettoie le cache
-            command.Parameters.Clear();
-
-            command.CommandText = "GetLesArtistes";
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                int.TryParse(reader["id"].ToString(), out id);
-                int.TryParse(reader["id_CourantArtistique"].ToString(), out idCourantArtistique);
-
-                if (reader["Nom de l'artiste"]== DBNull.Value)
-                {
-                    nom = default(string);
-                }
-                else
-                {
-                    nom = reader["Nom de l'artiste"].ToString();
-                }
-
-                if(reader ["Le site web"] ==DBNull.Value)
-                {
-                    sitWeb = default(string);
-                }
-                else
-                {
-                    sitWeb = reader["Le site web"].ToString();
-                }
-
-                if(reader["Le courant artistique"]==DBNull.Value)
-                {
-                    libelleCourant = default(string);
-                }
-                else
-                {
-                    libelleCourant = reader["Le courant artistique"].ToString();
-                }
-                leCourantArtistique = new CourantArtistique(idCourantArtistique, libelleCourant);
-                unArtiste = new Artiste(id, nom, sitWeb, leCourantArtistique);
-                lesArtistes.Add(unArtiste);
-            }
-
-            //Fermeture du lecteur
-            reader.Close();
-
-            //Fermerture de la connexion
-            command.Connection.Close();
-            return lesArtistes;
-        }
+        
 
         public int UpdateArtiste(Artiste unArtiste)
         {
@@ -225,7 +165,7 @@ namespace JRProjetCampagneDAL
             laCom.Parameters.Add("Nom", SqlDbType.VarChar);
             laCom.Parameters["Nom"].Value = unArtiste.Nom;
             laCom.Parameters.Add("SiteWeb", SqlDbType.VarChar);
-            laCom.Parameters["SiteWeb"].Value = unArtiste.SitWeb;
+            laCom.Parameters["SiteWeb"].Value = unArtiste.SiteWeb;
             laCom.Parameters.Add("IdCourantArtistique", SqlDbType.VarChar);
             laCom.Parameters["IdCourantArtistique"].Value = unArtiste.UnCourantArtistique.Id;
 
@@ -242,7 +182,7 @@ namespace JRProjetCampagneDAL
         {
             string nom;
             string siteWeb;
-            string sonCourant;
+            string libelle;
             CourantArtistique unCourantArtisitque;
             Artiste unArtiste = null;
 
@@ -263,10 +203,10 @@ namespace JRProjetCampagneDAL
             {
                 nom = reader["nom"].ToString();
                 siteWeb = reader["siteWeb"].ToString();
-                sonCourant = reader["courant artistique"].ToString();
+                libelle = reader["courant artistique"].ToString();
 
                 //On créer un courant artistique
-                unCourantArtisitque = new CourantArtistique(sonCourant);
+                unCourantArtisitque = new CourantArtistique(libelle);
                 //On crée un artiste
                 unArtiste = new Artiste(nom, siteWeb, unCourantArtisitque);
             }
