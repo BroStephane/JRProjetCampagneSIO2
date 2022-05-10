@@ -117,6 +117,7 @@ namespace JRProjetCampagneGUI
             this.btnValiderAjoutArtiste.TabIndex = 8;
             this.btnValiderAjoutArtiste.Text = "Valider";
             this.btnValiderAjoutArtiste.UseVisualStyleBackColor = true;
+            this.btnValiderAjoutArtiste.Click += new System.EventHandler(this.btnValiderModifArtiste_Click);
             // 
             // lblArtiste
             // 
@@ -136,6 +137,7 @@ namespace JRProjetCampagneGUI
             this.cbxArtiste.Name = "cbxArtiste";
             this.cbxArtiste.Size = new System.Drawing.Size(196, 24);
             this.cbxArtiste.TabIndex = 16;
+            this.cbxArtiste.SelectionChangeCommitted += new System.EventHandler(this.cbxArtiste_SelectionChangeCommitted);
             // 
             // pnlModifArtiste
             // 

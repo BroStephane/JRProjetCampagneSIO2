@@ -36,6 +36,11 @@ namespace JRProjetCampagneBO
             this.leSite = leSite;
         }
 
+        public Artiste(int id)
+        {
+            this.id = id;
+        }
+
         [System.ComponentModel.Browsable(false)]
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }

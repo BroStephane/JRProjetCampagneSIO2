@@ -50,7 +50,7 @@ namespace JRProjetCampagneBLL
         /// </summary>
         /// <param name="idChoixArtiste"></param>
         /// <returns></returns>
-        public Artiste GetUnArtisteId(int idChoixAriste)
+        public Artiste GetUnArtisteId(int idChoixArtiste)
         {
             return ArtisteDAO.GetInstance().GetUnArtisteId(idChoixArtiste);
         }

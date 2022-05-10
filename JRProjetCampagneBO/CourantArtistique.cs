@@ -33,6 +33,11 @@ namespace JRProjetCampagneBO
             this.leLibelle = leLibelle;
         }
 
+        public CourantArtistique(string libelle)
+        {
+            this.libelle = libelle;
+        }
+
         public int Id { get => id; set => id = value; }
         public string Libelle { get => libelle; set => libelle = value; }
 

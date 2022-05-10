@@ -133,6 +133,13 @@ namespace JRProjetCampagneGUI
             frmsup.ShowDialog();
         }
 
+        private void modificationDunArtisteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmModifArtiste leFormAppele = new FrmModifArtiste();
+            //affichage du formulaire
+            leFormAppele.ShowDialog();
 
+        }
     }
 }
