@@ -41,6 +41,36 @@ namespace JRProjetCampagneDAL
         {
         }
 
+        public int AddArtiste(Artiste unArtiste)
+        {
+            // Récupérer l'objet responsable de la connexion à la db
+            SqlCommand laCom = Command.GetObjCommande();
+
+            // on indique que l'on va appeler une procédure stockée
+            laCom.CommandType = CommandType.StoredProcedure;
+
+            // Nettoie le 'cache'
+            laCom.Parameters.Clear();
+
+            // Créer l'objet qui contient la requête INSERT
+            laCom.CommandText = "AddArtiste";
+
+            laCom.Parameters.Add("Nom", SqlDbType.VarChar);
+            laCom.Parameters["Nom"].Value = unArtiste.Nom;
+            laCom.Parameters.Add("SiteWeb", SqlDbType.VarChar);
+            laCom.Parameters["SiteWeb"].Value = unArtiste.SitWeb;
+            laCom.Parameters.Add("IdCourantArtistique", SqlDbType.VarChar);
+            laCom.Parameters["IdCourantArtistique"].Value = unArtiste.UnCourantArtistique.Id;
+
+            // Exécuter la requête + Return
+            int nb = laCom.ExecuteNonQuery();
+
+            // Fermeture de la connexion
+            laCom.Connection.Close();
+            return nb;
+
+        }
+
         public List<Artiste> GetLesArtistes()
         {
             //Déclaration des variable de travail
@@ -115,35 +145,74 @@ namespace JRProjetCampagneDAL
             return lesArtistes;
         }
 
-        public int AddArtiste(Artiste unArtiste)
+        public Artiste GetUnArtisteId(int idChoixArtiste)
         {
-            // Récupérer l'objet responsable de la connexion à la db
-            SqlCommand laCom = Command.GetObjCommande();
+            string leNom;
+            string leSite;
+            string SonCourant;
+            CourantArtistique unCourant;
+            Artiste unArtiste = null;
 
-            // on indique que l'on va appeler une procédure stockée
-            laCom.CommandType = CommandType.StoredProcedure;
+            // on récupère l'objet responsable de la connexion à la base
+            SqlCommand maCommand = Command.GetObjCommande();
 
-            // Nettoie le 'cache'
-            laCom.Parameters.Clear();
+            maCommand.Parameters.Clear();
 
-            // Créer l'objet qui contient la requête INSERT
-            laCom.CommandText = "AddArtiste";
+            // on exécute la requête et on récupère dans un DataReader les enregistrements
+            maCommand.CommandText = "GetLesArtistesId";
 
-            laCom.Parameters.Add("Nom", SqlDbType.VarChar);
-            laCom.Parameters["Nom"].Value = unArtiste.Nom;
-            laCom.Parameters.Add("SiteWeb", SqlDbType.VarChar);
-            laCom.Parameters["SiteWeb"].Value = unArtiste.SitWeb;
-            laCom.Parameters.Add("IdCourantArtistique", SqlDbType.VarChar);
-            laCom.Parameters["IdCourantArtistique"].Value = unArtiste.UnCourantArtistique.Id;
+            maCommand.Parameters.Add("IdArtiste", System.Data.SqlDbType.Int);
+            maCommand.Parameters["IdArtiste"].Value = idChoixArtiste;
 
-            // Exécuter la requête + Return
-            int nb = laCom.ExecuteNonQuery();
+            SqlDataReader reader = maCommand.ExecuteReader();
 
-            // Fermeture de la connexion
-            laCom.Connection.Close();
-            return nb;
+            while(reader.Read())
+            {
+                leNom = reader["nom"].ToString();
+                leSite = reader["siteWeb"].ToString();
+                SonCourant = reader["courant artistique"].ToString();
+
+
+                //On crée un courant artistique 
+                unCourant = new CourantArtistique(SonCourant);
+                //On crée un Artiste
+                unArtiste = new Artiste(leNom, leSite, unCourant);
+            }
+            // on ferme le DataReader
+            reader.Close();
+
+            // on ferme la connexion
+            maCommand.Connection.Close();
+
+            // on retourne la collection
+            return unArtiste;
+        }
+        
+        public int UpdateArtiste(Artiste unArtiste)
+        {
+            //on récupère l'objet responsable de la connexion à la base
+            SqlCommand maCommand = Command.GetObjCommande();
+
+            maCommand.Parameters.Clear();
+
+            //on crée l'objet qui va contenir la requête SQL d'insert qui sera exécutée
+            maCommand.CommandText = "UpdateArtiste";
+
+            //On renseigne le paramètre
+            maCommand.Parameters.Add("Nom", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["Nom"].Value = unArtiste.Nom;
+
+            maCommand.Parameters.Add("SiteWeb", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["SiteWeb"].Value = unArtiste.SitWeb;
+
+            maCommand.Parameters.Add("IdCourantArtistique", System.Data.SqlDbType.VarChar);
+            maCommand.Parameters["IdCourantArtistique"].Value = unArtiste.UnCourantArtistique.Id;
+
+            return maCommand.ExecuteNonQuery();
 
         }
+
+
 
 
     }

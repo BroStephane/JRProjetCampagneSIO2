@@ -33,7 +33,6 @@ namespace JRProjetCampagneBLL
         /// </summary>
         private ArtisteManager()
         {
-
         }
 
         //appel de la couche DAL pour récupérer une collection de artistes
@@ -45,6 +44,34 @@ namespace JRProjetCampagneBLL
         {
             return ArtisteDAO.GetInstance().GetLesArtistes();
         }
+
+        /// <summary>
+        /// Appel de la couche DAL pour récupérer l'instance d'un artiste grâce à l'id passé en paramètre 
+        /// </summary>
+        /// <param name="idChoixArtiste"></param>
+        /// <returns></returns>
+        public Artiste GetUnArtisteId(int idChoixAriste)
+        {
+            return ArtisteDAO.GetInstance().GetUnArtisteId(idChoixArtiste);
+        }
+
+        /// <summary>
+        /// Appel de la couche DAL pour mettre à jour un artiste en passant une instance de l'artiste avec les attributs à mettre à jour
+        /// </summary>
+        /// <param name="idChoixArtiste">id de l'artiste</param>
+        /// <param name="nomChoixArtiste">nom de l'artiste</param>
+        /// <param name="siteChoixArtiste">site de l'artiste</param>
+        /// <param name="idChoixCourant">id du courant artistique</param>
+        /// <returns></returns>
+        public int UpdateArtiste(int idChoixArtiste, string sonLibelle, string sonSite, int idChoixCourant)
+        {
+            CourantArtistique unCourant;
+            unCourant = new CourantArtistique(idChoixCourant);
+            Artiste unArtiste;
+            unArtiste = new Artiste(idChoixArtiste, sonLibelle, sonSite, unCourant);
+            return ArtisteDAO.GetInstance().UpdateArtiste(unArtiste);
+        }
+
 
         //appel de la couche DAL pour créer une nouvelle artistes
         /// <summary>
