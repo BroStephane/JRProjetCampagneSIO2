@@ -30,7 +30,6 @@ namespace JRProjetCampagneGUI
         private void InitializeComponent()
         {
             this.lblTitre = new System.Windows.Forms.Label();
-            this.cbxArtiste = new System.Windows.Forms.ComboBox();
             this.lblCourantArtistique = new System.Windows.Forms.Label();
             this.pnlArtiste = new System.Windows.Forms.Panel();
             this.btnValiderModificationArtiste = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@ namespace JRProjetCampagneGUI
             this.cbxCourantArtistique = new System.Windows.Forms.ComboBox();
             this.lblNomArtiste = new System.Windows.Forms.Label();
             this.txtNomArtiste = new System.Windows.Forms.TextBox();
+            this.cbxArtiste = new System.Windows.Forms.ComboBox();
             this.pnlArtiste.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,25 +53,15 @@ namespace JRProjetCampagneGUI
             this.lblTitre.TabIndex = 8;
             this.lblTitre.Text = "Modification d\'un artiste ";
             // 
-            // cbxArtiste
-            // 
-            this.cbxArtiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbxArtiste.FormattingEnabled = true;
-            this.cbxArtiste.Location = new System.Drawing.Point(655, 201);
-            this.cbxArtiste.Name = "cbxArtiste";
-            this.cbxArtiste.Size = new System.Drawing.Size(196, 24);
-            this.cbxArtiste.TabIndex = 9;
-            this.cbxArtiste.SelectionChangeCommitted += new System.EventHandler(this.cbxArtiste_SelectionChangeCommitted);
-            // 
             // lblCourantArtistique
             // 
             this.lblCourantArtistique.AutoSize = true;
             this.lblCourantArtistique.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblCourantArtistique.Location = new System.Drawing.Point(437, 201);
             this.lblCourantArtistique.Name = "lblCourantArtistique";
-            this.lblCourantArtistique.Size = new System.Drawing.Size(212, 20);
+            this.lblCourantArtistique.Size = new System.Drawing.Size(220, 20);
             this.lblCourantArtistique.TabIndex = 10;
-            this.lblCourantArtistique.Text = "Choisisez l\'artiste à modifier :";
+            this.lblCourantArtistique.Text = "Choisissez l\'artiste à modifier :";
             // 
             // pnlArtiste
             // 
@@ -153,15 +143,24 @@ namespace JRProjetCampagneGUI
             this.txtNomArtiste.Size = new System.Drawing.Size(196, 23);
             this.txtNomArtiste.TabIndex = 13;
             // 
+            // cbxArtiste
+            // 
+            this.cbxArtiste.FormattingEnabled = true;
+            this.cbxArtiste.Location = new System.Drawing.Point(655, 199);
+            this.cbxArtiste.Name = "cbxArtiste";
+            this.cbxArtiste.Size = new System.Drawing.Size(196, 21);
+            this.cbxArtiste.TabIndex = 12;
+            this.cbxArtiste.SelectionChangeCommitted += new System.EventHandler(this.cbxArtiste_SelectionChangeCommitted_1);
+            // 
             // FrmModifArtiste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1476, 661);
+            this.Controls.Add(this.cbxArtiste);
             this.Controls.Add(this.pnlArtiste);
             this.Controls.Add(this.lblCourantArtistique);
-            this.Controls.Add(this.cbxArtiste);
             this.Controls.Add(this.lblTitre);
             this.Name = "FrmModifArtiste";
             this.Text = "Modification un artiste";
@@ -175,7 +174,6 @@ namespace JRProjetCampagneGUI
         #endregion
 
         private System.Windows.Forms.Label lblTitre;
-        private System.Windows.Forms.ComboBox cbxArtiste;
         private System.Windows.Forms.Label lblCourantArtistique;
         private System.Windows.Forms.Panel pnlArtiste;
         private System.Windows.Forms.Label label1;
@@ -185,5 +183,6 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.Label lblNomArtiste;
         private System.Windows.Forms.TextBox txtNomArtiste;
         private System.Windows.Forms.Button btnValiderModificationArtiste;
+        private System.Windows.Forms.ComboBox cbxArtiste;
     }
 }

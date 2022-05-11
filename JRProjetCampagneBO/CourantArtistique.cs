@@ -17,10 +17,6 @@ namespace JRProjetCampagneBO
             this.libelle = libelle;
         }
 
-        //public CourantArtistique(string libelle)
-        //{
-            //this.libelle = libelle;
-        //}
 
 
         public CourantArtistique(int id)

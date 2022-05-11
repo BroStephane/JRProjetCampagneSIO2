@@ -35,7 +35,7 @@ namespace JRProjetCampagneBO
         }
 
 
-        [System.ComponentModel.Browsable(false)]
+        //[System.ComponentModel.Browsable(false)]
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public string SiteWeb { get => siteWeb; set => siteWeb = value; }

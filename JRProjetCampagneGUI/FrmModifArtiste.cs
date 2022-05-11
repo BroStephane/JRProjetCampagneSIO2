@@ -27,8 +27,8 @@ namespace JRProjetCampagneGUI
             pnlArtiste.Visible = false;
             try
             {
-                cbxArtiste.DisplayMember = "nom";
-                cbxArtiste.ValueMember = "id";
+                cbxArtiste.DisplayMember = "Nom";
+                cbxArtiste.ValueMember = "Id";
                 cbxArtiste.DataSource = ArtisteManager.GetInstance().GetLesArtistes();
                 cbxArtiste.SelectedItem = null;
             }
@@ -40,7 +40,7 @@ namespace JRProjetCampagneGUI
             try
             {
                 cbxCourantArtistique.DisplayMember = "Libelle";
-                cbxCourantArtistique.ValueMember = "id";
+                cbxCourantArtistique.ValueMember = "Id";
                 cbxCourantArtistique.DataSource = CourantArtistiqueManager.GetInstance().GetCourantArtistiques();
                 cbxCourantArtistique.SelectedItem = null;
             }
@@ -50,21 +50,25 @@ namespace JRProjetCampagneGUI
             }
         }
 
-        private void cbxArtiste_SelectionChangeCommitted(object sender, EventArgs e)
+
+
+
+        private void cbxArtiste_SelectionChangeCommitted_1(object sender, EventArgs e)
         {
 
 
             //int idArtiste = (int)cbxArtiste.SelectedValue;
+
             int idArtiste = (int)cbxArtiste.SelectedValue;
             Artiste unArtiste = ArtisteManager.GetInstance().GetUnArtisteId(idArtiste);
 
             txtNomArtiste.Text = unArtiste.Nom;
             txtSiteWebArtiste.Text = unArtiste.SiteWeb;
+            cbxCourantArtistique.Text = " ";
             cbxCourantArtistique.Text = unArtiste.LibelleCourant;
 
             pnlArtiste.Visible = true;
         }
-
         private void btnValiderModificationArtiste_Click(object sender, EventArgs e)
         {
             txtNomArtiste.Text = txtNomArtiste.Text.Trim();
@@ -124,5 +128,6 @@ namespace JRProjetCampagneGUI
             }
 
         }
+
     }
 }
