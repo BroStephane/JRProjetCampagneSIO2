@@ -118,6 +118,12 @@
     <Compile Include="FrmModifArtiste.Designer.cs">
       <DependentUpon>FrmModifArtiste.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSupArtiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupArtiste.Designer.cs">
+      <DependentUpon>FrmSupArtiste.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSupEvenement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifArtiste.resx">
       <DependentUpon>FrmModifArtiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupArtiste.resx">
+      <DependentUpon>FrmSupArtiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSupEvenement.resx">
       <DependentUpon>FrmSupEvenement.cs</DependentUpon>

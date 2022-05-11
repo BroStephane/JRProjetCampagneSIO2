@@ -16,8 +16,8 @@ namespace JRProjetCampagneGUI
         public FrmSupEvenement()
         {
             InitializeComponent();
-            btnSup.Visible = false;
-            chargerEvenement();
+                btnSup.Visible = false;
+                chargerEvenement();
 
         }
 

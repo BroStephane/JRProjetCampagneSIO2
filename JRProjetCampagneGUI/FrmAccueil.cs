@@ -141,5 +141,12 @@ namespace JRProjetCampagneGUI
             frmModifArtiste.ShowDialog();
         }
 
+        private void suppressionDunArtisteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //créer un objet, une instance de la classe du formulaire appeler
+            FrmSupArtiste frmSupArtiste = new FrmSupArtiste();
+            //affichage du formulaire
+            frmSupArtiste.ShowDialog();
+        }
     }
 }

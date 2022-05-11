@@ -219,6 +219,32 @@ namespace JRProjetCampagneDAL
             return unArtiste;
         }
 
+        public int DeleteArtiste(Artiste unArtiste)
+        {
+            // Récupérer l'objet responsable de la connexion à la db
+            SqlCommand laCom = Command.GetObjCommande();
+
+            // on indique que l'on va appeler une procédure stockée
+            laCom.CommandType = CommandType.StoredProcedure;
+
+            // Nettoie le 'cache'
+            laCom.Parameters.Clear();
+
+            // Créer l'objet qui contient la requête INSERT
+            laCom.CommandText = "DeleteArtiste";
+
+            laCom.Parameters.Add("id", SqlDbType.Int);
+            laCom.Parameters["id"].Value = unArtiste.Id;
+
+
+            // Exécuter la requête + Return
+            int nb = laCom.ExecuteNonQuery();
+
+            // Fermeture de la connexion
+            laCom.Connection.Close();
+            return nb;
+        }
+
 
     }
 }

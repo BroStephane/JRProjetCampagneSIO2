@@ -84,6 +84,11 @@ namespace JRProjetCampagneBLL
             return ArtisteDAO.GetInstance().GetUnArtisteId(idArtiste);
         }
 
+        public int DeleteArtiste(int idArtiste)
+        {
+            Artiste unArtiste = new Artiste(idArtiste);
+            return ArtisteDAO.GetInstance().DeleteArtiste(unArtiste);
+        }
 
     }
 }

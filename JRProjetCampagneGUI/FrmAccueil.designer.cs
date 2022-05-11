@@ -33,6 +33,7 @@ namespace JRProjetCampagneGUI
             this.consultationDesAgencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultationDesÉvénementsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultationDesCampagnesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultationDesArtistesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutDunÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajoutDunArtisteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,12 +42,12 @@ namespace JRProjetCampagneGUI
             this.ajoutDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invitationVIPÀUnÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierUnArtisteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionDunÉvénementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppressionDunVIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTitrePrincipale = new System.Windows.Forms.Label();
-            this.modifierUnArtisteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultationDesArtistesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppressionDunArtisteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +99,13 @@ namespace JRProjetCampagneGUI
             this.consultationDesCampagnesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.consultationDesCampagnesToolStripMenuItem.Text = "Consultation des campagnes";
             this.consultationDesCampagnesToolStripMenuItem.Click += new System.EventHandler(this.consultationDesCampagnesToolStripMenuItem_Click);
+            // 
+            // consultationDesArtistesToolStripMenuItem
+            // 
+            this.consultationDesArtistesToolStripMenuItem.Name = "consultationDesArtistesToolStripMenuItem";
+            this.consultationDesArtistesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.consultationDesArtistesToolStripMenuItem.Text = "Consultation des artistes";
+            this.consultationDesArtistesToolStripMenuItem.Click += new System.EventHandler(this.consultationDesArtistesToolStripMenuItem_Click);
             // 
             // ajoutToolStripMenuItem
             // 
@@ -165,12 +173,20 @@ namespace JRProjetCampagneGUI
             this.modificationToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.modificationToolStripMenuItem.Text = "Modification";
             // 
+            // modifierUnArtisteToolStripMenuItem
+            // 
+            this.modifierUnArtisteToolStripMenuItem.Name = "modifierUnArtisteToolStripMenuItem";
+            this.modifierUnArtisteToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.modifierUnArtisteToolStripMenuItem.Text = "Modifier un artiste";
+            this.modifierUnArtisteToolStripMenuItem.Click += new System.EventHandler(this.modifierUnArtisteToolStripMenuItem_Click);
+            // 
             // suppressionToolStripMenuItem
             // 
             this.suppressionToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.suppressionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.suppressionDunÉvénementToolStripMenuItem,
-            this.suppressionDunVIPToolStripMenuItem});
+            this.suppressionDunVIPToolStripMenuItem,
+            this.suppressionDunArtisteToolStripMenuItem});
             this.suppressionToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.suppressionToolStripMenuItem.Name = "suppressionToolStripMenuItem";
             this.suppressionToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
@@ -200,18 +216,12 @@ namespace JRProjetCampagneGUI
             this.lblTitrePrincipale.TabIndex = 1;
             this.lblTitrePrincipale.Text = "Bienvenue sur le menu des campagnes";
             // 
-            // modifierUnArtisteToolStripMenuItem
+            // suppressionDunArtisteToolStripMenuItem
             // 
-            this.modifierUnArtisteToolStripMenuItem.Name = "modifierUnArtisteToolStripMenuItem";
-            this.modifierUnArtisteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modifierUnArtisteToolStripMenuItem.Text = "Modifier un artiste";
-            this.modifierUnArtisteToolStripMenuItem.Click += new System.EventHandler(this.modifierUnArtisteToolStripMenuItem_Click);
-            // consultationDesArtistesToolStripMenuItem
-            // 
-            this.consultationDesArtistesToolStripMenuItem.Name = "consultationDesArtistesToolStripMenuItem";
-            this.consultationDesArtistesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
-            this.consultationDesArtistesToolStripMenuItem.Text = "Consultation des artistes";
-            this.consultationDesArtistesToolStripMenuItem.Click += new System.EventHandler(this.consultationDesArtistesToolStripMenuItem_Click);
+            this.suppressionDunArtisteToolStripMenuItem.Name = "suppressionDunArtisteToolStripMenuItem";
+            this.suppressionDunArtisteToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.suppressionDunArtisteToolStripMenuItem.Text = "Suppression d\'un artiste";
+            this.suppressionDunArtisteToolStripMenuItem.Click += new System.EventHandler(this.suppressionDunArtisteToolStripMenuItem_Click);
             // 
             // FrmAccueil
             // 
@@ -257,6 +267,7 @@ namespace JRProjetCampagneGUI
         private System.Windows.Forms.ToolStripMenuItem suppressionDunVIPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifierUnArtisteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultationDesArtistesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suppressionDunArtisteToolStripMenuItem;
     }
 }
 
